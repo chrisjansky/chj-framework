@@ -5,7 +5,7 @@
     "Christian Jánský"
   ],
   "description": "Useful snippets.",
-  "main": "scss/chj-mixins.scss",
+  "main": "scss/mixins.scss",
   "license": "MIT",
   "homepage": "http://www.chrisjansky.cz",
   "ignore": [
