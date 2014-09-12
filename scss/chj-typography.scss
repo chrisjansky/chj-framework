@@ -1,0 +1,46 @@
+body {
+  font-family: $font-family;
+}
+::selection {
+  background-color: lighten($c-color2, 25%);
+  color: shade($c-color2, 50%);
+  text-shadow: none;
+}
+a {
+  @include link-state {color: $c-color1; }
+  @include hover-state {color: $c-hover; }
+}
+a.t-link--light {
+  @include link-state {color: $c-grey3; }
+  @include hover-state {color: $c-grey4; }
+}
+.t-link--selected {
+  cursor: default;
+  color: $c-grey4;
+  @include hover-state {color: $c-grey4; }
+}
+nav a {
+  text-decoration: none;
+}
+p a, h1 a, h2 a, h3 a, h4 a {
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+h1 {
+  font-size: em($ratio--xl);
+  line-height: 1.2;
+}
+h2 {
+  font-size: em($ratio--l);
+  line-height: 1.3;
+}
+h3 {
+  font-size: em($ratio--m);
+  line-height: 1.4;
+}
+h4 {
+  font-size: em($unit--l);
+}
+h5 {
+  font-size: em($ratio--b);
+}

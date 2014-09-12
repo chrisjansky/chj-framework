@@ -1,0 +1,25 @@
+// Bourbon settings
+$grid-columns: 12;
+$portrait-columns: 6;
+$phone-columns: 2;
+
+// Media queries
+$desktop: new-breakpoint(min-width em(1025));
+$desktop--wide: new-breakpoint(min-width em(1441));
+
+$portable: new-breakpoint(max-width em(1024));
+
+$tablet: new-breakpoint(max-width em(1024) min-width em(481));
+$tablet--landscape: new-breakpoint(max-width em(1024) min-width em(769));
+$tablet--portrait: new-breakpoint(max-width em(768) min-width em(481), $portrait-columns);
+
+$phone: new-breakpoint(max-width em(480));
+$phone--landscape: new-breakpoint(max-width em(480) min-width em(321), $phone-columns);
+$phone--portrait: new-breakpoint(max-width em(320));
+
+// Ranges
+$tablet__up: new-breakpoint(min-width em(481));
+$tablet--landscape__up: new-breakpoint(min-width em(769), $grid-columns);
+$tablet--portrait__down: new-breakpoint(max-width em(768));
+
+$phone--landscape__up: new-breakpoint(min-width em(321));

@@ -1,0 +1,70 @@
+@mixin bottom-radius($value) {
+  border-bottom-left-radius: $value;
+  border-bottom-right-radius: $value;
+}
+@mixin top-radius($value) {
+  border-top-left-radius: $value;
+  border-top-right-radius: $value;
+}
+@mixin left-radius($value) {
+  border-top-left-radius: $value;
+  border-bottom-left-radius: $value;
+}
+@mixin right-radius($value) {
+  border-top-right-radius: $value;
+  border-bottom-right-radius: $value;
+}
+@mixin stretch-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@mixin collapse-children {
+  & > :first-child {margin-top: 0; }
+  & > :last-child {margin-bottom: 0; }
+  }
+@mixin radial {
+  @include radial-gradient(center top, rgba(white, 0.25), transparent);
+}
+@mixin pseudo-center--parent {
+  &:before {
+    display: inline-block;
+    height: 100%;
+    content: "";
+    width: 0;
+    vertical-align: middle;
+  }
+}
+@mixin pseudo-center--child {
+  display: inline-block;
+  vertical-align: middle;
+}
+@mixin list-reset {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@mixin link-underline {
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+@mixin link-state {
+  &:link,
+  &:visited {
+    @content
+  }
+}
+@mixin hover-state {
+  &:hover,
+  &:active,
+  &:focus {
+    @content
+  }
+}
+@mixin px-rem ($property, $value) {
+  #{$property}: $value * $unit--b + px;
+  #{$property}: #{$value}rem;
+}

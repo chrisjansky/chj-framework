@@ -1,0 +1,17 @@
+{
+  "name": "chj-framework",
+  "version": "1.0.0",
+  "authors": [
+    "Christian Jánský"
+  ],
+  "description": "Useful snippets.",
+  "license": "MIT",
+  "homepage": "http://www.chrisjansky.cz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
