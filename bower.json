@@ -1,10 +1,11 @@
 {
   "name": "chj-framework",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "authors": [
     "Christian Jánský"
   ],
   "description": "Useful snippets.",
+  "main": "scss/chj-mixins.scss",
   "license": "MIT",
   "homepage": "http://www.chrisjansky.cz",
   "ignore": [
