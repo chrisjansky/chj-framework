@@ -59,7 +59,18 @@
 }
 @mixin hover-state {
   &:hover,
+  &:active {
+    @content
+  }
+}
+@mixin active-state {
+  &:hover,
   &:active,
+  &:focus {
+    @content
+  }
+}
+@mixin focus-state {
   &:focus {
     @content
   }
