@@ -79,3 +79,7 @@
   #{$property}: $value * $unit--b + px;
   #{$property}: #{$value}rem;
 }
+@mixin rgba ($property, $color, $opacity) {
+  #{$property}: $color;
+  #{$property}: rgba($color, $opacity);
+}
