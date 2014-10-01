@@ -1,5 +1,6 @@
 // Media queries
 $desktop: new-breakpoint(min-width em(1025));
+$desktop--narrow: new-breakpoint(min-width em(1025) max-width em(1440));
 $desktop--wide: new-breakpoint(min-width em(1441));
 
 $portable: new-breakpoint(max-width em(1024));
