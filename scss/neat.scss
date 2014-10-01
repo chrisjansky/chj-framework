@@ -1,8 +1,3 @@
-// Bourbon settings
-$grid-columns: 12;
-$portrait-columns: 6;
-$phone-columns: 2;
-
 // Media queries
 $desktop: new-breakpoint(min-width em(1025));
 $desktop--wide: new-breakpoint(min-width em(1441));
