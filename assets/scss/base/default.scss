@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  overflow-y: scroll;
+}
+hr {
+  border-top: $line--s solid $c-grey4;
+  border-bottom: none;
+  margin: em($ratio--b) 0;
+}
+img {
+  display: block;
+}
+canvas,
+iframe {
+  display: block;
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+}

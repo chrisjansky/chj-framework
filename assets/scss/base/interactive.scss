@@ -1,0 +1,11 @@
+a {
+  @include state--link {
+    color: $c-color1;
+  }
+  @include state--active {
+    color: $c-hover;
+  }
+}
+nav a {
+  text-decoration: none;
+}

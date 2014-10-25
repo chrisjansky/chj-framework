@@ -1,0 +1,47 @@
+body {
+  font-family: $font--default;
+  font-weight: $weight--default;
+  line-height: 1.5;
+}
+::selection {
+  background-color: lighten($c-color2, 25%);
+  color: shade($c-color2, 50%);
+  text-shadow: none;
+}
+
+// Headline styles.
+.chj-h1 {
+  font-size: em($ratio--l);
+  margin: em($ratio--s) 0;
+  line-height: 1.1;
+}
+.chj-h2 {
+  font-size: em($ratio--m);
+  line-height: 1.2;
+}
+.chj-h3 {
+  font-size: em($unit--l);
+  line-height: 1.3;
+}
+.chj-h4 {
+  font-size: em($ratio--b);
+}
+
+// Paragraphs.
+.chj-lead {
+  font-size: em($unit--l);
+}
+.chj-small {
+  font-size: em($unit--s);
+}
+
+// Styles.
+[class^="chj-caps"],
+[class*=" chj-caps"] {
+  letter-spacing: .125em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.chj-caps--small {
+  font-size: em($unit--xs);
+}
