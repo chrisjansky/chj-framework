@@ -1,4 +1,4 @@
-// Media queries
+// Media queries.
 $desktop: new-breakpoint(min-width em(1025));
 $desktop--narrow: new-breakpoint(min-width em(1025) max-width em(1440));
 $desktop--wide: new-breakpoint(min-width em(1441));
@@ -13,7 +13,7 @@ $phone: new-breakpoint(max-width em(480));
 $phone--landscape: new-breakpoint(max-width em(480) min-width em(321), $phone-columns);
 $phone--portrait: new-breakpoint(max-width em(320));
 
-// Ranges
+// Device ranges.
 $tablet__up: new-breakpoint(min-width em(481));
 $tablet--landscape__up: new-breakpoint(min-width em(769), $grid-columns);
 $tablet--portrait__down: new-breakpoint(max-width em(768));

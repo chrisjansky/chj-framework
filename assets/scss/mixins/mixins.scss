@@ -21,19 +21,21 @@
   left: 0;
   right: 0;
 }
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 @mixin collapse-children {
   & > :first-child {margin-top: 0; }
   & > :last-child {margin-bottom: 0; }
-  }
-@mixin radial {
-  @include radial-gradient(center top, rgba(white, 0.25), transparent);
 }
 @mixin pseudo-center--parent {
   &:before {
     display: inline-block;
-    height: 100%;
     content: "";
     width: 0;
+    height: 100%;
     vertical-align: middle;
   }
 }
@@ -51,26 +53,35 @@
   text-decoration: none;
   border-bottom: 1px solid;
 }
-@mixin link-state {
+@mixin state--link {
   &:link,
   &:visited {
     @content
   }
 }
-@mixin hover-state {
+@mixin state--hover {
   &:hover,
   &:active {
     @content
   }
 }
-@mixin active-state {
+@mixin state--active {
   &:hover,
   &:active,
   &:focus {
     @content
   }
 }
-@mixin focus-state {
+@mixin state--focus {
+  &:focus {
+    @content
+  }
+}
+@mixin state--all {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
   &:focus {
     @content
   }
@@ -82,4 +93,14 @@
 @mixin rgba ($property, $color, $opacity) {
   #{$property}: $color;
   #{$property}: rgba($color, $opacity);
+}
+
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a)
+  } @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
 }
