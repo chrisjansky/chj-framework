@@ -1,0 +1,13 @@
+// Text input.
+.chj-input {
+  height: em($height--b);
+  padding: 0 em($ratio--s);
+  border: $line--s solid;
+  background-color: transparent;
+  @include state--focus {
+    outline: 0;
+  }
+  // iOS reset.
+  -webkit-appearance: none;
+  border-radius: 0;
+}

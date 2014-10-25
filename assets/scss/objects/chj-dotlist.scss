@@ -1,0 +1,36 @@
+// General middot list.
+[class^="chj-dotlist--"],
+[class*=" chj-dotlist--"] {
+  list-style: none;
+  padding-left: 0;
+  li:before {
+    content: "\b7\a0";
+  }
+}
+
+// Inline dotlist.
+.chj-dotlist--inline {
+  li {
+    display: inline-block;
+    padding-left: em($ratio--xxs);
+    &:before {
+      margin-right: em($ratio--xxs);
+    }
+  }
+  li:first-child {
+    padding-left: 0;
+    &:before {display: none; }
+  }
+}
+
+// Stacked list items.
+.chj-dotlist--stacked {
+  li {
+    position: relative;
+    padding-left: em($ratio--b);
+    &:before {
+      position: absolute;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+// Default variant.
+.chj-wrapper {
+  padding: em($ratio--b);
+
+  margin-right: auto;
+  margin-left: auto;
+  @include clearfix;
+  @include collapse-children;
+
+  @include media($phone--landscape) {
+    padding: em($ratio--m);
+  }
+  @include media($tablet) {
+    padding: em($ratio--l);
+  }
+  @include media($desktop) {
+    padding: em($ratio--l) 6.5%;
+  }
+  @include media($desktop--wide) {
+    padding: em($ratio--l) 10%;
+  }
+}
+
+// Small variant.
+.chj-wrapper--small {
+  padding-top: em($ratio--s);
+  padding-bottom: em($ratio--s);
+  @include media($tablet--portrait) {
+    padding-top: em($ratio--b);
+    padding-bottom: em($ratio--b);
+  }
+  @include media($tablet--landscape__up) {
+    padding-top: em($ratio--m);
+    padding-bottom: em($ratio--m);
+  }
+}
+
+// Big variant.
+.chj-wrapper--big {
+  padding-top: em($ratio--m);
+  padding-bottom: em($ratio--m);
+  @include media($tablet--portrait) {
+    padding-top: em($ratio--l);
+    padding-bottom: em($ratio--l);
+  }
+  @include media($tablet--landscape__up) {
+    padding-top: em($ratio--xl);
+    padding-bottom: em($ratio--xl);
+  }
+}
+
+// Modificators.
+.chj-wrapper--vertical {
+  padding-left: 0;
+  padding-right: 0;
+}
+.chj-wrapper--horizontal {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.chj-wrapper--no-top {
+  padding-top: 0;
+}
+.chj-wrapper--no-bottom {
+  padding-bottom: 0;
+}

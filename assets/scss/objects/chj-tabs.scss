@@ -1,0 +1,30 @@
+.chj-tabs {
+  padding-left: 0;
+  @include clearfix;
+}
+.chj-tabs__item {
+  display: inline;
+}
+.chj-tabs__link {
+  display: inline-block;
+  padding: 0 em($ratio--xs) em($ratio--xs);
+  // border-bottom: $line--s solid;
+  text-decoration: none;
+  margin-bottom: -$line--s;
+}
+.chj-tabs__content {
+  width: 100%;
+  border-top: $line--s solid $c-grey2;
+}
+
+// Tab states.
+.tab--is-active {
+  @include state--all {
+    color: black;
+    border-bottom: $line--s solid $c-grey4;
+  }
+}
+.tab--is-open {
+  display: block;
+  float: left;
+}

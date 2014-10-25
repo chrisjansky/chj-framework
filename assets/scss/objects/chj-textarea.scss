@@ -1,0 +1,12 @@
+// Textarea.
+.chj-textarea {
+  padding: em($ratio--s);
+  border: $line--s solid;
+  background-color: transparent;
+  @include state--focus {
+    outline: 0;
+  }
+  // iOS fix.
+  -webkit-appearance: none;
+  border-radius: 0;
+}
