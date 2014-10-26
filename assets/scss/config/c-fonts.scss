@@ -1,0 +1,14 @@
+// Families.
+$font--sans: "Helvetica", sans-serif;
+$font--serif: "Georgia", serif;
+
+// Weights.
+$sans--regular: normal;
+$sans--semibold: bold;
+
+$serif--regular: normal;
+$serif--bold: bold;
+
+// Defaults.
+$font--default: $font--sans;
+$weight--default: $sans--regular;

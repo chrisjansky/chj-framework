@@ -1,0 +1,31 @@
+// Units
+$unit--xl: 36;
+$unit--l:  20;
+$unit--m:  18;
+$unit--b:  16;
+$unit--s:  14;
+$unit--xs: 12;
+
+// Radius
+$radius--b: 2px;
+
+// Thickness
+$line--l: 3px;
+$line--b: 2px;
+$line--s: 1px;
+
+// Heights
+$height--b: 40;
+
+// Ratios
+$ratio--xxh: round(golden-ratio($unit--b,  7));
+$ratio--xh:  round(golden-ratio($unit--b,  6));
+$ratio--h:   round(golden-ratio($unit--b,  5));
+$ratio--xxl: round(golden-ratio($unit--b,  4));
+$ratio--xl:  round(golden-ratio($unit--b,  3));
+$ratio--l:   round(golden-ratio($unit--b,  2));
+$ratio--m:   round(golden-ratio($unit--b,  1));
+$ratio--b:   $unit--b;
+$ratio--s:   round(golden-ratio($unit--b, -1));
+$ratio--xs:  round(golden-ratio($unit--b, -2));
+$ratio--xxs: round(golden-ratio($unit--b, -3));

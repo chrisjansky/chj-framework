@@ -1,0 +1,13 @@
+// Bourbon settings.
+$em-base: $unit--b;
+
+// Neat settings.
+$grid-columns: 12;
+$portrait-columns: 6;
+$phone-columns: 4;
+
+$column: em($ratio--l);
+$gutter: em($ratio--b);
+
+// Column span.
+$column--one: 4;
