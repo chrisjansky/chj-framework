@@ -6,9 +6,10 @@ body {
   overflow-y: scroll;
 }
 hr {
-  border-top: $line--s solid $c-grey4;
+  border-top: $line--s solid;
   border-bottom: none;
   margin: em($ratio--b) 0;
+  @include rgba(border-color, $c-grey4, .5);
 }
 img {
   display: block;

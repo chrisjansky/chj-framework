@@ -1,0 +1,10 @@
+body {
+  font-family: $font--default;
+  font-weight: $weight--default;
+  line-height: 1.5;
+}
+::selection {
+  background-color: $c-color2--light;
+  color: $c-color2--dark;
+  text-shadow: none;
+}
