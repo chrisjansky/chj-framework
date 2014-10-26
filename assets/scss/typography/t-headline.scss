@@ -1,0 +1,16 @@
+.t-h1 {
+  font-size: em($ratio--l);
+  margin: em($ratio--s) 0;
+  line-height: 1.1;
+}
+.t-h2 {
+  font-size: em($ratio--m);
+  line-height: 1.2;
+}
+.t-h3 {
+  font-size: em($unit--l);
+  line-height: 1.3;
+}
+.t-h4 {
+  font-size: em($ratio--b);
+}

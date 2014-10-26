@@ -1,0 +1,9 @@
+[class^="t-caps"],
+[class*=" t-caps"] {
+  letter-spacing: .125em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.t-caps--small {
+  font-size: em($unit--xs);
+}
