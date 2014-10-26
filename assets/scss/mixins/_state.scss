@@ -1,0 +1,33 @@
+@mixin state--link {
+  &:link,
+  &:visited {
+    @content
+  }
+}
+@mixin state--hover {
+  &:hover,
+  &:active {
+    @content
+  }
+}
+@mixin state--active {
+  &:hover,
+  &:active,
+  &:focus {
+    @content
+  }
+}
+@mixin state--focus {
+  &:focus {
+    @content
+  }
+}
+@mixin state--all {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    @content
+  }
+}

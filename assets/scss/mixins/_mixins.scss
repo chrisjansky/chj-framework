@@ -1,0 +1,23 @@
+@mixin stretch-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin collapse-children {
+  & > :first-child {margin-top: 0; }
+  & > :last-child {margin-bottom: 0; }
+}
+
+@mixin px-rem ($property, $value) {
+  #{$property}: $value * $unit--b + px;
+  #{$property}: #{$value}rem;
+}

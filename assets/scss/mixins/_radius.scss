@@ -1,0 +1,16 @@
+@mixin radius--bottom($value) {
+  border-bottom-left-radius: $value;
+  border-bottom-right-radius: $value;
+}
+@mixin radius--top($value) {
+  border-top-left-radius: $value;
+  border-top-right-radius: $value;
+}
+@mixin radius--left($value) {
+  border-top-left-radius: $value;
+  border-bottom-left-radius: $value;
+}
+@mixin radius--right($value) {
+  border-top-right-radius: $value;
+  border-bottom-right-radius: $value;
+}
