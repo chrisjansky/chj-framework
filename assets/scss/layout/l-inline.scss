@@ -1,0 +1,28 @@
+.l-inline__cell {
+  text-align: center;
+
+  &:first-child > :first-child {
+    margin-top: 0;
+  }
+}
+
+@include media($tablet__up) {
+  .l-inline {
+    display: table;
+    width: 100%;
+  }
+  .l-inline__row {
+    display: table-row;
+  }
+  .l-inline__cell {
+    display: table-cell;
+    vertical-align: middle;
+    @include collapse-children;
+    &:first-child {
+      text-align: left; 
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+}

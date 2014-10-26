@@ -1,5 +1,5 @@
 // Default variant.
-.chj-wrapper {
+.l-wrap {
   padding: em($ratio--b);
 
   margin-right: auto;
@@ -22,7 +22,7 @@
 }
 
 // Small variant.
-.chj-wrapper--small {
+.l-wrap--small {
   padding-top: em($ratio--s);
   padding-bottom: em($ratio--s);
   @include media($tablet--portrait) {
@@ -36,7 +36,7 @@
 }
 
 // Big variant.
-.chj-wrapper--big {
+.l-wrap--big {
   padding-top: em($ratio--m);
   padding-bottom: em($ratio--m);
   @include media($tablet--portrait) {
@@ -49,18 +49,18 @@
   }
 }
 
-// Modificators.
-.chj-wrapper--vertical {
+// Modifications.
+.l-wrap--vertical {
   padding-left: 0;
   padding-right: 0;
 }
-.chj-wrapper--horizontal {
+.l-wrap--horizontal {
   padding-top: 0;
   padding-bottom: 0;
 }
-.chj-wrapper--no-top {
+.l-wrap--no-top {
   padding-top: 0;
 }
-.chj-wrapper--no-bottom {
+.l-wrap--no-bottom {
   padding-bottom: 0;
 }
