@@ -1,0 +1,22 @@
+// Inline buttons.
+.o-button-group--inline {
+  [class^="o-button--"],
+  [class*=" o-button--"] {
+      margin-left: em($ratio--s);
+      &:first-child {
+        margin-left: 0;
+      }
+  }
+}
+// Stacked below each other.
+.o-button-group--stacked {
+  text-align: center;
+  [class^="o-button--"],
+  [class*=" o-button--"] {
+    display: block;
+    margin-top: em($ratio--s);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
