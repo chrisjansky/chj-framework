@@ -1,6 +1,6 @@
 // A basic button.
-[class^="chj-button--"],
-[class*=" chj-button--"] {
+[class^="o-button--"],
+[class*=" o-button--"] {
   display: inline-block;
   text-decoration: none;
   padding-left: em($ratio--b);
@@ -9,7 +9,7 @@
 }
 
 // Solid background.
-.chj-button--solid {
+.o-button--solid {
   @include state--link {
     color: white;
     background-color: $c-color1;
@@ -22,7 +22,7 @@
 }
 
 // Outline border.
-.chj-button--outline {
+.o-button--outline {
   border: $line--b solid;
   line-height: em($height--b - $line--b * 2);
   @include state--link {
@@ -34,7 +34,7 @@
 }
 
 // Block, centered text.
-.chj-button--block {
+.o-button--block {
   display: block;
   padding-left: 0;
   padding-right: 0;

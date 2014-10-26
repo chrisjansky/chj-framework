@@ -1,11 +1,13 @@
-.chj-submit {
+// Text input.
+.o-input {
   height: em($height--b);
-  padding: 0 em($ratio--b);
+  padding: 0 em($ratio--s);
   border: $line--s solid;
   background-color: transparent;
-  // iOS fix.
-  border-radius: 0;
   @include state--focus {
     outline: 0;
   }
+  // iOS reset.
+  -webkit-appearance: none;
+  border-radius: 0;
 }

@@ -1,6 +1,6 @@
 // General middot list.
-[class^="chj-dotlist--"],
-[class*=" chj-dotlist--"] {
+[class^="o-dotlist--"],
+[class*=" o-dotlist--"] {
   list-style: none;
   padding-left: 0;
   li:before {
@@ -9,7 +9,7 @@
 }
 
 // Inline dotlist.
-.chj-dotlist--inline {
+.o-dotlist--inline {
   li {
     display: inline-block;
     padding-left: em($ratio--xxs);
@@ -24,7 +24,7 @@
 }
 
 // Stacked list items.
-.chj-dotlist--stacked {
+.o-dotlist--stacked {
   li {
     position: relative;
     padding-left: em($ratio--b);

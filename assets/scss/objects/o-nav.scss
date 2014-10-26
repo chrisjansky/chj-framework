@@ -1,0 +1,22 @@
+@include media($phone) {
+  .o-nav__list {
+    display: none;
+  }
+}
+@include media($tablet__up) {
+  .o-nav__toggle {
+    display: none;
+  }
+}
+.o-nav__link--selected {
+  border-bottom: $line--s solid;
+  @include state--all {
+    color: $c-grey8;
+  }
+}
+// Toggled with [data-nav].
+.nav--is-open {
+  & + .o-nav__list {
+    display: block;
+  }
+}
