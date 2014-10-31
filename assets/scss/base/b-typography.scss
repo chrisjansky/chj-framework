@@ -4,7 +4,7 @@ body {
   line-height: 1.5;
 }
 ::selection {
-  background-color: $c-color2--light;
-  color: $c-color2--dark;
+  background-color: $c-select--bg;
+  color: $c-select--text;
   text-shadow: none;
 }

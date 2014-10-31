@@ -1,6 +1,6 @@
 a {
   @include state--link {
-    color: $c-color1;
+    color: $c-link;
   }
   @include state--active {
     color: $c-hover;
