@@ -1,14 +1,16 @@
 // Families.
-$font--sans: "Helvetica", sans-serif;
-$font--serif: "Georgia", serif;
+$font__sans: "Helvetica", sans-serif;
+$font__serif: "Georgia", serif;
 
 // Weights.
-$sans--regular: normal;
-$sans--semibold: bold;
+$font__sans--regular: normal;
+$font__sans--bold: bold;
 
-$serif--regular: normal;
-$serif--bold: bold;
+$font__serif--regular: normal;
+$font__serif--bold: bold;
 
 // Defaults.
-$font--default: $font--sans;
-$weight--default: $sans--regular;
+$default__size: $unit--b;
+$default__family: $font__sans;
+$default__weight: $font__sans--regular;
+$default__leading: 1.5;
