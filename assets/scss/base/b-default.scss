@@ -8,7 +8,7 @@ body {
 hr {
   border-top: $line--s solid;
   border-bottom: none;
-  margin: em($ratio--b) 0;
+  @include margin(em($ratio--b) null);
   @include rgba(border-color, $c-grey4, .5);
 }
 img {
