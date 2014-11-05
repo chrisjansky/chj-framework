@@ -1,7 +1,6 @@
 body {
-  font-family: $font--default;
-  font-weight: $weight--default;
-  line-height: 1.5;
+  font: $default__weight em($default__size, 16) $default__family;
+  line-height: $default__leading;
 }
 ::selection {
   background-color: $c-select--bg;
