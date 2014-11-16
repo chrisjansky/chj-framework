@@ -1,0 +1,34 @@
+{
+  "name": "chj-framework",
+  "version": "0.2.0",
+  "description": "Project of Christian Jánský.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "glob": "latest",
+    "gulp": "latest",
+    "gulp-clean": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-jade": "latest",
+    "gulp-kss": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-size": "latest",
+    "gulp-svg2png": "latest",
+    "gulp-uglify": "latest",
+    "gulp-uncss": "latest",
+    "gulp-usemin": "latest",
+    "gulp-watch": "latest",
+    "hygienist-middleware": "latest",
+    "node-bourbon": "latest",
+    "node-neat": "latest",
+    "yargs": "latest"
+  }
+}
