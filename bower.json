@@ -1,11 +1,10 @@
 {
   "name": "chj-framework",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "authors": [
     "Christian Jánský"
   ],
   "description": "Useful snippets.",
-  "main": "scss/mixins.scss",
   "license": "MIT",
   "homepage": "http://www.chrisjansky.cz",
   "ignore": [
@@ -13,6 +12,14 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
-  ]
+    "tests",
+    "public",
+    "assets/css",
+    "assets/jade",
+    "*.html"
+  ],
+  "devDependencies": {
+    "normalize-css": "latest",
+    "jquery": "latest"
+  }
 }
