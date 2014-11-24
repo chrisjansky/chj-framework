@@ -34,7 +34,7 @@ var paths = {
   glob_data: "assets/data/*.json",
 
   kss: "assets/kss",
-  kss_scss: "assets/scss/kss.scss",
+  kss_css: "assets/css/styleguide.css"
 };
 
 /*
@@ -80,8 +80,8 @@ gulp.task("pages", ["templates"], function() {
 
 gulp.task("scan", function () {
   // Using gulp.start soon to be deprecated.
-  plugins.watch(paths.glob_scss, function() {
-    gulp.start("styles");
+  plugins.watch(paths.glob_scss, function(files, cb) {
+    gulp.start("styles", cb);
   });
   plugins.watch([paths.glob_jade, paths.glob_data, paths.js], function(files, cb) {
     gulp.start("pages", cb);
@@ -176,7 +176,7 @@ var styleguideFiles = [
   "assets/kss/assets/prism.css"
 ];
 
-gulp.task("styleguide-wipe", function() {
+gulp.task("styleguide-wipe", ["build-wipe"], function() {
   return gulp.src(paths.styleguide, {read: false})
     .pipe(plugins.clean());
 });
@@ -187,7 +187,7 @@ gulp.task("styleguide-move", ["styleguide-wipe"], function() {
 });
 
 gulp.task("styleguide-styles", ["styleguide-move"], function() {
-  return gulp.src(paths.glob_css)
+  return gulp.src(paths.kss_css)
     .pipe(plugins.minifyCss({
       keepSpecialComments: 0
     }))
@@ -197,7 +197,7 @@ gulp.task("styleguide-styles", ["styleguide-move"], function() {
     .pipe(gulp.dest(paths.production + paths.css));
 });
 
-gulp.task("styleguide", ["styleguide-styles"], function() {
+gulp.task("styleguide-compile", ["styleguide-styles"], function() {
   return gulp.src(paths.glob_scss)
     .pipe(plugins.kss({
       overview: paths.kss + "/styleguide.md",
@@ -214,3 +214,5 @@ gulp.task("compile", ["styles", "pages"]);
 
 // Wipe first. Move, produce. Images if --full. Strip if --uncss.
 gulp.task("build", ["build-move", "build-images", "build-strip"]);
+
+gulp.task("styleguide", ["build-compile", "styleguide-compile"]);
