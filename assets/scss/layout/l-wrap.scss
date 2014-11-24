@@ -1,4 +1,17 @@
-// Default variant.
+// A basic wrap.
+//
+// .l-wrap--small - Smaller.
+// .l-wrap--big - Bigger.
+// .l-wrap--vertical - Only vertical.
+// .l-wrap--horizontal - Only horizontal.
+// .l-wrap--no-top - No top padding.
+// .l-wrap--no-bottom - No bottom padding.
+//
+// Markup:
+// <div class="l-wrap {$modifiers}">Text.</div>
+//
+// Styleguide 1.1.
+
 .l-wrap {
   padding: em($ratio--b);
 
@@ -21,7 +34,6 @@
   }
 }
 
-// Small variant.
 .l-wrap--small {
   padding-top: em($ratio--s);
   padding-bottom: em($ratio--s);
@@ -35,7 +47,6 @@
   }
 }
 
-// Big variant.
 .l-wrap--big {
   padding-top: em($ratio--m);
   padding-bottom: em($ratio--m);
@@ -49,7 +60,6 @@
   }
 }
 
-// Modifications.
 .l-wrap--vertical {
   padding-left: 0;
   padding-right: 0;
