@@ -1,11 +1,11 @@
 // Media queries.
 $phone: new-breakpoint(max-width em(560));
-$phone--landscape: new-breakpoint(min-width em(401) max-width em(560), $columns__phone);
 $phone--portrait: new-breakpoint(max-width em(400));
+$phone--landscape: new-breakpoint(min-width em(401) max-width em(560), $columns__phone);
 
 $tablet: new-breakpoint(min-width em(561) max-width em(1024));
-$tablet--landscape: new-breakpoint(min-width em(801) max-width em(1024), $columns__landscape);
-$tablet--portrait: new-breakpoint(min-width em(561) max-width em(800), $columns__portrait);
+$tablet--portrait: new-breakpoint(min-width em(561) max-width em(820), $columns__portrait);
+$tablet--landscape: new-breakpoint(min-width em(821) max-width em(1024), $columns__landscape);
 
 $portable: new-breakpoint(max-width em(1024));
 
@@ -17,5 +17,5 @@ $desktop--wide: new-breakpoint(min-width em(1441));
 $phone--landscape__up: new-breakpoint(min-width em(401));
 
 $tablet__up: new-breakpoint(min-width em(561));
-$tablet--portrait__down: new-breakpoint(max-width em(800));
-$tablet--landscape__up: new-breakpoint(min-width em(801), $columns__desktop);
+$tablet--portrait__down: new-breakpoint(max-width em(820));
+$tablet--landscape__up: new-breakpoint(min-width em(821));
