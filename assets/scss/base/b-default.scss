@@ -1,4 +1,5 @@
 body {
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 hr {
@@ -9,6 +10,7 @@ hr {
 }
 img {
   display: block;
+  max-width: 100%;
 }
 canvas,
 iframe {

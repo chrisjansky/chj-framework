@@ -1,9 +1,15 @@
 a {
-  @include state--link {
+  &:link {
     color: $c-link;
   }
-  @include state--active {
+  &:visited {
+    color: $c-visited;
+  }
+  &:hover {
     color: $c-hover;
+  }
+  &:active {
+    color: $c-active;
   }
 }
 nav a {
