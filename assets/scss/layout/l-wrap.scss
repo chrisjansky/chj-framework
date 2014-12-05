@@ -35,38 +35,32 @@
 }
 
 .l-wrap--small {
-  padding-top: em($ratio--s);
-  padding-bottom: em($ratio--s);
+  @include padding(em($ratio--s) null);
+  
   @include media($tablet--portrait) {
-    padding-top: em($ratio--b);
-    padding-bottom: em($ratio--b);
+    @include padding(em($ratio--b) null);
   }
   @include media($tablet--landscape__up) {
-    padding-top: em($ratio--m);
-    padding-bottom: em($ratio--m);
+    @include padding(em($ratio--m) null);
   }
 }
 
 .l-wrap--big {
-  padding-top: em($ratio--m);
-  padding-bottom: em($ratio--m);
+  @include padding(em($ratio--m) null);
+
   @include media($tablet--portrait) {
-    padding-top: em($ratio--l);
-    padding-bottom: em($ratio--l);
+    @include padding(em($ratio--l) null);
   }
   @include media($tablet--landscape__up) {
-    padding-top: em($ratio--xl);
-    padding-bottom: em($ratio--xl);
+    @include padding(em($ratio--xl) null);
   }
 }
 
 .l-wrap--vertical {
-  padding-left: 0;
-  padding-right: 0;
+  @include padding(null 0);
 }
 .l-wrap--horizontal {
-  padding-top: 0;
-  padding-bottom: 0;
+  @include padding(0 null);
 }
 .l-wrap--no-top {
   padding-top: 0;

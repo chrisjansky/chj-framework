@@ -1,0 +1,16 @@
+[class^="l-spacer"],
+[class*=" l-spacer"] {
+  border: none;
+  margin: 0;
+  height: em($ratio--m);
+}
+
+.l-spacer--small {
+  height: em($ratio--b);
+}
+
+@include media($tablet__up) {
+  .l-spacer {
+    height: em($ratio--l);
+  }
+}

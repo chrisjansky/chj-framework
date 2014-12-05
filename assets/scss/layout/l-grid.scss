@@ -3,33 +3,23 @@
   @include clearfix;
 }
 
-.l-grid__item--4 {
-  @include media($tablet--portrait__down) {
-    margin-bottom: em($ratio--b);
-  }
-  @include media($phone--landscape__up) {
+[class^="l-grid__item"],
+[class*=" l-grid__item"] {
+  @include media($tablet--landscape__up) {
     @include collapse-children;
   }
-  @include media($phone--landscape) {
-    @include span-columns($columns__phone / 2);
-    @include omega(2n);
-  }
-  @include media($tablet--portrait) {
-    @include span-columns($columns__portrait / 2);
-    @include omega(2n);
-  }
+}
+
+.l-grid__item--2 {
   @include media($tablet--landscape) {
-    @include span-columns($columns__landscape / 4);
+    @include span-columns($columns__landscape / 2);
   }
   @include media($desktop) {
-    @include span-columns($columns__desktop / 4);
+    @include span-columns($columns__desktop / 2);
   }
 }
 
 .l-grid__item--3 {
-  @include media($tablet--landscape__up) {
-    @include collapse-children;
-  }
   @include media($tablet--landscape) {
     @include span-columns($columns__landscape / 2);
     @include omega(2n);
@@ -43,14 +33,19 @@
   }
 }
 
-.l-grid__item--2 {
-  @include media($tablet--landscape__up) {
-    @include collapse-children;
+.l-grid__item--4 {
+  @include media($phone--landscape) {
+    @include span-columns($columns__phone / 2);
+    @include omega(2n);
+  }
+  @include media($tablet--portrait) {
+    @include span-columns($columns__portrait / 2);
+    @include omega(2n);
   }
   @include media($tablet--landscape) {
-    @include span-columns($columns__landscape / 2);
+    @include span-columns($columns__landscape / 4);
   }
   @include media($desktop) {
-    @include span-columns($columns__desktop / 2);
+    @include span-columns($columns__desktop / 4);
   }
 }
