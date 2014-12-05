@@ -1,0 +1,34 @@
+[class^="o-icon-button"],
+[class*=" o-icon-button"] {
+  text-decoration: none;
+  &:before {
+    margin-right: em($ratio--xxs);
+  }
+  &:after {
+    margin-left: em($ratio--xxs);
+  }
+}
+
+.o-icon-button {
+  &:before, &:after {
+    font-size: #{$icon--b}px;
+  }
+}
+
+.o-icon-button--small {
+  &:before, &:after {
+    font-size: #{$icon--s}px;
+  }
+}
+
+.o-icon-button--medium {
+  &:before, &:after {
+    font-size: #{$icon--m}px;
+  }
+}
+
+.o-icon-button--big {
+  &:before, &:after {
+    font-size: #{$icon--l}px;
+  }
+}

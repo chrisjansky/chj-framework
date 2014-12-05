@@ -1,0 +1,23 @@
+[class^="o-note"],
+[class*=" o-note"] {
+  display: inline-block;
+  line-height: em($height--b);
+
+  @include padding(null em($ratio--b));
+
+  border-radius: $radius--b;
+}
+
+.o-note {
+  background-color: $c-grey2;
+}
+
+.o-note--positive {
+  color: $c-color1--dark;
+  background-color: $c-color1--light;
+}
+
+.o-note--negative {
+  color: $c-color4--dark;
+  background-color: $c-color4--light;
+}

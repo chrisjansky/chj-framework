@@ -1,0 +1,41 @@
+.o-carousel {
+  user-select: none;
+  // Important to set box-sizing!
+  box-sizing: content-box;
+}
+.o-carousel__list {
+  list-style: none;
+  padding-left: 0;
+  &:hover {
+    cursor: grab;
+  }
+}
+.o-carousel__item {
+  & + & {
+    padding-left: em($ratio--b);
+  }
+}
+.o-carousel__link {
+  display: block;
+  @include state--hover {
+    opacity: .625;
+  }
+}
+
+[class^="o-carousel__arrow"],
+[class*=" o-carousel__arrow"] {
+  padding: em($ratio--b);
+  text-decoration: none; 
+}
+
+.o-carousel__arrow--prev {
+  .carousel--start & {
+    opacity: .375;
+  }
+}
+
+.o-carousel__arrow--next {
+  .carousel--end & {
+    opacity: .375;
+  }
+}

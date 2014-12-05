@@ -1,0 +1,32 @@
+.o-slider {
+  user-select: none;
+}
+.o-slider__list {
+  list-style: none;
+  padding-left: 0;
+  &:hover {
+    cursor: grab;
+  }
+}
+
+.o-slider__image {
+  @include margin(null auto);
+}
+
+[class^="o-slider__arrow"],
+[class*=" o-slider__arrow"] {
+  padding: em($ratio--b);
+  text-decoration: none; 
+}
+
+.o-slider__arrow--prev {
+  .slider--start & {
+    opacity: .375;
+  }
+}
+
+.o-slider__arrow--next {
+  .slider--end & {
+    opacity: .375;
+  }
+}

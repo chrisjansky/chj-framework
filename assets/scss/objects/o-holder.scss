@@ -1,0 +1,41 @@
+.o-holder--number {
+  &:hover .o-holder__icon,
+  .o-holder__input:focus + .o-holder__icon {
+    display: none;
+  }
+}
+
+// Fuck Firefox.
+@-moz-document url-prefix() {
+  .o-holder--select .o-holder__icon {
+    display: none;
+  }
+}
+
+.o-holder__label {
+  min-width: em($ratio--xl);
+  margin-right: em($ratio--s);
+  line-height: em($height--b);
+  float: left;
+}
+
+.o-holder__content {
+  position: relative;
+  overflow-x: auto;
+}
+
+.o-holder__icon {
+  position: absolute;
+  right: em($ratio--s);
+  top: 0;
+  bottom: 0;
+
+  pointer-events: none;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,30 @@
+.o-select {
+  display: inline-block;
+
+  line-height: em($height--b - $line--s * 2);
+
+  border: $line--s solid $c-grey4;
+  border-radius: $radius--b;
+
+  @include state--hover {
+    border-color: $c-grey6;
+  }
+}
+.o-select__content {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @include padding(null em($ratio--l) null em($ratio--s));
+
+  // Extremely stupid fix for Firefox styling.
+  // https://bugzilla.mozilla.org/show_bug.cgi?id=649849
+  text-indent: .1px;
+  text-overflow: "";
+
+  @include appearance(none);
+  @include state--focus {
+    outline: 0;
+  }
+}

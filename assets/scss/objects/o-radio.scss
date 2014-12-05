@@ -1,0 +1,41 @@
+.o-radio {
+  cursor: pointer;
+  position: relative;
+  line-height: em($height--b);
+  & + & {
+    margin-left: em($ratio--b);
+  }
+}
+
+.o-radio__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.o-radio__mark {
+  position: relative;
+  display: inline-block;
+
+  width: em($ratio--b);
+  height: em($ratio--b);
+
+  margin-right: em($ratio--s);
+
+  border: $line--b solid $c-grey3;
+  border-radius: 50%;
+  vertical-align: middle;
+
+  :checked + & {
+    border-color: $c-color1;
+    background-color: $c-color1--light;
+  }
+}
+
+.o-radio__text {
+  color: $c-grey4;
+  :checked + * + & {
+    color: $c-color1--dark;
+  }
+}

@@ -1,0 +1,29 @@
+.o-hero {
+  display: inline-block;
+  position: relative;
+}
+
+.o-hero__overlay {
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  @include stretch-overlay;
+  @include pseudo-center--parent;
+  z-index: $index--b;
+}
+
+.o-hero__content {
+  @include padding(null em($ratio--b));
+  @include collapse-children;
+  @include pseudo-center--child;
+  white-space: normal;
+}
+
+.o-hero__background {
+  background-color: $c-grey8;
+}
+
+.o-hero__image {
+  opacity: .625;
+  @include margin(null auto);
+}

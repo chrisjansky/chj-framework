@@ -1,0 +1,27 @@
+.o-accordion__title {
+  background-color: $c-grey1;
+  border-radius: $radius--b;
+  .o-accordion__content + & {
+    margin-top: em($ratio--xs);
+  }
+}
+.o-accordion__link {
+  display: block;
+
+  line-height: em($height--b);
+  @include padding(null em($ratio--b));
+
+  text-decoration: none;
+  .accordion--is-active & {
+    @include state--all {
+      color: $c-color3--dark;
+    }
+  }
+}
+.o-accordion__content {
+  @include margin(em($ratio--s) null em($ratio--m) em($ratio--b));
+}
+
+.accordion--is-active {
+  background-color: $c-color3--light;
+}

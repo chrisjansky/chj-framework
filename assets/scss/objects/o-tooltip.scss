@@ -1,0 +1,32 @@
+.o-tooltip {
+  position: relative;
+  &:hover {
+    cursor: help;
+  }
+  &:hover:after {
+    position: absolute;
+    bottom: em($ratio--m + $ratio--b / 2);
+    left: 0;
+
+    content: attr(title);
+    white-space: nowrap;
+
+    line-height: em($height--b);
+    @include padding(null em($ratio--b));
+    border-radius: $radius--b;
+    
+    color: white;
+    background-color: rgba($c-grey8, 0.85);
+  }
+  &:hover:before {
+    position: absolute;
+    bottom: em($ratio--m);
+    left: em($ratio--b);
+
+    content: "";
+    @include triangle(em($ratio--b), rgba($c-grey8, 0.85), down);
+  }
+  &:after, &:before {
+    font-size: rem($unit--s);
+  }
+}
