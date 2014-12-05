@@ -1,0 +1,53 @@
+extends templates/_basic
+
+block template-variables
+  - var pageSettings = {title: "chj", description: "Framework."}
+
+block template-body
+  include mixins/_dummy
+  .l-wrap
+    include partials/_nav
+    hr
+    include partials/_typography
+    hr
+    include partials/_hero
+    hr
+    include partials/_slider
+
+  include partials/_carousel
+
+  .l-wrap
+    hr
+    each instance in ["inside", "outside", "inline"]
+      ul(class="o-dotlist--#{instance}")
+        each number in [1, 2, 3, 4]
+          li Item #{number}
+    hr
+    span.t-caps Uppercase title
+    p: +dummy()
+    span.t-caps--small Small-caps title
+    p: +dummy()
+    hr
+    h4.t-h4 Button Group
+    .o-button-group--inline
+      a.o-button--solid(href="#") Solid Button
+      a.o-button--outline(href="#") Outline Button
+      a.o-button--solid.o-button--selected(href="#") Selected
+    hr
+    h4.t-h4 Tooltip
+    p
+      +dummy(5, "text")
+      | 
+      abbr.o-tooltip(title="Something."): +dummy(5, "text")
+    hr
+    include partials/_modal
+    hr
+    include partials/_grid
+    hr
+    include partials/_form
+    hr
+    include partials/_tabs
+    hr
+    include partials/_accordion
+
+  //- include styleguide/_color
