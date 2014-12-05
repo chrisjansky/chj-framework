@@ -1,16 +1,27 @@
+// Headlines.
+//
+// Markup:
+// <h1 class="t-h1">First Headline</h1>
+// <h2 class="t-h2">Second Headline</h2>
+// <h3 class="t-h3">Third Headline</h3>
+// <h4 class="t-h4">Fourth Headline</h4>
+//
+// Styleguide 0.2.
 .t-h1 {
   font-size: em($ratio--l);
-  margin: em($ratio--s) 0;
   line-height: 1.1;
+  @include margin(em($ratio--s) null);
 }
 .t-h2 {
   font-size: em($ratio--m);
   line-height: 1.2;
+  @include margin(em($ratio--b) null);
 }
 .t-h3 {
   font-size: em($unit--l);
   line-height: 1.3;
 }
 .t-h4 {
-  font-size: em($ratio--b);
+  font-size: em($unit--m);
+  @include margin(em($ratio--b) null);
 }
