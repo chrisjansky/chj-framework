@@ -1,11 +1,36 @@
-.o-submit {
+[class^="o-submit"],
+[class*=" o-submit"] {
   height: em($height--b);
   padding: 0 em($ratio--b);
-  border: $line--s solid;
+
   background-color: transparent;
-  // iOS fix.
-  border-radius: 0;
+  color: $c-link;
+
+  border: $line--b solid;
+  border-radius: $radius--b;
+
+  @include state--hover {
+    color: $c-link--dark;
+    border-color: $c-link;
+  }
   @include state--focus {
+    color: $c-link--dark;
+    background-color: $c-link--light;
+    border-color: $c-link;
     outline: 0;
+  }
+}
+
+.o-submit--reset {
+  color: $c-color4;
+
+  @include state--hover {
+    color: $c-color4--dark;
+    border-color: $c-color4;
+  }
+  @include state--focus {
+    color: $c-color4--dark;
+    background-color: $c-color4--light;
+    border-color: $c-color4;
   }
 }

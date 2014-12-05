@@ -11,7 +11,7 @@
 .o-nav__link--selected {
   border-bottom: $line--s solid;
   @include state--all {
-    color: $c-grey8;
+    color: $c-active;
   }
 }
 // Toggled with [data-nav].

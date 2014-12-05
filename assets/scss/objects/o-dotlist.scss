@@ -1,36 +1,54 @@
 // General middot list.
+//
+// Markup:
+// <a href="#" class="o-button {$modifiers}">Button</a>
+// <a href="#" class="o-button {$modifiers} pseudo-class-hover">On Hover</a>
+//
+// Styleguide 3.1.
 [class^="o-dotlist--"],
 [class*=" o-dotlist--"] {
   list-style: none;
   padding-left: 0;
+  li {
+    position: relative;
+    padding-left: em($ratio--b);
+  }
   li:before {
+    position: absolute;
+    left: 0;
+
     content: "\b7\a0";
   }
 }
 
 // Inline dotlist.
 .o-dotlist--inline {
-  li {
-    display: inline-block;
-    padding-left: em($ratio--xxs);
-    &:before {
-      margin-right: em($ratio--xxs);
+  @include media($phone--landscape__up) {
+    li {
+      display: inline-block;
+      padding-left: em($ratio--s);
+      &:before {
+        position: relative;
+        margin-right: em($ratio--s);
+      }
     }
-  }
-  li:first-child {
-    padding-left: 0;
-    &:before {display: none; }
+    li:first-child {
+      padding-left: 0;
+    }
+    li:first-child:before {
+      display: none;
+    }
   }
 }
 
-// Stacked list items.
-.o-dotlist--stacked {
-  li {
-    position: relative;
-    padding-left: em($ratio--b);
-    &:before {
-      position: absolute;
-      left: 0;
+// Outside bullets.
+@include media($phone--landscape__up) {
+  .o-dotlist--outside {
+    li {
+      padding-left: 0;
+    }
+    li:before {
+      left: em(-$ratio--b);
     }
   }
 }

@@ -1,13 +1,21 @@
 // Text input.
 .o-input {
+  width: 100%;
   height: em($height--b);
   padding: 0 em($ratio--s);
-  border: $line--s solid;
+
   background-color: transparent;
+
+  border: $line--s solid $c-grey4;
+  border-radius: $radius--b;
+  
+  @include state--hover {
+    border-color: $c-grey6;
+  }
   @include state--focus {
+    border-color: $c-color1;
     outline: 0;
   }
   // iOS reset.
   -webkit-appearance: none;
-  border-radius: 0;
 }

@@ -7,21 +7,25 @@
 }
 .o-tabs__link {
   display: inline-block;
-  padding: 0 em($ratio--xs) em($ratio--xs);
-  // border-bottom: $line--s solid;
-  text-decoration: none;
+  
+  line-height: em($height--b);
+  @include padding(null em($ratio--b));
   margin-bottom: -$line--s;
+
+  text-decoration: none;
 }
 .o-tabs__content {
+  display: none;
   width: 100%;
   border-top: $line--s solid $c-grey2;
 }
 
 // Tab states.
 .tab--is-active {
+  background-color: $c-active--light;
   @include state--all {
-    color: black;
-    border-bottom: $line--s solid $c-grey4;
+    color: $c-active--dark;
+    border-bottom: $line--s solid $c-active;
   }
 }
 .tab--is-open {

@@ -1,12 +1,20 @@
 // Textarea.
 .o-textarea {
-  padding: em($ratio--s);
-  border: $line--s solid;
+  width: 100%;
+  padding: em($ratio--xs) em($ratio--s);
+
   background-color: transparent;
+
+  border: $line--s solid $c-grey4;
+  border-radius: $radius--b;
+
+  @include state--hover {
+    border-color: $c-grey6;
+  }
   @include state--focus {
+    border-color: $c-color1;
     outline: 0;
   }
   // iOS fix.
   -webkit-appearance: none;
-  border-radius: 0;
 }
