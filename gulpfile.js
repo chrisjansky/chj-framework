@@ -196,7 +196,7 @@ gulp.task("deploy", function() {
     .pipe(plugins.ftp({
       host: "chrisjansky.cz",
       user: "w85799",
-      pass: "novyweb2014",
+      pass: "",
       remotePath: "www/subdom/work/chj"
     }))
     .pipe(plugins.size());
