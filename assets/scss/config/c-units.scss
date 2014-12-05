@@ -6,6 +6,9 @@ $unit--b:  16;
 $unit--s:  14;
 $unit--xs: 12;
 
+// Spacing
+$spacing--b: 1.5;
+
 // Radius
 $radius--b: 2px;
 
@@ -14,8 +17,21 @@ $line--l: 3px;
 $line--b: 2px;
 $line--s: 1px;
 
+// Icons
+$icon--l: 48;
+$icon--m: 32;
+$icon--b: 24;
+$icon--s: 16;
+
+// Z-index
+$index--m: 100;
+$index--b: 50;
+
+// Widths
+$width--xxl: 800;
+
 // Heights
-$height--b: 40;
+$height--b: round(golden-ratio($unit--b * $spacing--b, 1));
 
 // Ratios
 $ratio--xxh: round(golden-ratio($unit--b,  7));
