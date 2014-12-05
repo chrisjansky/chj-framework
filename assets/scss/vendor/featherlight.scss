@@ -1,0 +1,35 @@
+.featherlight {
+  z-index: $index--m;
+
+  @include media($phone) {
+    -webkit-overflow-scrolling: touch;
+  }
+  &:last-of-type {
+    background: rgba($c-grey8, .85);
+  }
+
+  .featherlight-content {
+    @include margin(null em($ratio--b));
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .featherlight-close-icon {
+    width: auto;
+    height: auto;
+
+    top: em($ratio--b);
+    right: em($ratio--b);
+
+    line-height: em($height--b);
+    @include padding(null em($ratio--s));
+
+    background-color: transparent;
+    @include rgba(color, $c-grey8, .675);
+
+    @include state--active {
+      color: $c-hover;
+    }
+  }
+}
