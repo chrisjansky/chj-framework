@@ -1,6 +1,6 @@
 {
   "name": "chj-framework",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "authors": [
     "Christian Jánský"
   ],
@@ -20,6 +20,9 @@
   ],
   "devDependencies": {
     "normalize-css": "latest",
-    "jquery": "latest"
+    "jquery": "latest",
+    "jquery-easing-original": "latest",
+    "idangerous-swiper": "latest",
+    "featherlight": "latest"
   }
 }
