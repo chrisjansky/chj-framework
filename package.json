@@ -1,6 +1,6 @@
 {
   "name": "chj-framework",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Project of Christian Jánský.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,9 @@
     "browser-sync": "latest",
     "glob": "latest",
     "gulp": "latest",
+    "gulp-autoprefixer": "latest",
     "gulp-clean": "latest",
+    "gulp-ftp": "latest",
     "gulp-imagemin": "latest",
     "gulp-jade": "latest",
     "gulp-kss": "latest",
