@@ -1,0 +1,27 @@
+section(data-name="l-grid")
+  h1.t-h1 Grid
+
+  h2.t-h2 Two Grid Items
+  .l-grid--2
+    each instance in [1, 2]
+      .l-grid__item--2
+        p: +dummy(15, "text")
+        a.o-button--solid.o-button--block(href="#"): +dummy(2, "words")
+
+  hr.l-spacer
+
+  h2.t-h2 Three Grid Items
+  .l-grid--3
+    each instance in [1, 2, 3]
+      .l-grid__item--3
+        p: +dummy(15, "text")
+        a.o-button--solid.o-button--block(href="#"): +dummy(2, "words")
+
+  hr.l-spacer
+
+  h2.t-h2 Four Grid Items
+  .l-grid--4
+    each instance in [1, 2, 3, 4]
+      .l-grid__item--4
+        p: +dummy(15, "text")
+        a.o-button--solid.o-button--block(href="#"): +dummy(2, "words")

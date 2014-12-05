@@ -1,0 +1,8 @@
+section(data-name="tabs")
+  h4.t-h4 Tabs
+  ul.o-tabs(data-tabs)
+    each instance, index in [1, 2, 3]
+      li.o-tabs__item
+        a.o-tabs__link(href="#") Tab Title
+        .o-tabs__content
+          p Ut sit amet libero nec orci mattis fringilla #{index}.

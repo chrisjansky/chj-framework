@@ -1,0 +1,10 @@
+section(data-name="accordion")
+  h4.t-h4 Accordion
+  dl.o-accordion(data-accordion)
+    each instance, index in [1, 2, 3]
+      dt.o-accordion__title
+        if (index === 1)
+          a.o-accordion__link(href="#", data-accordion-opened) Opened
+        else
+          a.o-accordion__link(href="#") Accordion Title
+      dd.o-accordion__content Accordion content #{index}.

@@ -1,0 +1,10 @@
+nav.o-nav
+  a.o-nav__toggle(href="#", data-nav) Menu
+  ul.o-nav__list.o-dotlist--inline
+    each instance, index in [1, 2, 3, 4, 5]
+      if (index == 2)
+        li.o-nav__item
+          a(href="#").o-nav__link--selected Nav Item
+      else
+        li.o-nav__item
+          a(href="#") Nav Item

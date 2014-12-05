@@ -1,0 +1,10 @@
+section(data-name="carousel")
+  .o-carousel.swiper-container.l-wrap.l-wrap--horizontal(data-carousel)
+    h4.t-h4 Carousel
+    ul.o-carousel__list.swiper-wrapper
+      each instance, index in [211, 111, 332, 59, 366, 106, 99, 123, 234, 345]
+        li.o-carousel__item.swiper-slide
+          a.o-carousel__link(href="http://unsplash.it/800/800/?image=#{instance}", data-featherlight="image")
+            img(src="http://unsplash.it/200/120/?image=#{instance}", alt="unsplash.it")
+    a(href="#", data-swiper--prev).o-carousel__arrow--prev &larr;
+    a(href="#", data-swiper--next).o-carousel__arrow--next &rarr;

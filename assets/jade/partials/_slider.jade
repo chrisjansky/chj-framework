@@ -1,0 +1,9 @@
+section(data-name="slider")
+  .o-slider.swiper-container(data-slider)
+    h4.t-h4 Slider
+    ul.o-slider__list.swiper-wrapper
+      each instance, index in [211, 111, 332, 59]
+        li.o-slider__item.swiper-slide
+            img.o-slider__image(src="http://unsplash.it/600/300/?image=#{instance}", alt="unsplash.it")
+    a(href="#", data-swiper--prev).o-slider__arrow--prev &larr;
+    a(href="#", data-swiper--next).o-slider__arrow--next &rarr;
