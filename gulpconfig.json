@@ -1,0 +1,45 @@
+{
+  "paths": {
+    "development": ".",
+    "production": "public/",
+    "styleguide": "public/styleguide/",
+
+    "pages": "*.html",
+    "jade": "assets/jade/*.jade",
+    "glob_jade": "assets/jade/**/*.jade",
+    "ignore_jade": "!assets/jade/**/_*",
+
+    "scss": "assets/scss/*.scss",
+    "css": "assets/css",
+    "glob_scss": "assets/scss/**/*.scss",
+    "glob_css": "assets/css/*.css",
+
+    "js": "assets/js/*.js",
+    "glob_js": "assets/js/**/*.js",
+
+    "images": "assets/images",
+    "glob_images": "assets/images/**/*",
+    "ignore_images": "!assets/images/ignore{,/**}",
+
+    "glob_svg": "assets/svg/*",
+
+    "fallbacks": "assets/images/fallbacks",
+
+    "glob_data": "assets/data/*.json",
+
+    "kss": "assets/kss",
+    "kss_css": "assets/css/styleguide.css"
+  },
+  "files": [
+
+  ],
+  "styleguide": [
+    "assets/kss/assets/prism.css"
+  ],
+  "ftp": {
+    "host": "chrisjansky.cz",
+    "user": "w85799",
+    "pass": "",
+    "path": "www/subdom/work/chj"
+  }
+}
