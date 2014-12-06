@@ -15,7 +15,6 @@
     "tests",
     "public",
     "assets/css",
-    "assets/jade",
     "*.html"
   ],
   "devDependencies": {
