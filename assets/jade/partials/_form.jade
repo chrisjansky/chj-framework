@@ -14,30 +14,29 @@ section(data-name="o-form")
         tr
           each instance, index in ["text", "number"]
             td
-              div(class="o-holder--#{instance}")
-                label.o-holder__label.o-label Label #{index}
-                .o-holder__content
-                  input.o-input.o-holder__input(type=instance, placeholder="Value")
-                  span.o-holder__icon.ss-notebook
+              div(class="o-field--#{instance}")
+                label.o-field__label Label #{index}
+                input.o-field__content.o-input(type=instance, placeholder="Value")
+                span.o-field__icon.ss-notebook
         tr
           td
-            .o-holder--radio
-              label.o-label.o-holder__label Select
-              .o-holder__content
+            .o-field--radio
+              label.o-field__label Select
+              .o-field__content
                 each instance in ["One", "Two", "Three"]
                   label.o-radio
                     input.o-radio__input(type="radio", name="radio-group")
                     span.o-radio__mark
                     span.o-radio__text= instance
           td
-            .o-holder--select
-              label.o-label.o-holder__label Select
-              .o-select.o-holder__content
+            .o-field--select
+              label.o-field__label Select
+              .o-select.o-field__content
                 select.o-select__content
                   optgroup(label="Group Name")
                   each instance in [1, 2, 3]
                     option Option #{instance}
-                span.o-holder__icon.ss-navigatedown
+                span.o-field__icon.ss-navigatedown
         tr
           td(colspan="2")
             textarea.o-textarea(placeholder="Text.")
