@@ -4,8 +4,7 @@
   box-sizing: content-box;
 }
 .o-carousel__list {
-  list-style: none;
-  padding-left: 0;
+  @include reset-list;
   &:hover {
     cursor: grab;
   }
