@@ -1,22 +1,17 @@
 .o-hero {
-  display: inline-block;
   position: relative;
 }
 
-.o-hero__overlay {
-  text-align: center;
-  color: white;
-  white-space: nowrap;
+[class^="o-hero__overlay"],
+[class*=" o-hero__overlay"] {
   @include stretch-overlay;
-  @include pseudo-center--parent;
+  color: white;
   z-index: $index--b;
 }
 
 .o-hero__content {
-  @include padding(null em($ratio--b));
+  padding: em($ratio--b);
   @include collapse-children;
-  @include pseudo-center--child;
-  white-space: normal;
 }
 
 .o-hero__background {
@@ -26,4 +21,17 @@
 .o-hero__image {
   opacity: .625;
   @include margin(null auto);
+}
+
+// Centered variant.
+.o-hero__overlay--center {
+  @include pseudo-center--parent;
+
+  text-align: center;
+  white-space: nowrap;
+  
+  .o-hero__content {
+    @include pseudo-center--child;
+    white-space: normal;
+  }
 }
