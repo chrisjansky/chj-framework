@@ -49,8 +49,6 @@ document.onreadystatechange = function() {
         matrix[i].start = matrix[i-1] ? $(matrix[i].el).parent().offset().top - trigger : 0
         matrix[i].stop = matrix[i].start + matrix[i].el.parentNode.offsetHeight + trigger
       }
-
-      console.log("GET")
     }
 
     function setTop(m, t) {
