@@ -1,0 +1,1 @@
+jQuery.easing.def = "easeInOutCubic";
