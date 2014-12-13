@@ -1,10 +1,8 @@
-var
-  resizeTrigger;
+// Source: davidwalsh.name/orientation-change
 
-// Debounce resize.
-$(window).on("resize orientationChanged", function() {
-  clearTimeout(resizeTrigger);
-  resizeTrigger = setTimeout(function() {
-    // Do something.
-  }, durationBasic);
+$(window).on("resize orientationchange", function() {
+  clearTimeout(this.id)
+  this.id = setTimeout(function() {
+    console.log(this)
+  }, durationBasic)
 });
