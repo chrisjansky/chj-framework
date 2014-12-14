@@ -1,8 +1,8 @@
 {
   "paths": {
     "development": ".",
-    "production": "public/",
-    "styleguide": "public/styleguide/",
+    "production": "public",
+    "styleguide": "public/styleguide",
 
     "pages": "*.html",
     "jade": "assets/jade/*.jade",
@@ -17,11 +17,10 @@
     "js": "assets/js/*.js",
     "glob_js": "assets/js/**/*.js",
 
-    "images": "assets/images",
     "glob_images": "assets/images/**/*",
     "ignore_images": "!assets/images/ignore{,/**}",
 
-    "glob_svg": "assets/svg/*",
+    "glob_svg": "assets/svg/**/*",
 
     "fallbacks": "assets/images/fallbacks",
 
