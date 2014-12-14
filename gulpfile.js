@@ -67,7 +67,8 @@ gulp.task("templates", ["fetch-data"], function() {
     .pipe(plugins.plumber())
     .pipe(plugins.jade({
       pretty: true,
-      locals: JSON.parse(jsonGroup)
+      locals: JSON.parse(jsonGroup),
+      basedir: config.paths.development
     }))
     .pipe(gulp.dest(config.paths.development));
 });
@@ -93,7 +94,7 @@ gulp.task("scan", function() {
 // Delete the previous build.
 gulp.task("build-wipe", function() {
   if (argv.full) {
-    return gulp.src(config.paths.production)
+    return gulp.src(config.paths.production, {read: false})
       .pipe(vinyl(del));
   } else return;
 });
@@ -123,12 +124,12 @@ gulp.task("build-move", ["build-wipe"], function() {
 // Minify images if provided with --full argument.
 gulp.task("build-images", ["build-wipe"], function() {
   if (argv.full) {
-    return gulp.src([config.paths.glob_images, config.paths.ignore_images])
+    return gulp.src([config.paths.glob_images, config.paths.glob_svg, config.paths.ignore_images], {base: config.paths.development})
       .pipe(plugins.imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}]
       }))
-      .pipe(gulp.dest(config.paths.production + config.paths.images));
+      .pipe(gulp.dest(config.paths.production));
   };
 });
 
