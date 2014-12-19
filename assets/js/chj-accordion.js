@@ -10,15 +10,15 @@ $("[data-accordion]").on("click", "dt > a", function(event) {
     $parent = $(this).parent(),
     $target = $parent.next("dd"),
     $accordPanels = $parent.siblings("dd"),
-    $accordTitles = $parent.siblings("dt");
+    $accordTitles = $parent.siblings("dt")
   
   if(!$parent.hasClass("accordion--is-active")) {
-    $accordPanels.slideUp(durationShort);
+    $accordPanels.slideUp(durShort);
     $accordTitles.removeClass("accordion--is-active");
     $parent.addClass("accordion--is-active");
-    $target.slideDown(durationBasic);
+    $target.slideDown(durBasic);
   } else {
-    $accordPanels.slideUp(durationShort);
+    $accordPanels.slideUp(durShort);
     $accordTitles.add($parent).removeClass("accordion--is-active");
   }
 });

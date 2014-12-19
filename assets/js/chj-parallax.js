@@ -89,7 +89,7 @@ document.onreadystatechange = function() {
       clearTimeout(this.id)
       this.id = setTimeout(function() {
         getParams()
-      }, durationBasic)
+      }, durBasic)
     });
 
   }

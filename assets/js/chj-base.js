@@ -1,4 +1,4 @@
 var
-  durationShort = 250,
-  durationBasic = 500,
-  durationLong = 750;
+  durShort = 250,
+  durBasic = 500,
+  durLong = 750
