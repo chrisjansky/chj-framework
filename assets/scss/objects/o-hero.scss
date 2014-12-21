@@ -1,5 +1,9 @@
-.o-hero {
+[class^="o-hero--"],
+[class*=" o-hero--"] {
   position: relative;
+}
+.o-hero--full {
+  height: 100vh;
 }
 
 [class^="o-hero__overlay"],
@@ -26,6 +30,8 @@
 // Centered variant.
 .o-hero__overlay--center {
   @include pseudo-center--parent;
+
+  margin-left: em(-$ratio--b); // Offseting white-space from pseudo-centering
 
   text-align: center;
   white-space: nowrap;

@@ -17,4 +17,9 @@
   }
   // iOS reset.
   -webkit-appearance: none;
+  
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 em($ratio--l) $c-grey1 inset;
+    border-color: $c-grey2;
+  }
 }
