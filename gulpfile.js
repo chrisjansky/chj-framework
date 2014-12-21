@@ -43,19 +43,23 @@ var
   jsonGroup;
 
 gulp.task("fetch-data", function() {
-  jsonFiles = glob.sync(config.paths.glob_data);
+  jsonFiles = glob.sync(config.paths.data_glob);
 
   // Check if files exist.
   if (jsonFiles.length > 0) {
 
     jsonGroup = fs.readFileSync(jsonFiles[0], "utf8");
+
     // Add other files if more than one.
     if (jsonFiles.length > 1) {
+      jsonGroup.slice(-1);
       for (i = 1; i < jsonFiles.length; i++) {
-        jsonGroup += ",\n" + fs.readFileSync(jsonFiles[i], "utf8");
+        // Remove wrapping brackets.
+        var slicedFile = jsonFiles[i].slice(1, -1);
+        jsonGroup += ",\n" + fs.readFileSync(slicedFile, "utf8");
       }
+      jsonGroup += "}";
     }
-    jsonGroup = "{" + jsonGroup + "}";
 
   } else {
     jsonGroup = null;
@@ -63,7 +67,7 @@ gulp.task("fetch-data", function() {
 });
 
 gulp.task("templates", ["fetch-data"], function() {
-  return gulp.src([config.paths.glob_jade, config.paths.ignore_jade])
+  return gulp.src([config.paths.jade_glob, config.paths.jade_ignore])
     .pipe(plugins.plumber())
     .pipe(plugins.jade({
       pretty: true,
@@ -82,9 +86,9 @@ gulp.task("refresh", function() {
 });
 
 gulp.task("scan", function() {
-  gulp.watch(config.paths.glob_scss, ["styles"]);
-  gulp.watch([config.paths.glob_jade, config.paths.glob_data], ["pages"]);
-  gulp.watch(config.paths.glob_js, ["refresh"]);
+  gulp.watch(config.paths.scss_glob, ["styles"]);
+  gulp.watch([config.paths.jade_glob, config.paths.data_glob], ["pages"]);
+  gulp.watch(config.paths.js_glob, ["refresh"]);
 });
 
 /*
@@ -124,7 +128,7 @@ gulp.task("build-move", ["build-wipe"], function() {
 // Minify images if provided with --full argument.
 gulp.task("build-images", ["build-wipe"], function() {
   if (argv.full) {
-    return gulp.src([config.paths.glob_images, config.paths.glob_svg, config.paths.ignore_images], {base: config.paths.development})
+    return gulp.src([config.paths.images_glob, config.paths.images_ignore], {base: config.paths.development})
       .pipe(plugins.imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}]
@@ -136,7 +140,7 @@ gulp.task("build-images", ["build-wipe"], function() {
 // Strip unused CSS afterwards if --uncss provided.
 gulp.task("build-strip", ["build-compile"], function() {
   if (argv.uncss) {
-    return gulp.src(config.paths.production + config.paths.glob_css)
+    return gulp.src(config.paths.production + config.paths.css_glob)
       .pipe(plugins.uncss({
         html: glob.sync(config.paths.pages),
         ignore: [/::?-[\w\d]+/]
@@ -156,7 +160,7 @@ gulp.task("build-strip", ["build-compile"], function() {
 */
 
 gulp.task("deploy", function() {
-  return gulp.src(config.paths.production + "**/*")
+  return gulp.src(config.paths.production + "/**/*", {base: config.paths.production})
     .pipe(plugins.ftp({
       host: config.ftp.host,
       user: config.ftp.user,
@@ -172,13 +176,21 @@ gulp.task("deploy", function() {
 
 // Delete the PNG fallbacks/ folder.
 gulp.task("svg-wipe", function() {
-  return gulp.src(config.paths.fallbacks, {read: false})
+  return gulp.src([config.paths.fallbacks, config.paths.svg_glob], {read: false})
     .pipe(vinyl(del));
 });
 
+// Optimize SVG.
+gulp.task("svg-optimize", ["svg-wipe"], function() {
+  return gulp.src(config.paths.svg_source_glob)
+    .pipe(plugins.imagemin())
+    .pipe(gulp.dest(config.paths.svg));
+});
+
 // Render PNG fallbacks for SVG.
-gulp.task("svg", ["svg-wipe"], function() {
-  return gulp.src(config.paths.glob_svg)
+gulp.task("svg", ["svg-optimize"], function() {
+  // WTF error, needs src with ".svg".
+  return gulp.src(config.paths.svg_glob + ".svg")
     .pipe(plugins.svg2png())
     .pipe(gulp.dest(config.paths.fallbacks));
 });
@@ -209,7 +221,7 @@ gulp.task("styleguide-styles", ["styleguide-move"], function() {
 });
 
 gulp.task("styleguide-compile", ["styleguide-styles"], function() {
-  return gulp.src(config.paths.glob_scss)
+  return gulp.src(config.paths.scss_glob)
     .pipe(plugins.kss({
       overview: config.paths.kss + "/styleguide.md",
       templateDirectory: config.paths.kss
