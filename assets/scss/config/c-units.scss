@@ -7,7 +7,11 @@ $unit--s:  14;
 $unit--xs: 12;
 
 // Spacing
-$spacing--b: 1.5;
+$spacing--m:   2;
+$spacing--b:   1.5;
+$spacing--s:   1.35;
+$spacing--xs:  1.25;
+$spacing--xxs: 1.125;
 
 // Radius
 $radius--b: 2px;
@@ -24,13 +28,23 @@ $icon--b: 24;
 $icon--s: 16;
 
 // Z-index
-$index--m: 100;
-$index--b: 50;
+$index--xl:  400;
+$index--l:   300;
+$index--m:   200;
+$index--b:   100;
+$index--s:   50;
+$index--xs:  10;
+$index--xxs: 1;
 
 // Widths
-$width--xxl: 800;
+$width--xl: 800;
+$width--l:  740;
+$width--m:  560;
+$width--b:  400;
+$width--s:  220;
 
 // Heights
+$height--m: round(golden-ratio($unit--b * $spacing--m, 1));
 $height--b: round(golden-ratio($unit--b * $spacing--b, 1));
 
 // Ratios
@@ -45,3 +59,4 @@ $ratio--b:   $unit--b;
 $ratio--s:   round(golden-ratio($unit--b, -1));
 $ratio--xs:  round(golden-ratio($unit--b, -2));
 $ratio--xxs: round(golden-ratio($unit--b, -3));
+$ratio--t:   round(golden-ratio($unit--b, -4));

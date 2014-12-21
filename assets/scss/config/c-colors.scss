@@ -1,37 +1,41 @@
+$c-hue1: 90;
+$c-hue2: 160;
+$c-hue3: 50;
+$c-hue4: 310;
+
 // Primary colors.
-$c-color1: hsb(90, 45, 80);
-$c-color2: hsb(160, 70, 80);
-$c-color3: hsb(50, 65, 90);
-$c-color4: hsb(310, 40, 85);
-
-// Lighter.
+$c-color1: hsb($c-hue1, 45, 80);
 $c-color1--light: lighten($c-color1, 25%);
-$c-color2--light: lighten($c-color2, 25%);
-$c-color3--light: tint($c-color3, 70%);
-$c-color4--light: lighten($c-color4, 25%);
-
-// Darker.
 $c-color1--dark: darken($c-color1, 25%);
+
+$c-color2: hsb($c-hue2, 70, 80);
+$c-color2--light: lighten($c-color2, 25%);
 $c-color2--dark: shade($c-color2, 50%);
+
+$c-color3: hsb($c-hue3, 65, 90);
+$c-color3--light: tint($c-color3, 70%);
 $c-color3--dark: shade($c-color3, 50%);
+
+$c-color4: hsb($c-hue4, 40, 85);
+$c-color4--light: lighten($c-color4, 25%);
 $c-color4--dark: darken($c-color4, 25%);
 
 // Neutral colors.
-$c-grey1: hsb(040, 01, 95);
-$c-grey2: hsb(040, 02, 90);
-$c-grey3: hsb(040, 03, 80);
-$c-grey4: hsb(040, 04, 65);
-$c-grey5: hsb(210, 04, 50);
-$c-grey6: hsb(210, 04, 35);
-$c-grey7: hsb(210, 04, 25);
-$c-grey8: hsb(210, 04, 10);
+$c-grey1: hsb(040, 02, 95);
+$c-grey2: hsb(040, 03, 90);
+$c-grey3: hsb(040, 04, 80);
+$c-grey4: hsb(040, 05, 65);
+$c-grey5: hsb(210, 06, 50);
+$c-grey6: hsb(210, 07, 35);
+$c-grey7: hsb(210, 08, 25);
+$c-grey8: hsb(210, 09, 10);
 
 // Interactive.
 $c-link: $c-color1;
 $c-link--light: $c-color1--light;
 $c-link--dark: $c-color1--dark;
 
-$c-visited: $c-grey4;
+$c-visited: $c-color1--dark;
 $c-hover: $c-color2;
 
 $c-active: $c-color3;
