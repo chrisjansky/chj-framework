@@ -1,6 +1,7 @@
 var
   sliderStartClass = "slider--start",
-  sliderEndClass = "slider--end";
+  sliderEndClass = "slider--end",
+  carouselArrowDisabledClass = "arrow--is-disabled"
 
 $("[data-slider]").each(function(index, instance) {
   var sliderSwiper = new Swiper(instance, {
@@ -9,7 +10,7 @@ $("[data-slider]").each(function(index, instance) {
     visibilityFullFit: true,
 
     onFirstInit: function(swiper) {
-      $(swiper.container).addClass(sliderStartClass);
+      sliderPosition(swiper);
     },
 
     onSlideChangeStart: function(swiper) {
@@ -35,9 +36,17 @@ $("[data-slider]").each(function(index, instance) {
 function sliderPosition(instance) {
   var
     firstIsActive = instance.activeIndex === 0,
-    lastIsActive = (" " + instance.getLastSlide().className + " ").indexOf(" swiper-slide-visible ") > -1;
+    lastIsActive = instance.activeIndex === instance.slides.length - 1
 
   $(instance.container)
-    .toggleClass(sliderStartClass, firstIsActive)
-    .toggleClass(sliderEndClass, lastIsActive);
+    .toggleClass(carouselStartClass, firstIsActive)
+    .toggleClass(carouselEndClass, lastIsActive);
+
+  $(instance.container)
+    .find("[data-swiper--prev]")
+    .toggleClass(carouselArrowDisabledClass, firstIsActive);
+
+  $(instance.container)
+    .find("[data-swiper--next]")
+    .toggleClass(carouselArrowDisabledClass, lastIsActive);
 }

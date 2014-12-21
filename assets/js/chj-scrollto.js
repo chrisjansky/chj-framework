@@ -1,5 +1,5 @@
 // Scroll to anchor.
-$("[href*='#']").click(function() {
+$("[data-scrollto]").click(function() {
   window.location.hash = "section-" + this.hash.slice(1)
 
   $("html, body").animate({
@@ -16,5 +16,5 @@ if (location.hash) {
     $("html, body").animate({
       scrollTop: $(smoothScrollTo).offset().top
     }, durBasic);
-  }, durShort)
+  }, durLong)
 }
