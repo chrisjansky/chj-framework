@@ -1,0 +1,83 @@
+.kss-section {
+  background-color: $c-grey1;
+}
+
+.kss-block {
+  background-color: white;
+  @include collapse-children;
+  padding: em($ratio--b);
+  & + & {
+    margin-top: em($ratio--s);
+  }
+  @include media($tablet) {
+    padding: em($ratio--m);
+    & + & {
+      margin-top: em($ratio--b);
+    }
+  }
+  @include media($desktop) {
+    padding: em($ratio--l);
+    & + & {
+      margin-top: em($ratio--m);
+    }
+  }
+}
+.kss-ref {
+  margin-right: em($ratio--s);
+}
+.kss-variant {
+  @include clearfix;
+  & + & {
+    margin-top: em($ratio--s);
+    padding-top: em($ratio--s);
+    border-top: 1px dotted $c-grey1;
+  }
+}
+.kss-example {
+  box-sizing: border-box;
+}
+.kss-description p {
+  margin-top: em($ratio--xs);
+  margin-bottom: 0;
+}
+@include media($tablet__up) {
+  .kss-example {
+    float: left;
+  }
+  .kss-description {
+    float: right;
+  }
+}
+@include media($desktop) {
+  .kss-example {
+    width: 75%;
+    padding-right: em($ratio--m);
+  }
+  .kss-description {
+    width: 25%;
+  }
+  .kss-list {
+    margin-bottom: em($ratio--m);
+  }
+}
+@include media($tablet) {
+  .kss-example {
+    width: 60%;
+    padding-right: em($ratio--b);
+  }
+  .kss-description {
+    width: 40%;
+  }
+  .kss-list {
+    margin-bottom: em($ratio--b);
+  }
+}
+@include media($phone) {
+  .kss-markup {
+    display: none;
+  }
+  .kss-description {
+    text-align: center;
+    margin-top: em($ratio--s);
+  }
+}

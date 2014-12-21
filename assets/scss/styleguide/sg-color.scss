@@ -1,0 +1,71 @@
+// Color swatch.
+//
+// Markup:
+// <div class="sg-color__swatch {$modifiers}"></div>
+//
+// Styleguide 2.3.
+.sg-color {
+  text-align: center;
+}
+.sg-color__group {
+  margin: em($ratio--l) 0;
+}
+// Swatches.
+[class^="sg-color__swatch"],
+[class*=" sg-color__swatch"] {
+  position: relative;
+  display: inline-block;
+  width: em($ratio--h);
+  height: em($ratio--h);
+  border-radius: 50%;
+  background-color: black;
+  margin: em($ratio--s);
+}
+.sg-color__swatch--small {
+  width: em($ratio--l);
+  height: em($ratio--l);
+  margin: em($ratio--xs);
+}
+// Fields.
+.sg-color__field {
+  position: relative;
+  text-align: center;
+  height: 40vh;
+}
+// Overlay.
+.sg-color__overlay {
+  @include stretch-overlay;
+  @include pseudo-center--parent;
+  font-size: em($ratio--l);
+}
+[class^="sg-color__glyph"],
+[class*=" sg-color__glyph"] {
+  & + & {
+    margin-left: 25vw;
+  }
+}
+.sg-color__glyph--white {
+  color: white;
+}
+.sg-color__glyph--black {
+  color: black;
+}
+
+$colors__main: $c-color1 $c-color2 $c-color3 $c-color4;
+$colors__grey: $c-grey1 $c-grey2 $c-grey3 $c-grey4 $c-grey5 $c-grey6 $c-grey7 $c-grey8;
+
+// Main background colors.
+@each $color in $colors__main {
+  $i: index($colors__main, $color);
+  .sg-background--main#{$i} {
+    background-color: $color;
+  }
+}
+
+// Neutral backgrounds.
+@each $color in $colors__grey {
+  $i: index($colors__grey, $color);
+  .sg-background--grey#{$i} {
+    background-color: $color;
+  }
+}
