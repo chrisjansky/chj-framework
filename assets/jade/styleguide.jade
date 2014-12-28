@@ -1,0 +1,60 @@
+extends templates/_basic
+
+append template-head
+  <!-- build:css assets/css/styleguide-min.css -->
+  link(rel="stylesheet", href="assets/css/styleguide.css")
+  <!-- endbuild -->
+
+block template-body
+  - var colorCount = {main: 4, neutral: 8}
+
+  .l-wrap
+    .sg-color
+
+      each type in ["outline--small", "solid--small", "outline", "solid"]
+
+        .sg-color__group
+
+          - var n = 0
+          while n < colorCount.main
+            .sg-color__item
+              each shade in ["white", "light", "basic", "dark", "black"]
+                if (type === "outline--small" || type === "outline")
+                  .sg-color__swatch(class="sg-color__#{type} sg-border-color#{n + 1}--#{shade}")
+                else
+                  .sg-color__swatch(class="sg-color__#{type} sg-background-color#{n + 1}--#{shade}")
+                    if (type === "solid")
+                      .sg-color__overlay
+                        span.sg-color__glyph--white Aa
+            - n++
+
+          .sg-color__item
+           - var n = 0
+            while n < colorCount.neutral
+              if (type === "outline--small" || type === "outline")
+                .sg-color__swatch(class="sg-color__#{type} sg-border--grey#{n + 1}")
+              else
+                .sg-color__swatch(class="sg-color__#{type} sg-background--grey#{n + 1}")
+                  if (type === "solid")
+                    .sg-color__overlay
+                      span.sg-color__glyph--white Aa
+              - n++
+      
+      .sg-color__group   
+
+        - var n = 0
+        while n < colorCount.main
+          each shade in ["white", "light", "basic", "dark", "black"]
+            .sg-color__field(class="sg-background-color#{n + 1}--#{shade}")
+              .sg-color__overlay--big
+                span.sg-color__glyph--white Aa
+                span.sg-color__glyph--black Aa
+          - n++
+
+        - var n = 0
+        while n < colorCount.neutral
+          .sg-color__field(class="sg-background--grey#{n + 1}")
+            .sg-color__overlay--big
+              span.sg-color__glyph--white Aa
+              span.sg-color__glyph--black Aa
+          - n++
