@@ -1,46 +1,44 @@
-$c-hue1: 90;
-$c-hue2: 160;
-$c-hue3: 50;
-$c-hue4: 310;
+$hue-1: 90;
+$hue-2: 160;
+$hue-3: 50;
 
 // Primary colors.
-$c-color1: hsb($c-hue1, 45, 80);
-$c-color1--light: lighten($c-color1, 25%);
-$c-color1--dark: darken($c-color1, 25%);
+$color-1--light:   hsb($hue-1, 060, 095);
+$color-1:          hsb($hue-1, 070, 075);
+$color-1--dark:    hsb($hue-1, 060, 065);
 
-$c-color2: hsb($c-hue2, 70, 80);
-$c-color2--light: lighten($c-color2, 25%);
-$c-color2--dark: shade($c-color2, 50%);
+$color-2--lighter: hsb($hue-2, 050, 100);
+$color-2--light:   hsb($hue-2, 065, 095);
+$color-2:          hsb($hue-2, 070, 080);
+$color-2--dark:    hsb($hue-2, 070, 070);
+$color-2--darker:  hsb($hue-2, 075, 060);
 
-$c-color3: hsb($c-hue3, 65, 90);
-$c-color3--light: tint($c-color3, 70%);
-$c-color3--dark: shade($c-color3, 50%);
-
-$c-color4: hsb($c-hue4, 40, 85);
-$c-color4--light: lighten($c-color4, 25%);
-$c-color4--dark: darken($c-color4, 25%);
+$color-3--light:   hsb($hue-3, 055, 095);
+$color-3:          hsb($hue-3, 065, 090);
+$color-3--dark:    hsb($hue-3, 070, 080);
 
 // Neutral colors.
-$c-grey1: hsb(040, 02, 95);
-$c-grey2: hsb(040, 03, 90);
-$c-grey3: hsb(040, 04, 80);
-$c-grey4: hsb(040, 05, 65);
-$c-grey5: hsb(210, 06, 50);
-$c-grey6: hsb(210, 07, 35);
-$c-grey7: hsb(210, 08, 25);
-$c-grey8: hsb(210, 09, 10);
+$grey-1: hsb(210, 02, 96);
+$grey-2: hsb(210, 03, 85);
+$grey-3: hsb(210, 04, 74);
+$grey-4: hsb(210, 05, 63);
+$grey-5: hsb(210, 06, 52);
+$grey-6: hsb(210, 07, 41);
+$grey-7: hsb(210, 08, 30);
+$grey-8: hsb(210, 09, 19);
+$grey-9: hsb(210, 09, 08);
 
-// Interactive.
-$c-link: $c-color1;
-$c-link--light: $c-color1--light;
-$c-link--dark: $c-color1--dark;
+// // Interactive.
+$c-link: $color-1;
+$c-link--light: $color-1--light;
+$c-link--dark: $color-1--dark;
 
-$c-visited: $c-color1--dark;
-$c-hover: $c-color2;
+$c-visited: $color-2;
+$c-hover: $color-2;
 
-$c-active: $c-color3;
-$c-active--light: $c-color3--light;
-$c-active--dark: $c-color3--dark;
+$c-active: $color-3;
+$c-active--light: $color-3--light;
+$c-active--dark: $color-3--dark;
 
-$c-select__background: $c-color2--light;
-$c-select__text: $c-color2--dark;
+$c-select__background: $color-2--light;
+$c-select__text: $color-2--dark;
