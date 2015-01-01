@@ -1,0 +1,75 @@
+// Color swatch.
+//
+// Markup:
+// <div class="sg-color__swatch {$modifiers}"></div>
+//
+// Styleguide 2.3.
+
+.sg-color {
+  text-align: center;
+}
+.sg-color__group {
+  & + & {
+    margin-top: em($ratio--xl);
+  }
+}
+
+// Swatches.
+[class^="sg-color__swatch"],
+[class*=" sg-color__swatch"] {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  margin: em($ratio--m);
+}
+
+.sg-color__outline--small {
+  width: em($ratio--s);
+  height: em($ratio--s);
+}
+
+.sg-color__outline {
+  width: em($ratio--xl);
+  height: em($ratio--xl);
+}
+
+.sg-color__solid--small {
+  width: em($ratio--m);
+  height: em($ratio--m);
+}
+
+.sg-color__solid {
+  width: em($ratio--h);
+  height: em($ratio--h);
+}
+
+// Fields.
+.sg-color__field {
+  position: relative;
+  text-align: center;
+  height: 40vh;
+}
+
+// Overlay.
+[class^="sg-color__overlay"],
+[class*=" sg-color__overlay"] {
+  @include stretch-overlay;
+  @include pseudo-center--parent;
+  font-size: em($ratio--m);
+}
+.sg-color__overlay--big {
+  font-size: em($ratio--l);
+}
+
+[class^="sg-color__glyph"],
+[class*=" sg-color__glyph"] {
+  & + & {
+    margin-left: 25vw;
+  }
+}
+.sg-color__glyph--white {
+  color: white;
+}
+.sg-color__glyph--black {
+  color: black;
+}
