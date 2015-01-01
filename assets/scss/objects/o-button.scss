@@ -39,7 +39,7 @@
   border: $line--b solid;
   line-height: em($height--b - $line--b * 2);
   @include state--link {
-    color: $c-color1;
+    color: $color-1;
   }
   @include state--active {
     color: $c-hover;
@@ -57,7 +57,7 @@
 // Selected.
 .o-button--selected {
   @include state--all {
-    background-color: $c-grey1;
-    color: $c-grey4;
+    background-color: $grey-1;
+    color: $grey-4;
   }
 }

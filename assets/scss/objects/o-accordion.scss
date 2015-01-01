@@ -1,5 +1,5 @@
 .o-accordion__title {
-  background-color: $c-grey1;
+  background-color: $grey-1;
   border-radius: $radius--b;
   .o-accordion__content + & {
     margin-top: em($ratio--xs);
@@ -14,7 +14,7 @@
   text-decoration: none;
   .accordion--is-active & {
     @include state--all {
-      color: $c-color3--dark;
+      color: $color-3--dark;
     }
   }
 }
@@ -23,5 +23,5 @@
 }
 
 .accordion--is-active {
-  background-color: $c-color3--light;
+  background-color: $color-3--light;
 }

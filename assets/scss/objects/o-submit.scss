@@ -21,16 +21,16 @@
   }
 }
 
-.o-submit--reset {
-  color: $c-color4;
+// .o-submit--reset {
+//   color: $color-4;
 
-  @include state--hover {
-    color: $c-color4--dark;
-    border-color: $c-color4;
-  }
-  @include state--focus {
-    color: $c-color4--dark;
-    background-color: $c-color4--light;
-    border-color: $c-color4;
-  }
-}
+//   @include state--hover {
+//     color: $color-4--dark;
+//     border-color: $color-4;
+//   }
+//   @include state--focus {
+//     color: $color-4--dark;
+//     background-color: $color-4--light;
+//     border-color: $color-4;
+//   }
+// }

@@ -3,11 +3,11 @@
 
   line-height: em($height--b - $line--s * 2);
 
-  border: $line--s solid $c-grey4;
+  border: $line--s solid $grey-4;
   border-radius: $radius--b;
 
   @include state--hover {
-    border-color: $c-grey6;
+    border-color: $grey-6;
   }
 }
 .o-select__content {

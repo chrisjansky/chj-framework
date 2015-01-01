@@ -5,14 +5,14 @@
 
   background-color: transparent;
 
-  border: $line--s solid $c-grey4;
+  border: $line--s solid $grey-4;
   border-radius: $radius--b;
 
   @include state--hover {
-    border-color: $c-grey6;
+    border-color: $grey-6;
   }
   @include state--focus {
-    border-color: $c-color1;
+    border-color: $color-1;
     outline: 0;
   }
   // iOS fix.

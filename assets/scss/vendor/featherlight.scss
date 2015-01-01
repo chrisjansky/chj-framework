@@ -5,7 +5,7 @@
     -webkit-overflow-scrolling: touch;
   }
   &:last-of-type {
-    background: rgba($c-grey8, .85);
+    background: rgba($grey-8, .85);
   }
 
   .featherlight-content {
@@ -26,7 +26,7 @@
     @include padding(null em($ratio--s));
 
     background-color: transparent;
-    @include rgba(color, $c-grey8, .675);
+    @include rgba(color, $grey-8, .675);
 
     @include state--active {
       color: $c-hover;

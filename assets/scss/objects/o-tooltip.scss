@@ -16,7 +16,7 @@
     border-radius: $radius--b;
     
     color: white;
-    background-color: rgba($c-grey8, 0.85);
+    background-color: rgba($grey-8, 0.85);
   }
   &:hover:before {
     position: absolute;
@@ -24,7 +24,7 @@
     left: em($ratio--b);
 
     content: "";
-    @include triangle(em($ratio--b), rgba($c-grey8, 0.85), down);
+    @include triangle(em($ratio--b), rgba($grey-8, 0.85), down);
   }
   &:after, &:before {
     font-size: rem($unit--s);

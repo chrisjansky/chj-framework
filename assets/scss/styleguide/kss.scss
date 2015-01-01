@@ -1,5 +1,5 @@
 .kss-section {
-  background-color: $c-grey1;
+  background-color: $grey-1;
 }
 
 .kss-block {
@@ -30,7 +30,7 @@
   & + & {
     margin-top: em($ratio--s);
     padding-top: em($ratio--s);
-    border-top: 1px dotted $c-grey1;
+    border-top: 1px dotted $grey-1;
   }
 }
 .kss-example {

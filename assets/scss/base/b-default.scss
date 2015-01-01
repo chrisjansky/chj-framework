@@ -6,7 +6,7 @@ hr {
   border-top: $line--s solid;
   border-bottom: none;
   @include margin(em($ratio--b) null);
-  @include rgba(border-color, $c-grey4, .5);
+  @include rgba(border-color, $grey-4, .5);
 }
 img {
   display: block;

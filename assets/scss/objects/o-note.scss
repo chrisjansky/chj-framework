@@ -9,15 +9,15 @@
 }
 
 .o-note {
-  background-color: $c-grey2;
+  background-color: $grey-2;
 }
 
 .o-note--positive {
-  color: $c-color1--dark;
-  background-color: $c-color1--light;
+  color: $color-1--dark;
+  background-color: $color-1--light;
 }
 
-.o-note--negative {
-  color: $c-color4--dark;
-  background-color: $c-color4--light;
-}
+// .o-note--negative {
+//   color: $color-4--dark;
+//   background-color: $color-4--light;
+// }

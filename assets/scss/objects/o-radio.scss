@@ -23,19 +23,19 @@
 
   margin-right: em($ratio--s);
 
-  border: $line--b solid $c-grey3;
+  border: $line--b solid $grey-3;
   border-radius: 50%;
   vertical-align: middle;
 
   :checked + & {
-    border-color: $c-color1;
-    background-color: $c-color1--light;
+    border-color: $color-1;
+    background-color: $color-1--light;
   }
 }
 
 .o-radio__text {
-  color: $c-grey4;
+  color: $grey-4;
   :checked + * + & {
-    color: $c-color1--dark;
+    color: $color-1--dark;
   }
 }
