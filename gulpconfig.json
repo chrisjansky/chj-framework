@@ -1,18 +1,19 @@
 {
   "paths": {
     "development": ".",
-    "production": "public",
-    "styleguide": "public/styleguide",
+    "production": "public/",
+    "styleguide": "public/styleguide/",
 
     "pages": "*.html",
     "jade": "assets/jade/*.jade",
     "jade_glob": "assets/jade/**/*.jade",
     "jade_ignore": "!assets/jade/**/_*",
 
-    "scss": "assets/scss/*.scss",
+    "scss": "assets/scss/",
+    "scss_root": "assets/scss/*.scss",
     "scss_glob": "assets/scss/**/*.scss",
 
-    "css": "assets/css",
+    "css": "assets/css/",
     "css_glob": "assets/css/*.css",
 
     "js": "assets/js/*.js",
@@ -21,15 +22,16 @@
     "images_glob": "assets/images/**/*",
     "images_ignore": "!assets/images/_ignore{,/**}",
 
-    "svg": "assets/svg/_build",
+    "svg": "assets/svg/_build/",
     "svg_glob": "assets/svg/_build/**/*",
     "svg_source_glob": "assets/svg/_source/**/*",
 
-    "fallbacks": "assets/images/fallbacks",
+    "fallbacks": "assets/images/fallbacks/",
 
+    "data": "assets/data/",
     "data_glob": "assets/data/*.json",
 
-    "kss": "assets/kss",
+    "kss": "assets/kss/",
     "kss_css": "assets/css/styleguide.css"
   },
   "files": [
