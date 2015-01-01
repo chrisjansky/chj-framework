@@ -32,6 +32,7 @@
     "gulp-uncss": "",
     "gulp-usemin": "",
     "hygienist-middleware": "",
+    "json-sass": "^1.2.1",
     "node-bourbon": "",
     "node-neat": "",
     "vinyl-paths": "^1.0.0",
