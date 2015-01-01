@@ -82,15 +82,14 @@ block template-body
   //-     .sg-swatch--rectangle
   //-     - rect--
 
-  section
-    h1 Colors
-    - var colorIndex = 0
-    each group in colors
-      - colorIndex++
+  section.sg-section
+    each group, index in colors
       .sg-group
-        each shade in group
-          .sg-swatch--rectangle(class="background-#{colorIndex}--#{shade.name}")= shade.value
-  section
-    h2 Greys
+        each shade in group.shades
+          .sg-swatch--rectangle(class="background-#{index + 1}--#{shade.name}", data-toggle="rectangle--big")
+            span.sg-overlay= shade.value
+
+  section.sg-section
     each grey in greys
-      .sg-grey= grey
+      .sg-swatch--full(class="background-grey--#{grey.name}")
+        span.sg-overlay= grey.value
