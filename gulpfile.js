@@ -6,7 +6,7 @@ var
   gulp = require("gulp"),
   vinyl = require("vinyl-paths"),
   plugins = require('gulp-load-plugins')({
-    pattern: ["gulp-*", "browser-*", "hygienist-*"]
+    pattern: ["gulp-*", "browser-*", "hygienist-*", "json-sass"]
   }),
   config = require("./gulpconfig.json");
 
@@ -25,8 +25,16 @@ gulp.task("server", function() {
   });
 });
 
+gulp.task("json-sass", function () {
+  return fs.createReadStream(config.paths.data + "palette.json")
+    .pipe(plugins.jsonSass({
+      prefix: "$json: ",
+    }))
+    .pipe(fs.createWriteStream(config.paths.scss + "styleguide/json.scss"));
+});
+
 gulp.task("styles", function () {
-  return gulp.src(config.paths.scss)
+  return gulp.src(config.paths.scss_root)
     .pipe(plugins.plumber())
     .pipe(plugins.sass({
       errLogToConsole: true,
@@ -160,7 +168,7 @@ gulp.task("build-strip", ["build-compile"], function() {
 */
 
 gulp.task("deploy", function() {
-  return gulp.src(config.paths.production + "/**/*", {base: config.paths.production})
+  return gulp.src(config.paths.production + "**/*", {base: config.paths.production})
     .pipe(plugins.ftp({
       host: config.ftp.host,
       user: config.ftp.user,
@@ -223,7 +231,7 @@ gulp.task("styleguide-styles", ["styleguide-move"], function() {
 gulp.task("styleguide-compile", ["styleguide-styles"], function() {
   return gulp.src(config.paths.scss_glob)
     .pipe(plugins.kss({
-      overview: config.paths.kss + "/styleguide.md",
+      overview: config.paths.kss + "styleguide.md",
       templateDirectory: config.paths.kss
     }))
     .pipe(gulp.dest(config.paths.styleguide));
