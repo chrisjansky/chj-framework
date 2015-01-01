@@ -15,13 +15,18 @@ $color-attributes: (
 
   $attribute-name: map-get($attribute, "name");
   $attribute-property: map-get($attribute, "property");
+  
   /* Attribute: #{$attribute-name} */
 
   $color-groups: map-get($json, "colors");
 
-  @each $color-name, $color-shades in $color-groups {
+  @each $color-group in $color-groups {
+    $index: index($color-groups, $color-group);
+    $color-name: map-get($color-group, "name");
+    $color-shades: map-get($color-group, "shades");
+
     /* Color group: #{$color-name} */
-    $index: index($color-groups, $color-name); 
+
     @each $color-shade in $color-shades {
       $shade-name: map-get($color-shade, "name");
       $shade-value: map-get($color-shade, "value");
