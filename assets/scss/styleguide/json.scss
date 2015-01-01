@@ -1,0 +1,79 @@
+$json: (
+  colors: ((
+    name: primary,
+    shades: ((
+      name: lighter,
+      value: transparent
+    ), (
+      name: light,
+      value: $color-1--light
+    ), (
+      name: base,
+      value: $color-1
+    ), (
+      name: dark,
+      value: $color-1--dark
+    ))
+  ), (
+    name: secondary,
+    shades: ((
+      name: lighter,
+      value: $color-2--lighter
+    ), (
+      name: light,
+      value: $color-2--light
+    ), (
+      name: base,
+      value: $color-2
+    ), (
+      name: dark,
+      value: $color-2--dark
+    ), (
+      name: darker,
+      value: $color-2--darker
+    ))
+  ), (
+    name: tertiary,
+    shades: ((
+      name: lighter,
+      value: transparent
+    ), (
+      name: light,
+      value: $color-3--light
+    ), (
+      name: base,
+      value: $color-3
+    ), (
+      name: dark,
+      value: $color-3--dark
+    ))
+  )),
+  greys: ((
+    name: bright,
+    value: $grey-1
+  ), (
+    name: lightest,
+    value: $grey-2
+  ), (
+    name: lighter,
+    value: $grey-3
+  ), (
+    name: light,
+    value: $grey-4
+  ), (
+    name: medium,
+    value: $grey-5
+  ), (
+    name: dark,
+    value: $grey-6
+  ), (
+    name: darker,
+    value: $grey-7
+  ), (
+    name: darkest,
+    value: $grey-8
+  ), (
+    name: black,
+    value: $grey-9
+  ))
+);
