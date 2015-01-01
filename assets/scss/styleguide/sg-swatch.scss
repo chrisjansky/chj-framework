@@ -1,0 +1,18 @@
+.sg-swatch--rectangle {
+  width: 20%;
+  padding-bottom: 20%;
+
+  float: left;
+
+  background-color: $c-grey6;
+
+  // &:nth-child(2n) {
+  //   background-color: $c-grey5;
+  // }
+  // &:nth-child(3n) {
+  //   background-color: $c-grey7;
+  // }
+  // &:nth-child(7n) {
+  //   background-color: $c-grey8;
+  // }
+}
