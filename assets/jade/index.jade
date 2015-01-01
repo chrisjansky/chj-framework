@@ -1,10 +1,6 @@
 extends templates/_basic
 
-block template-variables
-  - var pageSettings = {title: "chj", description: "Framework."}
-
 block template-body
-  include mixins/_dummy
   .l-wrap
     include partials/_nav
     hr
@@ -37,7 +33,7 @@ block template-body
     h4.t-h4 Tooltip
     p
       +dummy(5, "text")
-      | 
+      |  
       abbr.o-tooltip(title="Something."): +dummy(5, "text")
     hr
     include partials/_modal
@@ -49,5 +45,3 @@ block template-body
     include partials/_tabs
     hr
     include partials/_accordion
-
-  //- include styleguide/_color
