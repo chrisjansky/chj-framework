@@ -27,10 +27,10 @@
     padding: em($ratio--l);
   }
   @include media($desktop) {
-    padding: em($ratio--l) 6.5%;
+    padding: em($ratio--xl);
   }
   @include media($desktop--wide) {
-    padding: em($ratio--l) 10%;
+    padding: em($ratio--xxl);
   }
 }
 
