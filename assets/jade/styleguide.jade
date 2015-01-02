@@ -6,90 +6,46 @@ append template-head
   <!-- endbuild -->
 
 block template-body
-  - var colorCount = {main: 4, neutral: 8}
-
-  //- section.l-wrap
-  //-   - var colors = 4
-  //-   while colors > 0
-  //-     .skupina(data-toggle="ahoj")
-  //-       span skupina #{colors}
-  //-       - var random = Math.floor((Math.random() * 4))
-  //-       while random > 0
-  //-         .barva barva #{random}
-  //-         - random--
-  //-     - colors--
 
   .l-wrap
-    .sg-color
 
-      each type in ["outline--small", "solid--small", "outline", "solid"]
+    each swatch in ["text", "outline", "circle", "rectangle"]
+      - var property
+      case swatch
+        when "outline"
+          - property = "border"
+        when "text"
+          - property = "color"
+        default
+          - property = "background"
 
-        .sg-color__group
+      section.sg-section
 
-          - var n = 0
-          while n < colorCount.main
-            .sg-color__item
-              each shade in ["white", "light", "basic", "dark", "black"]
-                if (type === "outline--small" || type === "outline")
-                  .sg-color__swatch(class="sg-color__#{type} sg-border-color#{n + 1}--#{shade}")
-                else
-                  .sg-color__swatch(class="sg-color__#{type} sg-background-color#{n + 1}--#{shade}")
-                    if (type === "solid")
-                      .sg-color__overlay
-                        span.sg-color__glyph--white Aa
-            - n++
+        .sg-group--colors
+          each group, index in colors
+            .sg-group__column
+              each shade in group.shades
+                div(class="sg-swatch--#{swatch} #{property}-#{index + 1}--#{shade.name}")
+                  case swatch
+                    when "rectangle"
+                      .sg-overlay
+                        .sg-overlay__content
+                          span.sg-glyph--white Aa
+                          span.sg-glyph--black Aa
+                          small.sg-small= shade.value
+                    when "text"
+                      span.sg-title= shade.name
 
-          .sg-color__item
-           - var n = 0
-            while n < colorCount.neutral
-              if (type === "outline--small" || type === "outline")
-                .sg-color__swatch(class="sg-color__#{type} sg-border--grey#{n + 1}")
-              else
-                .sg-color__swatch(class="sg-color__#{type} sg-background--grey#{n + 1}")
-                  if (type === "solid")
-                    .sg-color__overlay
-                      span.sg-color__glyph--white Aa
-              - n++
-
-      .sg-color__group
-
-        - var n = 0
-        while n < colorCount.main
-          each shade in ["white", "light", "basic", "dark", "black"]
-            .sg-color__field(class="sg-background-color#{n + 1}--#{shade}")
-              .sg-color__overlay--big
-                span.sg-color__glyph--white Aa
-                span.sg-color__glyph--black Aa
-          - n++
-
-        - var n = 0
-        while n < colorCount.neutral
-          .sg-color__field(class="sg-background--grey#{n + 1}")
-            .sg-color__overlay--big
-              span.sg-color__glyph--white Aa
-              span.sg-color__glyph--black Aa
-          - n++
-
-  //- section
-  //-   - var n = 0
-  //-   while n < colorCount.main
-  //-     each shade in ["white", "light", "basic", "dark", "black"]
-  //-       .sg-swatch--rectangle(class="sg-background-color#{n + 1}--#{shade}")
-  //-     - n++
-
-  //-   - var rect = 6
-  //-   while rect > 0
-  //-     .sg-swatch--rectangle
-  //-     - rect--
-
-  section.sg-section
-    each group, index in colors
-      .sg-group
-        each shade in group.shades
-          .sg-swatch--rectangle(class="background-#{index + 1}--#{shade.name}", data-toggle="rectangle--big")
-            span.sg-overlay= shade.value
-
-  section.sg-section
-    each grey in greys
-      .sg-swatch--full(class="background-grey--#{grey.name}")
-        span.sg-overlay= grey.value
+        .sg-group--greys
+          each grey, index in greys
+            .sg-item
+              div(class="sg-swatch--#{swatch} #{property}-grey--#{grey.name}")
+                case swatch
+                  when "rectangle"
+                    .sg-overlay
+                      .sg-overlay__content
+                        span.sg-glyph--white Aa
+                        span.sg-glyph--black Aa
+                        small.sg-small= grey.value
+                  when "text"
+                    span.sg-title= grey.name
