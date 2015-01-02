@@ -32,7 +32,11 @@ $color-attributes: (
       $shade-value: map-get($color-shade, "value");
 
       .#{$attribute-name}-#{$index}--#{$shade-name} {
-        #{$attribute-property}: $shade-value;
+        @if ($shade-value == "transparent") {
+          visibility: hidden;
+        } @else {
+          #{$attribute-property}: $shade-value;
+        }
       }
 
     }
