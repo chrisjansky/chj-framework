@@ -24,8 +24,11 @@
 
 // Styleguide
 @import "styleguide/kss";
-
 @import "styleguide/specific";
 
-@import "styleguide/sg-swatch";
+@import "styleguide/json";
+
 @import "styleguide/sg-color";
+@import "styleguide/sg-swatch";
+
+@import "styleguide/sg-temp";

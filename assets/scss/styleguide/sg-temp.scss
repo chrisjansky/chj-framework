@@ -1,0 +1,73 @@
+// Color swatch.
+//
+// Markup:
+// <div class="sg-color__swatch {$modifiers}"></div>
+//
+// Styleguide 2.3.
+
+
+.sg-section {
+  @include clearfix;
+
+  & + & {
+    margin-top: em($ratio--l);
+  }
+}
+
+[data-toggle] {
+  cursor: pointer;
+}
+
+[class^="sg-group--"],
+[class*=" sg-group--"] {
+  @include clearfix;
+}
+.sg-group--greys {
+  margin-top: em($ratio--m);
+}
+
+.sg-group__column,
+.sg-item {
+  float: left;
+
+  width: 33.33%;
+
+  text-align: center;
+}
+
+.sg-title {
+  text-transform: capitalize;
+}
+
+// Overlay.
+.sg-overlay {
+  @include stretch-overlay;
+  @include pseudo-center--parent;
+}
+
+.sg-overlay__content {
+  display: inline-block;
+
+  vertical-align: middle;
+}
+
+.sg-small {
+  display: block;
+
+  margin-top: em($ratio--b);
+
+  opacity: .5;
+}
+
+[class^="sg-glyph"],
+[class*=" sg-glyph"] {
+  & + & {
+    margin-left: em($ratio--xl);
+  }
+}
+.sg-glyph--white {
+  color: white;
+}
+.sg-glyph--black {
+  color: black;
+}
