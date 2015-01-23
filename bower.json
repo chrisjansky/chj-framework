@@ -1,6 +1,6 @@
 {
   "name": "chj-framework",
-  "version": "0.3.8",
+  "version": "0.4.0",
   "authors": [
     "Christian Jánský"
   ],
@@ -12,13 +12,12 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    "gulp*.*"
+    "tests"
   ],
   "devDependencies": {
-    "normalize-css": "latest",
-    "jquery": "latest",
-    "jquery-easing-original": "latest",
+    "normalize-css": "~3.0.2",
+    "jquery": "~2.1.1",
+    "jquery-easing-original": "~1.3.1",
     "idangerous-swiper": "latest",
     "featherlight": "latest"
   }
