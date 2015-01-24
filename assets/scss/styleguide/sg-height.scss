@@ -1,0 +1,46 @@
+// Heights
+//
+// Common block element heights. Perfect for buttons, inputs, forms etc.
+//
+// .sg-height--big - Big height.
+// .sg-height--medium - Medium height.
+// .sg-height--base - Base height.
+// .sg-height--small - Small height.
+//
+// Markup:
+// <div class="{$modifiers}"></div>
+//
+// Styleguide 1.3.
+
+[class^="sg-height--"],
+[class*=" sg-height--"] {
+  color: $grey--400;
+  background-color: $grey--000;
+
+  text-align: center;
+}
+
+.sg-height--big {
+  line-height: em($height--l);
+  &:after {
+    content: "#{$height--l}";
+  }
+}
+.sg-height--medium {
+  line-height: em($height--m);
+  &:after {
+    content: "#{$height--m}";
+  }
+}
+.sg-height--base {
+  line-height: em($height--b);
+  &:after {
+    content: "#{$height--b}";
+  }
+}
+.sg-height--small {
+  line-height: em($height--s);
+  &:after {
+    content: "#{$height--s}";
+  }
+}

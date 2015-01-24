@@ -1,0 +1,63 @@
+// Spacing
+//
+// .sg-spacing--xxs - Extremely small spacing.
+// .sg-spacing--xs - Smaller spacing.
+// .sg-spacing--s - Small spacing.
+// .sg-spacing--b - Base spacing.
+// .sg-spacing--m - Medium spacing.
+// .sg-spacing--l - Big spacing.
+//
+// Markup:
+// <span class="{$modifiers}">A rather long text that<br>looks great</span>
+//
+// Styleguide 1.4.
+
+[class^="sg-spacing--"],
+[class*=" sg-spacing--"] {
+  &:after {
+    margin-left: em($ratio--xs);
+    color: $grey--100;
+  }
+}
+
+.sg-spacing--l {
+  font-size: em($unit--xxs);
+  line-height: $spacing--l;
+  &:after {
+    content: "#{$spacing--l}";
+  }
+}
+.sg-spacing--m {
+  font-size: em($ratio--s);
+  line-height: $spacing--m;
+  &:after {
+    content: "#{$spacing--m}";
+  }
+}
+.sg-spacing--b {
+  line-height: $spacing--b;
+  &:after {
+    content: "#{$spacing--b}";
+  }
+}
+.sg-spacing--s {
+  font-size: em($unit--l);
+  line-height: $spacing--s;
+  &:after {
+    content: "#{$spacing--s}";
+  }
+}
+.sg-spacing--xs {
+  font-size: em($ratio--m);
+  line-height: $spacing--xs;
+  &:after {
+    content: "#{$spacing--xs}";
+  }
+}
+.sg-spacing--xxs {
+  font-size: em($unit--xh);
+  line-height: $spacing--xxs;
+  &:after {
+    content: "#{$spacing--xxs}";
+  }
+}

@@ -1,0 +1,102 @@
+// Ratios
+//
+// Golden ratio increments derived from base font-size.
+//
+// Markup:
+// <div class="sg-ratio--xxh">XXH</div>
+// <div class="sg-ratio--xh">XH</div>
+// <div class="sg-ratio--h">H</div>
+// <div class="sg-ratio--xxl">XXL</div>
+// <div class="sg-ratio--xl">XL</div>
+// <div class="sg-ratio--l">L</div>
+// <div class="sg-ratio--m">M</div>
+// <div class="sg-ratio--b">B</div>
+// <div class="sg-ratio--s">S</div>
+// <div class="sg-ratio--xs">XS</div>
+// <div class="sg-ratio--xxs">XXS</div>
+// <div class="sg-ratio--t">T</div>
+//
+// Styleguide 1.2.
+
+[class^="sg-ratio--"],
+[class*=" sg-ratio--"] {
+  display: inline-block;
+  vertical-align: top;
+
+  margin-right: em($ratio--b);
+  margin-bottom: em($ratio--b);
+
+  color: $grey--200;
+
+  &:after {
+    display: block;
+
+    margin-top: em($ratio--xs);
+    
+    color: $grey--400;
+    background-color: $grey--000;
+
+    text-align: center;
+  }
+}
+
+.sg-ratio--xxh:after {
+  min-width: em($ratio--xxh);
+  line-height: em($ratio--xxh);
+  content: "#{$ratio--xxh}";
+}
+.sg-ratio--xh:after {
+  min-width: em($ratio--xh);
+  line-height: em($ratio--xh);
+  content: "#{$ratio--xh}";
+}
+.sg-ratio--h:after {
+  min-width: em($ratio--h);
+  line-height: em($ratio--h);
+  content: "#{$ratio--h}";
+}
+.sg-ratio--xxl:after {
+  min-width: em($ratio--xxl);
+  line-height: em($ratio--xxl);
+  content: "#{$ratio--xxl}";
+}
+.sg-ratio--xl:after {
+  min-width: em($ratio--xl);
+  line-height: em($ratio--xl);
+  content: "#{$ratio--xl}";
+}
+.sg-ratio--l:after {
+  min-width: em($ratio--l);
+  line-height: em($ratio--l);
+  content: "#{$ratio--l}";
+}
+.sg-ratio--m:after {
+  min-width: em($ratio--m);
+  line-height: em($ratio--m);
+  content: "#{$ratio--m}";
+}
+.sg-ratio--b:after {
+  min-width: em($ratio--b);
+  line-height: em($ratio--b);
+  content: "#{$ratio--b}";
+}
+.sg-ratio--s:after {
+  min-width: em($ratio--s);
+  line-height: em($ratio--s);
+  content: "#{$ratio--s}";
+}
+.sg-ratio--xs:after {
+  min-width: em($ratio--xs);
+  line-height: em($ratio--xs);
+  content: "#{$ratio--xs}";
+}
+.sg-ratio--xxs:after {
+  min-width: em($ratio--xxs);
+  line-height: em($ratio--xxs);
+  content: "#{$ratio--xxs}";
+}
+.sg-ratio--t:after {
+  min-width: em($ratio--t);
+  line-height: em($ratio--t);
+  content: "#{$ratio--t}";
+}
