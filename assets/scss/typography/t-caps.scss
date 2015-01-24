@@ -1,3 +1,13 @@
+// Caps
+//
+// .t-caps - Uppercase.
+// .t-caps--small - Small-caps.
+//
+// Markup:
+// <strong class="{$modifiers}">Emphasis text</strong>
+//
+// Styleguide 3.2.
+
 [class^="t-caps"],
 [class*=" t-caps"] {
   letter-spacing: em($ratio--t);
