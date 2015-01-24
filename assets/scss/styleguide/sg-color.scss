@@ -46,11 +46,11 @@ $color-attributes: (
 
   /* Greys */
   @each $grey in $greys {
-    $grey-name: map-get($grey, "name");
-    $grey-value: map-get($grey, "value");
+    $grey--name: map-get($grey, "name");
+    $grey--value: map-get($grey, "value");
 
-    .#{$attribute-name}-grey--#{$grey-name} {
-      #{$attribute-property}: $grey-value;
+    .#{$attribute-name}-grey--#{$grey--name} {
+      #{$attribute-property}: $grey--value;
     }
   }
 
