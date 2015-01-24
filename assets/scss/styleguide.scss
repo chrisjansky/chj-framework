@@ -1,7 +1,7 @@
 // Bourbon
 @import "bourbon";
 
-// Mixins
+// Framework mixins
 @import "mixins/_mixins";
 @import "mixins/_center";
 @import "mixins/_color";
@@ -9,7 +9,7 @@
 @import "mixins/_state";
 @import "mixins/_wrap";
 
-// Config
+// Site config
 @import "config/c-colors";
 @import "config/c-units";
 @import "config/c-fonts";
@@ -28,7 +28,15 @@
 
 @import "styleguide/json";
 
-@import "styleguide/sg-color";
-@import "styleguide/sg-swatch";
-
+@import "styleguide/sg-config";
 @import "styleguide/sg-temp";
+@import "styleguide/sg-swatch";
+@import "styleguide/sg-color";
+
+// Basics
+// 
+// Styleguide 1.
+@import "styleguide/sg-unit";
+@import "styleguide/sg-ratio";
+@import "styleguide/sg-height";
+@import "styleguide/sg-spacing";
