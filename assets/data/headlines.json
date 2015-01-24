@@ -1,0 +1,28 @@
+{
+  "headlines": [
+    {
+      "tag": "h1",
+      "class": "top"
+    },
+    {
+      "tag": "h2",
+      "class": "higher"
+    },
+    {
+      "tag": "h3",
+      "class": "high"
+    },
+    {
+      "tag": "h4",
+      "class": "low"
+    },
+    {
+      "tag": "h5",
+      "class": "lower"
+    },
+    {
+      "tag": "h6",
+      "class": "bottom"
+    }
+  ]
+}
