@@ -60,12 +60,15 @@ gulp.task("fetch-data", function() {
 
     // Add other files if more than one.
     if (jsonFiles.length > 1) {
-      jsonGroup.slice(-1);
+      // Slicing always last two chars because of newline!
+      jsonGroup = jsonGroup.slice(0, -2);
+
       for (i = 1; i < jsonFiles.length; i++) {
         // Remove wrapping brackets.
-        var slicedFile = jsonFiles[i].slice(1, -1);
-        jsonGroup += ",\n" + fs.readFileSync(slicedFile, "utf8");
+        var slicedFile = fs.readFileSync(jsonFiles[i], "utf8").slice(1, -2);
+        jsonGroup += ",\n" + slicedFile;
       }
+
       jsonGroup += "}";
     }
 
