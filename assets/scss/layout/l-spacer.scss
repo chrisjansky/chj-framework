@@ -1,16 +1,30 @@
+// Spacer
+//
+// .l-spacer - Invisible horizontal rule, default styling.
+// .l-spacer--big - Bigger margin.
+// .l-spacer--small - Smaller margin.
+//
+// Markup:
+// <hr class="{$modifiers}">
+//
+// Styleguide 2.4.
+
 [class^="l-spacer"],
 [class*=" l-spacer"] {
   border: none;
   margin: 0;
+  height: em($ratio--l);
+}
+
+.l-spacer--big {
+  height: em($ratio--xl);
+}
+.l-spacer--small {
   height: em($ratio--m);
 }
 
-.l-spacer--small {
-  height: em($ratio--b);
-}
-
-@include media($tablet__up) {
-  .l-spacer {
-    height: em($ratio--l);
-  }
-}
+// @include media($tablet__up) {
+//   .l-spacer {
+//     height: em($ratio--l);
+//   }
+// }

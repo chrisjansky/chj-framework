@@ -1,3 +1,26 @@
+// Grid
+//
+// Various column setups. Added margin-bottom and background for styleguide purposes.
+//
+// Markup:
+// <div class="l-grid--4">
+//   <div class="l-grid__item--4">Quarter</div>
+//   <div class="l-grid__item--4">Quarter</div>
+//   <div class="l-grid__item--4">Quarter</div>
+//   <div class="l-grid__item--4">Quarter</div>
+// </div>
+// <div class="l-grid--3">
+//   <div class="l-grid__item--3">Third</div>
+//   <div class="l-grid__item--3">Third</div>
+//   <div class="l-grid__item--3">Third</div>
+// </div>
+// <div class="l-grid--2">
+//   <div class="l-grid__item--2">Half</div>
+//   <div class="l-grid__item--2">Half</div>
+// </div>
+//
+// Styleguide 2.3.
+
 [class^="l-grid--"],
 [class*=" l-grid--"] {
   @include clearfix;
@@ -14,6 +37,7 @@
   @include media($tablet--landscape) {
     @include span-columns($columns__landscape / 2);
   }
+
   @include media($desktop) {
     @include span-columns($columns__desktop / 2);
   }
@@ -23,11 +47,13 @@
   @include media($tablet--landscape) {
     @include span-columns($columns__landscape / 2);
     @include omega(2n);
+
     &:last-child {
       margin-top: em($ratio--m);
       @include shift($columns__landscape / 4);
     }
   }
+
   @include media($desktop) {
     @include span-columns($columns__desktop / 3);
   }
@@ -38,13 +64,16 @@
     @include span-columns($columns__phone / 2);
     @include omega(2n);
   }
+
   @include media($tablet--portrait) {
     @include span-columns($columns__portrait / 2);
     @include omega(2n);
   }
+
   @include media($tablet--landscape) {
     @include span-columns($columns__landscape / 4);
   }
+  
   @include media($desktop) {
     @include span-columns($columns__desktop / 4);
   }

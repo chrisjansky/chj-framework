@@ -1,4 +1,6 @@
-// A basic wrap.
+// Wrap
+//
+// Added offwhite background for styleguide purposes.
 //
 // .l-wrap--small - Smaller.
 // .l-wrap--big - Bigger.
@@ -10,7 +12,7 @@
 // Markup:
 // <div class="l-wrap {$modifiers}">Text.</div>
 //
-// Styleguide 1.1.
+// Styleguide 2.1.
 
 .l-wrap {
   padding: em($ratio--b);
@@ -28,9 +30,6 @@
   }
   @include media($desktop) {
     padding: em($ratio--xl);
-  }
-  @include media($desktop--wide) {
-    padding: em($ratio--xxl);
   }
 }
 
