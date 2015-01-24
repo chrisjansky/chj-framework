@@ -1,0 +1,95 @@
+// Units
+//
+// Basic unit scale with smaller increments than golden ratio.
+//
+// Markup:
+// <div class="sg-unit--xxh">XXH</div>
+// <div class="sg-unit--xh">XH</div>
+// <div class="sg-unit--h">H</div>
+// <div class="sg-unit--xxl">XXL</div>
+// <div class="sg-unit--xl">XL</div>
+// <div class="sg-unit--l">L</div>
+// <div class="sg-unit--m">M</div>
+// <div class="sg-unit--b">B</div>
+// <div class="sg-unit--s">S</div>
+// <div class="sg-unit--xs">XS</div>
+// <div class="sg-unit--xxs">XXS</div>
+//
+// Styleguide 1.1.
+
+[class^="sg-unit--"],
+[class*=" sg-unit--"] {
+  display: inline-block;
+  vertical-align: top;
+
+  margin-right: em($ratio--b);
+
+  color: $grey--200;
+
+  &:after {
+    display: block;
+
+    margin-top: em($ratio--xs);
+
+    color: $grey--400;
+    background-color: $grey--000;
+
+    text-align: center;
+  }
+}
+
+.sg-unit--xxh:after {
+  min-width: em($unit--xxh);
+  line-height: em($unit--xxh);
+  content: "#{$unit--xxh}";
+}
+.sg-unit--xh:after {
+  min-width: em($unit--xh);
+  line-height: em($unit--xh);
+  content: "#{$unit--xh}";
+}
+.sg-unit--h:after {
+  min-width: em($unit--h);
+  line-height: em($unit--h);
+  content: "#{$unit--h}";
+}
+.sg-unit--xxl:after {
+  min-width: em($unit--xxl);
+  line-height: em($unit--xxl);
+  content: "#{$unit--xxl}";
+}
+.sg-unit--xl:after {
+  min-width: em($unit--xl);
+  line-height: em($unit--xl);
+  content: "#{$unit--xl}";
+}
+.sg-unit--l:after {
+  min-width: em($unit--l);
+  line-height: em($unit--l);
+  content: "#{$unit--l}";
+}
+.sg-unit--m:after {
+  min-width: em($unit--m);
+  line-height: em($unit--m);
+  content: "#{$unit--m}";
+}
+.sg-unit--b:after {
+  min-width: em($unit--b);
+  line-height: em($unit--b);
+  content: "#{$unit--b}";
+}
+.sg-unit--s:after {
+  min-width: em($unit--s);
+  line-height: em($unit--s);
+  content: "#{$unit--s}";
+}
+.sg-unit--xs:after {
+  min-width: em($unit--xs);
+  line-height: em($unit--xs);
+  content: "#{$unit--xs}";
+}
+.sg-unit--xxs:after {
+  min-width: em($unit--xxs);
+  line-height: em($unit--xxs);
+  content: "#{$unit--xxs}";
+}
