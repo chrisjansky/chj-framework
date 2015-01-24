@@ -1,0 +1,22 @@
+// Text size
+//
+// .t-text--lead - Large introductory text.
+// .t-text--small - Smaller text.
+// .t-text--tiny - Unimportant text.
+//
+// Markup:
+// <p class="{$modifiers}">A somewhat long and pretty readable paragraph.</p>
+//
+// Styleguide 3.3.
+
+.t-text--lead {
+  font-size: em($unit--l);
+}
+
+.t-text--small {
+  font-size: em($unit--s);
+}
+
+.t-text--tiny {
+  font-size: em($unit--xs);
+}
