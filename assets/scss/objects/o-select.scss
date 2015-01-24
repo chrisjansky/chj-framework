@@ -1,13 +1,28 @@
+// Select
+//
+// Markup:
+// <div class="o-select">
+//   <select class="o-select__content">
+//     <optgroup label="Awesome Group">
+//       <option>Option 1</option>
+//       <option>Option 2</option>
+//       <option>Option 3</option>
+//     </optgroup>
+//   </select>
+// </div>
+//
+// Styleguide 4.32.
+
 .o-select {
   display: inline-block;
 
   line-height: em($height--b - $line--s * 2);
 
-  border: $line--s solid $grey-4;
+  border: $line--s solid $grey--200;
   border-radius: $radius--b;
 
   @include state--hover {
-    border-color: $grey-6;
+    border-color: $grey--400;
   }
 }
 .o-select__content {

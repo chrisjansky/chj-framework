@@ -1,3 +1,10 @@
+// Submit
+//
+// Markup:
+// <input type="submit" class="o-submit" value="Make it happen">
+//
+// Styleguide 4.34.
+
 [class^="o-submit"],
 [class*=" o-submit"] {
   height: em($height--b);
@@ -10,13 +17,13 @@
   border-radius: $radius--b;
 
   @include state--hover {
-    color: $c-link--dark;
+    color: $c-hover;
     border-color: $c-link;
   }
   @include state--focus {
-    color: $c-link--dark;
-    background-color: $c-link--light;
-    border-color: $c-link;
+    // color: $c-link--dark;
+    // background-color: $c-link--light;
+    // border-color: $c-link;
     outline: 0;
   }
 }

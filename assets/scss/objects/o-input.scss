@@ -1,25 +1,31 @@
-// Text input.
+// Input
+//
+// Markup:
+// <input type="text" placeholder="Value" class="o-input">
+//
+// Styleguide 4.30.
+
 .o-input {
   height: em($height--b);
   padding: 0 em($ratio--s);
 
   background-color: transparent;
 
-  border: $line--s solid $grey-4;
+  border: $line--s solid $grey--100;
   border-radius: $radius--b;
   
   @include state--hover {
-    border-color: $grey-6;
+    border-color: $grey--300;
   }
   @include state--focus {
-    border-color: $color-1;
+    border-color: $color1--500;
     outline: 0;
   }
   // iOS reset.
   -webkit-appearance: none;
   
   &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 em($ratio--l) $grey-1 inset;
-    border-color: $grey-2;
+    -webkit-box-shadow: 0 0 0 em($ratio--l) $grey--100 inset;
+    border-color: $grey--200;
   }
 }

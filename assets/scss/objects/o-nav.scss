@@ -1,3 +1,21 @@
+// Navigation
+//
+// Collapsing on mobile &mdash; toggled with [data-nav].
+//
+// Markup:
+// <nav class="o-nav">
+//   <a href="#" data-nav class="o-nav__toggle">Menu</a>
+//   <ul class="o-nav__list o-dotlist--inline">
+//     <li class="o-nav__item"><a href="#">Nav Item</a></li>
+//     <li class="o-nav__item">
+//       <a href="#" class="o-nav__link--selected">Nav Item</a>
+//     </li>
+//     <li class="o-nav__item"><a href="#">Nav Item</a></li>
+//   </ul>
+// </nav>
+//
+// Styleguide 4.4.
+
 @include media($phone) {
   .o-nav__list {
     display: none;

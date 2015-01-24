@@ -1,18 +1,28 @@
-// General middot list.
+// Dotlist
+//
+// .o-dotlist--inside - Dots inside.
+// .o-dotlist--outside - Dots outside.
+// .o-dotlist--inline - Inline-block display.
 //
 // Markup:
-// <a href="#" class="o-button {$modifiers}">Button</a>
-// <a href="#" class="o-button {$modifiers} pseudo-class-hover">On Hover</a>
+// <ul class="{$modifiers}">
+//   <li>List item</li>
+//   <li>List item</li>
+//   <li>List item</li>
+// </ul>
 //
-// Styleguide 3.1.
+// Styleguide 4.3.
+
 [class^="o-dotlist--"],
 [class*=" o-dotlist--"] {
   list-style: none;
   padding-left: 0;
+
   li {
     position: relative;
     padding-left: em($ratio--b);
   }
+
   li:before {
     position: absolute;
     left: 0;
@@ -32,9 +42,11 @@
         margin-right: em($ratio--s);
       }
     }
+
     li:first-child {
       padding-left: 0;
     }
+    
     li:first-child:before {
       display: none;
     }

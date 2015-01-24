@@ -1,3 +1,17 @@
+// Field
+//
+// .o-field--normal - Icon always on.
+// .o-field--number - Hide icon on :hover and :focus.
+//
+// Markup:
+// <div class="{$modifiers}">
+//   <label class="o-field__label">Label</label>
+//   <input type="text" placeholder="Value" class="o-field__content o-input">
+//   <span class="o-field__icon ss-notebook"></span>
+// </div>
+//
+// Styleguide 4.35.
+
 [class^="o-field--"],
 [class*=" o-field--"] {
   display: table;

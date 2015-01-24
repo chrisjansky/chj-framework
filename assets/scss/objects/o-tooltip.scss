@@ -1,8 +1,17 @@
+// Tooltip
+//
+// Markup:
+// <abbr class="o-tooltip" title="Pretty nice, right?">Hover me, pretty please</abbr>
+//
+// Styleguide 4.6.
+
 .o-tooltip {
   position: relative;
+
   &:hover {
     cursor: help;
   }
+
   &:hover:after {
     position: absolute;
     bottom: em($ratio--m + $ratio--b / 2);
@@ -16,16 +25,18 @@
     border-radius: $radius--b;
     
     color: white;
-    background-color: rgba($grey-8, 0.85);
+    background-color: rgba($grey--800, .85);
   }
+
   &:hover:before {
     position: absolute;
     bottom: em($ratio--m);
     left: em($ratio--b);
 
     content: "";
-    @include triangle(em($ratio--b), rgba($grey-8, 0.85), down);
+    @include triangle(em($ratio--b), rgba($grey--800, .85), down);
   }
+  
   &:after, &:before {
     font-size: rem($unit--s);
   }

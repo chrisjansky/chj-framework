@@ -1,7 +1,24 @@
+// Radio
+//
+// Markup:
+// <label class="o-radio">
+//   <input class="o-radio__input" type="radio" name="radio-group">
+//   <span class="o-radio__mark"></span>
+//   <span class="o-radio__text">Pick me please</span>
+// </label>
+// <label class="o-radio">
+//   <input class="o-radio__input" type="radio" name="radio-group">
+//   <span class="o-radio__mark"></span>
+//   <span class="o-radio__text">No, pick me</span>
+// </label>
+//
+// Styleguide 4.33.
+
 .o-radio {
   cursor: pointer;
   position: relative;
   line-height: em($height--b);
+  
   & + & {
     margin-left: em($ratio--b);
   }
@@ -23,19 +40,20 @@
 
   margin-right: em($ratio--s);
 
-  border: $line--b solid $grey-3;
+  border: $line--b solid $grey--200;
   border-radius: 50%;
   vertical-align: middle;
 
   :checked + & {
-    border-color: $color-1;
-    background-color: $color-1--light;
+    border-color: $color1--500;
+    background-color: $color1--300;
   }
 }
 
 .o-radio__text {
-  color: $grey-4;
+  color: $grey--500;
+
   :checked + * + & {
-    color: $color-1--dark;
+    color: $color1--700;
   }
 }

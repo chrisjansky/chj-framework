@@ -1,10 +1,32 @@
+// Accordion
+//
+// Markup:
+// <dl class="o-accordion" data-accordion>
+//   <dt class="o-accordion__title">
+//     <a href="#" class="o-accordion__link" data-accordion-opened>Opened item</a>
+//     <dd class="o-accordion__content">Content</dd>
+//   </dt>
+//   <dt class="o-accordion__title">
+//     <a href="#" class="o-accordion__link">Accordion item</a>
+//     <dd class="o-accordion__content">Content</dd>
+//   </dt>
+//   <dt class="o-accordion__title">
+//     <a href="#" class="o-accordion__link">Accordion item</a>
+//     <dd class="o-accordion__content">Content</dd>
+//   </dt>
+// </dl>
+//
+// Styleguide 4.50.
+
 .o-accordion__title {
-  background-color: $grey-1;
+  background-color: $grey--000;
   border-radius: $radius--b;
+
   .o-accordion__content + & {
     margin-top: em($ratio--xs);
   }
 }
+
 .o-accordion__link {
   display: block;
 
@@ -12,16 +34,18 @@
   @include padding(null em($ratio--b));
 
   text-decoration: none;
+
   .accordion--is-active & {
     @include state--all {
-      color: $color-3--dark;
+      color: $color2--700;
     }
   }
 }
+
 .o-accordion__content {
   @include margin(em($ratio--s) null em($ratio--m) em($ratio--b));
 }
 
 .accordion--is-active {
-  background-color: $color-3--light;
+  background-color: $color2--300;
 }

@@ -1,18 +1,24 @@
-// Textarea.
+// Textarea
+//
+// Markup:
+// <textarea placeholder="A longer text." class="o-textarea"></textarea>
+//
+// Styleguide 4.31.
+
 .o-textarea {
   width: 100%;
   padding: em($ratio--xs) em($ratio--s);
 
   background-color: transparent;
 
-  border: $line--s solid $grey-4;
+  border: $line--s solid $grey--200;
   border-radius: $radius--b;
 
   @include state--hover {
-    border-color: $grey-6;
+    border-color: $grey--300;
   }
   @include state--focus {
-    border-color: $color-1;
+    border-color: $color1--500;
     outline: 0;
   }
   // iOS fix.

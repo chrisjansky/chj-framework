@@ -1,3 +1,13 @@
+// Note
+//
+// .o-note - Important message.
+// .o-note--positive - Success message.
+//
+// Markup:
+// <mark class="{$modifiers}">Look ma, here!</mark>
+//
+// Styleguide 4.5.
+
 [class^="o-note"],
 [class*=" o-note"] {
   display: inline-block;
@@ -9,12 +19,12 @@
 }
 
 .o-note {
-  background-color: $grey-2;
+  background-color: $grey--000;
 }
 
 .o-note--positive {
-  color: $color-1--dark;
-  background-color: $color-1--light;
+  color: $color1--700;
+  background-color: $color1--300;
 }
 
 // .o-note--negative {

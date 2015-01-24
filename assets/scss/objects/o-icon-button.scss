@@ -1,3 +1,15 @@
+// Icon button
+//
+// .o-icon-button--big - Big icon size.
+// .o-icon-button--medium - Medium size.
+// .o-icon-button - Default size.
+// .o-icon-button--small - Small icon.
+//
+// Markup:
+// <a href="#" class="{$modifiers} ss-write"></a>
+//
+// Styleguide 4.21.
+
 [class^="o-icon-button"],
 [class*=" o-icon-button"] {
   text-decoration: none;

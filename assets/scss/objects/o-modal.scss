@@ -1,3 +1,13 @@
+// Modal
+//
+// Markup:
+// <a href="#test-modal" data-featherlight>Open Modal</a>
+// <div id="test-modal" class="o-modal">
+//   <p>Modal text.</p>
+// </div>
+//
+// Styleguide 4.52.
+
 .o-modal {
   display: none;
   max-width: em($width--xl);
