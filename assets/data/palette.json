@@ -4,20 +4,16 @@
       "name": "primary",
       "shades": [
         {
-          "name": "lighter",
-          "value": "transparent"
-        },
-        {
          "name": "light",
-         "value": "$color-1--light"
+         "value": "$color1--300"
         },
         {
          "name": "base",
-         "value": "$color-1"
+         "value": "$color1--500"
         },
         {
          "name": "dark",
-         "value": "$color-1--dark"
+         "value": "$color1--700"
         }
       ]
     },
@@ -25,85 +21,60 @@
       "name": "secondary",
       "shades": [
         {
-          "name": "lighter",
-          "value": "$color-2--lighter"
-        },
-        {
           "name": "light",
-          "value": "$color-2--light"
+          "value": "$color2--300"
         },
         {
           "name": "base",
-          "value": "$color-2"
+          "value": "$color2--500"
         },
         {
           "name": "dark",
-          "value": "$color-2--dark"
-        },
-        {
-          "name": "darker",
-          "value": "$color-2--darker"
-        }
-      ]
-    },
-    {
-      "name": "tertiary",
-      "shades": [
-        {
-          "name": "lighter",
-          "value": "transparent"
-        },
-        {
-          "name": "light",
-          "value": "$color-3--light"
-        },
-        {
-          "name": "base",
-          "value": "$color-3"
-        },
-        {
-          "name": "dark",
-          "value": "$color-3--dark"
+          "value": "$color2--700"
         }
       ]
     }
   ],
   "greys": [
     {
+      "name": "offwhite",
+      "value": "$grey--000"
+    },
+    {
       "name": "bright",
-      "value": "$grey-1"
+      "value": "$grey--100"
     },
     {
       "name": "lightest",
-      "value": "$grey-2"
+      "value": "$grey--200"
     },
     {
       "name": "lighter",
-      "value": "$grey-3"
+      "value": "$grey--300"
     },
     {
       "name": "light",
-      "value": "$grey-4"
+      "value": "$grey--400"
     },
     {
       "name": "medium",
-      "value": "$grey-5"
+      "value": "$grey--500"
     },
     {
       "name": "dark",
-      "value": "$grey-6"
+      "value": "$grey--600"
     },
     {
       "name": "darker",
-      "value": "$grey-7"
+      "value": "$grey--700"
     },
     {
       "name": "darkest",
-      "value": "$grey-8"
+      "value": "$grey--800"
     },
     {
-      "name": "black",
-      "value": "$grey-9"
+      "name": "offblack",
+      "value": "$grey--900"
     }
   ]
 }
