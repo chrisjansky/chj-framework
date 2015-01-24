@@ -2,8 +2,9 @@ body {
   font: $default__weight em($default__size, 16) $default__family;
   line-height: $default__leading;
 }
+
 ::selection {
-  background-color: $c-select__background;
+  background-color: $c-select__bg;
   color: $c-select__text;
   text-shadow: none;
 }
