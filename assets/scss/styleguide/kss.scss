@@ -1,83 +1,175 @@
-.kss-section {
-  background-color: $grey-1;
-}
+$kss-width: 240;
 
-.kss-block {
-  background-color: white;
-  @include collapse-children;
+// Wrappers
+.kss-header {
   padding: em($ratio--b);
-  & + & {
-    margin-top: em($ratio--s);
-  }
-  @include media($tablet) {
+
+  @include collapse-children;
+
+  @include media($tablet__up) {
     padding: em($ratio--m);
-    & + & {
-      margin-top: em($ratio--b);
-    }
   }
   @include media($desktop) {
-    padding: em($ratio--l);
-    & + & {
-      margin-top: em($ratio--m);
+    @include position(fixed, 0 null 0 0);
+    z-index: $index--b;
+
+    width: em($kss-width);
+
+    overflow-y: auto;
+  }
+}
+
+.kss-header__link {
+  display: block;
+  text-decoration: none;
+
+  &:link, &:visited {
+    color: $grey--700;
+  }
+  @include state--hover {
+    color: $grey--900;
+  }
+}
+
+.kss-main {
+  background-color: $grey--000;
+
+  padding: em($ratio--s);
+
+
+  @include media($tablet) {
+    padding: em($ratio--b);
+  }
+  @include media($desktop) {
+    @include collapse-children;
+
+    padding: em($ratio--m);
+
+    margin-left: em($kss-width);
+  }
+}
+
+// Navigation
+[class^="kss-menu--"],
+[class*=" kss-menu--"] {
+  list-style: none;
+  padding-left: 0;
+}
+.kss-menu--main {
+  margin-bottom: 0;
+
+  li {
+    line-height: em($height--s);
+    border-top: $line--s solid $grey--100;
+  }
+
+  @include media($tablet) {
+    @include clearfix;
+  }
+  @include media($tablet--portrait) {
+    & > li {
+      @include span-columns(2);
+      @include omega(3n);
+    }
+  }
+  @include media($tablet--landscape) {
+    & > li {
+      @include span-columns(2);
+      @include omega(4n);
+    }
+  } 
+}
+.kss-menu--sub {
+  margin-bottom: em($ratio--b);
+  font-size: em($unit--s);
+
+  a {
+    @include state--link {
+      color: $grey--400;
+    }
+    @include state--active {
+      color: $grey--600;
     }
   }
 }
-.kss-ref {
+
+// Item
+.kss-item__info {
+  @include clearfix;
+
+  margin-bottom: em($ratio--b);
+  
+  .kss-item + .kss-item & {
+    margin-top: em($ratio--l);
+  }
+}
+.kss-item__title {
+  @include margin(0 null);
+
+  @include media($desktop) {
+    @include span-columns(9);
+  }
+}
+.kss-small {
+  display: block;
+
+  color: $grey--300;
+
+  p {
+    @include margin(0 null);
+  }
+}
+.kss-item__content {
+  background-color: white;
+
+  box-shadow: 0 em($ratio--xxs) em($ratio--xs) $grey--200;
+}
+
+.kss-example {
+  @include media($desktop) {
+    @include span-columns(9);
+  }
+}
+
+.kss-description {
+  @include collapse-children;
+
+  @include media($portable) {
+    margin-top: em($ratio--b);
+  }
+
+  @include media($desktop) {
+    @include span-columns(3);
+  }
+}
+
+.kss-reference {
   margin-right: em($ratio--s);
 }
+
 .kss-variant {
-  @include clearfix;
+  padding: em($ratio--b) em($ratio--s);
+
+  @include media($tablet__up) {
+    padding: em($ratio--b);
+  }
+  @include media($desktop) {
+    @include clearfix;
+
+    padding-left: em($ratio--m);
+  }
+
   & + & {
-    margin-top: em($ratio--s);
-    padding-top: em($ratio--s);
-    border-top: 1px dotted $grey-1;
+    border-top: $line--s solid $grey--100;
   }
+
 }
-.kss-example {
-  box-sizing: border-box;
+.kss-variant__title {
+  margin-bottom: em($ratio--xxs);
+
+  color: $grey--600;
 }
-.kss-description p {
-  margin-top: em($ratio--xs);
-  margin-bottom: 0;
-}
-@include media($tablet__up) {
-  .kss-example {
-    float: left;
-  }
-  .kss-description {
-    float: right;
-  }
-}
-@include media($desktop) {
-  .kss-example {
-    width: 75%;
-    padding-right: em($ratio--m);
-  }
-  .kss-description {
-    width: 25%;
-  }
-  .kss-list {
-    margin-bottom: em($ratio--m);
-  }
-}
-@include media($tablet) {
-  .kss-example {
-    width: 60%;
-    padding-right: em($ratio--b);
-  }
-  .kss-description {
-    width: 40%;
-  }
-  .kss-list {
-    margin-bottom: em($ratio--b);
-  }
-}
-@include media($phone) {
-  .kss-markup {
-    display: none;
-  }
-  .kss-description {
-    text-align: center;
-    margin-top: em($ratio--s);
-  }
+
+.kss-markup {
+  font-size: em($unit--xs);
 }
