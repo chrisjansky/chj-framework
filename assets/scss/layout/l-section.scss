@@ -1,0 +1,28 @@
+// Section
+//
+// Added padding for styleguide purposes.
+//
+// .l-section--light - Light background.
+// .l-section--dark - Dark background.
+// .l-section--black - Very dark background.
+//
+// Markup:
+// <div class="{$modifiers}">A new section of layout.</div>
+//
+// Styleguide 2.5.
+
+.l-section--light {
+  background-color: $grey--000;
+
+  color: $grey--400;
+}
+.l-section--dark {
+  background-color: $grey--500;
+
+  color: $grey--200;
+}
+.l-section--black {
+  background-color: $grey--700;
+
+  color: $grey--400;
+}
