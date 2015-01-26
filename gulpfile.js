@@ -17,30 +17,25 @@ var
 gulp.task("server", function() {
   plugins.browserSync({
     server: {
-      baseDir: config.paths.development,
-      middleware: plugins.hygienistMiddleware(config.paths.development)
+      baseDir: config.dev.root,
+      routes: {
+        "/bower_components": "./bower_components"
+      },
+      middleware: plugins.hygienistMiddleware(config.dev.root)
     },
     xip: true,
     notify: false
   });
 });
 
-gulp.task("json-sass", function () {
-  return fs.createReadStream(config.paths.data + "palette.json")
-    .pipe(plugins.jsonSass({
-      prefix: "$json: ",
-    }))
-    .pipe(fs.createWriteStream(config.paths.scss + "styleguide/json.scss"));
-});
-
 gulp.task("styles", function () {
-  return gulp.src(config.paths.scss_root)
+  return gulp.src(config.dev.scssBase)
     .pipe(plugins.plumber())
     .pipe(plugins.sass({
       errLogToConsole: true,
       includePaths: require("node-neat").with("bower_components/")
     }))
-    .pipe(gulp.dest(config.paths.css))
+    .pipe(gulp.dest(config.dev.cssRoot))
     .pipe(plugins.browserSync.reload({
       stream: true
     }));
@@ -50,8 +45,8 @@ var
   jsonFiles,
   jsonGroup;
 
-gulp.task("fetch-data", function() {
-  jsonFiles = glob.sync(config.paths.data_glob);
+gulp.task("templates:read", function() {
+  jsonFiles = glob.sync(config.dev.dataGlob);
 
   // Check if files exist.
   if (jsonFiles.length > 0) {
@@ -77,18 +72,35 @@ gulp.task("fetch-data", function() {
   }
 });
 
-gulp.task("templates", ["fetch-data"], function() {
-  return gulp.src([config.paths.jade_glob, config.paths.jade_ignore])
+gulp.task("templates:compile", ["templates:read"], function() {
+  return gulp.src([config.dev.jadeGlob, config.dev.jadeIgnore])
     .pipe(plugins.plumber())
     .pipe(plugins.jade({
       pretty: true,
       locals: JSON.parse(jsonGroup),
-      basedir: config.paths.development
+      basedir: config.dev.root
     }))
-    .pipe(gulp.dest(config.paths.development));
+    .pipe(gulp.dest(config.dev.root));
 });
 
-gulp.task("pages", ["templates"], function() {
+gulp.task("templates:inject", ["templates:compile"], function() {
+  return gulp.src([config.dev.pagesGlob, config.dev.pagesIgnore])
+    .pipe(plugins.inject(gulp.src(
+      config.injectDev.site, {read: false}), {
+        relative: true,
+        name: "site"
+      }
+    ))
+    .pipe(plugins.inject(gulp.src(
+      config.injectDev.vendor, {read: false}), {
+        relative: true,
+        name: "vendor"
+      }
+    ))
+    .pipe(gulp.dest(config.dev.root));
+});
+
+gulp.task("templates:reload", ["templates:inject"], function() {
   plugins.browserSync.reload();
 });
 
@@ -97,9 +109,21 @@ gulp.task("refresh", function() {
 });
 
 gulp.task("scan", function() {
-  gulp.watch(config.paths.scss_glob, ["styles"]);
-  gulp.watch([config.paths.jade_glob, config.paths.data_glob], ["pages"]);
-  gulp.watch(config.paths.js_glob, ["refresh"]);
+  gulp.watch(config.dev.scssGlob, ["styles"]);
+  gulp.watch([config.dev.jadeGlob, config.dev.dataGlob], ["templates:reload"]);
+  gulp.watch(config.dev.jsGlob, ["refresh"]);
+});
+
+/*
+---------------------------- JSON. -----------------------------
+*/
+
+gulp.task("json-sass", function () {
+  return fs.createReadStream(config.dev.dataRoot + "palette.json")
+    .pipe(plugins.jsonSass({
+      prefix: "$json: ",
+    }))
+    .pipe(fs.createWriteStream(config.dev.scssRoot + "guide/json.scss"));
 });
 
 /*
@@ -107,62 +131,73 @@ gulp.task("scan", function() {
 */
 
 // Delete the previous build.
-gulp.task("build-wipe", function() {
+gulp.task("build:wipe", function() {
   if (argv.full) {
-    return gulp.src(config.paths.production, {read: false})
+    return gulp.src(config.dist.root, {read: false})
       .pipe(vinyl(del));
   } else return;
 });
 
-// Minify CSS and JS.
-gulp.task("build-compile", ["build-wipe"], function() {
-  return gulp.src(config.paths.pages)
-    .pipe(plugins.usemin({
-      js: [plugins.uglify()],
-      css: [
-        plugins.autoprefixer({
-          cascade: false
-        }),
-        plugins.minifyCss({
-          keepSpecialComments: 0
-        })]
-    }))
-    .pipe(gulp.dest(config.paths.production));
+// Move other assets to production folder.
+gulp.task("build:move", ["build:wipe"], function() {
+  return gulp.src(config.toMove, {base: config.dev.root})
+    .pipe(gulp.dest(config.dist.root));
 });
 
-// Move other assets to production folder.
-gulp.task("build-move", ["build-wipe"], function() {
-  gulp.src(config.files, {base: config.paths.development})
-    .pipe(gulp.dest(config.paths.production));
+// Minify CSS and JS.
+gulp.task("build:compile", ["build:move"], function() {
+  return gulp.src(config.dev.styleguide + "index.html")
+    .pipe(plugins.usemin(
+      {
+        js: [plugins.uglify()],
+        css: [
+          plugins.autoprefixer({
+            cascade: false
+          }),
+          plugins.minifyCss({
+            keepSpecialComments: 0
+        })]
+      }
+    ))
+    .pipe(gulp.dest(config.dist.styleguide))
+    .pipe(plugins.size({
+      showFiles: true
+    }));
+});
+
+// Inject production assets into all pages.
+gulp.task("build:inject", ["build:compile"], function() {
+  return gulp.src(config.dist.root + "**/*.html")
+    .pipe(plugins.inject(gulp.src(
+        config.injectDist.site, {read: false}), {
+          relative: true,
+          name: "site"
+        }
+      ))
+      .pipe(plugins.inject(gulp.src(
+        config.injectDist.vendor, {read: false}), {
+          relative: true,
+          name: "vendor"
+        }
+      ))
+      .pipe(plugins.inject(gulp.src(
+        config.injectDist.guide, {read: false}), {
+          relative: true,
+          name: "guide"
+        }
+      ))
+    .pipe(gulp.dest(config.dist.root));
 });
 
 // Minify images if provided with --full argument.
-gulp.task("build-images", ["build-wipe"], function() {
+gulp.task("build:images", ["build:wipe"], function() {
   if (argv.full) {
-    return gulp.src([config.paths.images_glob, config.paths.images_ignore], {base: config.paths.development})
+    return gulp.src([config.dev.imagesGlob, config.dev.imagesIgnore], {base: config.dev.root})
       .pipe(plugins.imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}]
       }))
-      .pipe(gulp.dest(config.paths.production));
-  };
-});
-
-// Strip unused CSS afterwards if --uncss provided.
-gulp.task("build-strip", ["build-compile"], function() {
-  if (argv.uncss) {
-    return gulp.src(config.paths.production + config.paths.css_glob)
-      .pipe(plugins.uncss({
-        html: glob.sync(config.paths.pages),
-        ignore: [/::?-[\w\d]+/]
-      }))
-      .pipe(plugins.minifyCss({
-        keepSpecialComments: 0
-      }))
-      .pipe(plugins.size({
-        showFiles: true
-      }))
-      .pipe(gulp.dest(config.paths.production + config.paths.css));
+      .pipe(gulp.dest(config.dist.root));
   }
 });
 
@@ -171,7 +206,7 @@ gulp.task("build-strip", ["build-compile"], function() {
 */
 
 gulp.task("deploy", function() {
-  return gulp.src(config.paths.production + "**/*", {base: config.paths.production})
+  return gulp.src(config.dist.root + "**/*", {base: config.dist.root})
     .pipe(plugins.ftp({
       host: config.ftp.host,
       user: config.ftp.user,
@@ -186,67 +221,89 @@ gulp.task("deploy", function() {
 */
 
 // Delete the PNG fallbacks/ folder.
-gulp.task("svg-wipe", function() {
-  return gulp.src([config.paths.fallbacks, config.paths.svg_glob], {read: false})
+gulp.task("svg:wipe", function() {
+  return gulp.src([config.dev.fallbacks, config.dev.svgBuildGlob], {read: false})
     .pipe(vinyl(del));
 });
 
 // Optimize SVG.
-gulp.task("svg-optimize", ["svg-wipe"], function() {
-  return gulp.src(config.paths.svg_source_glob)
+gulp.task("svg:optimize", ["svg:wipe"], function() {
+  return gulp.src(config.dev.svgSourceGlob)
     .pipe(plugins.imagemin())
-    .pipe(gulp.dest(config.paths.svg));
+    .pipe(gulp.dest(config.dev.svgBuild));
 });
 
 // Render PNG fallbacks for SVG.
-gulp.task("svg", ["svg-optimize"], function() {
+gulp.task("svg", ["svg:optimize"], function() {
   // WTF error, needs src with ".svg".
-  return gulp.src(config.paths.svg_glob + ".svg")
+  return gulp.src(config.dev.svgBuildGlob + ".svg")
     .pipe(plugins.svg2png())
-    .pipe(gulp.dest(config.paths.fallbacks));
+    .pipe(gulp.dest(config.dev.fallbacks));
 });
 
 /*
 -------------------------- Styleguide. --------------------------
 */
 
-gulp.task("styleguide-wipe", ["build-wipe"], function() {
-  return gulp.src(config.paths.styleguide, {read: false})
+gulp.task("guide:wipe", function() {
+  return gulp.src(config.dev.styleguide, {read: false})
     .pipe(vinyl(del));
 });
 
-gulp.task("styleguide-move", ["styleguide-wipe"], function() {
-  return gulp.src(config.styleguide, {base: config.paths.kss})
-    .pipe(gulp.dest(config.paths.styleguide));
-});
-
-gulp.task("styleguide-styles", ["styleguide-move"], function() {
-  return gulp.src(config.paths.kss_css)
-    .pipe(plugins.minifyCss({
-      keepSpecialComments: 0
+gulp.task("guide:scaffold", ["guide:wipe"], function() {
+  return gulp.src(config.dev.jadeRoot + "templates/_guide.jade")
+    .pipe(plugins.plumber())
+    .pipe(plugins.jade({
+      pretty: true,
+      basedir: config.dev.root
     }))
     .pipe(plugins.rename(function (path) {
-        path.basename += "-min";
+      path.basename = "index";
     }))
-    .pipe(gulp.dest(config.paths.production + config.paths.css));
+    .pipe(gulp.dest(config.dev.kssRoot));
 });
 
-gulp.task("styleguide-compile", ["styleguide-styles"], function() {
-  return gulp.src(config.paths.scss_glob)
-    .pipe(plugins.kss({
-      overview: config.paths.kss + "styleguide.md",
-      templateDirectory: config.paths.kss
-    }))
-    .pipe(gulp.dest(config.paths.styleguide));
+gulp.task("guide:compile", ["guide:scaffold"], plugins.shell.task([
+  "kss-node <%= source %> <%= destination %> --template <%= template %>"
+  ], {
+    templateData: {
+      source:      config.dev.cssRoot,
+      destination: config.dev.styleguide,
+      template:    config.dev.kssRoot
+    }
+  }
+));
+
+gulp.task("guide:inject", ["guide:compile"], function() {
+  return gulp.src(config.dev.styleguide + "**/*.html")
+    .pipe(plugins.inject(gulp.src(
+      config.injectDev.site, {read: false}), {
+        relative: true,
+        name: "site"
+      }
+    ))
+    .pipe(plugins.inject(gulp.src(
+      config.injectDev.vendor, {read: false}), {
+        relative: true,
+        name: "vendor"
+      }
+    ))
+    .pipe(plugins.inject(gulp.src(
+      config.injectDev.guide, {read: false}), {
+        relative: true,
+        name: "guide"
+      }
+    ))
+    .pipe(gulp.dest(config.dev.styleguide));
 });
 
 /*
 -------------------------- Task groups. ---------------------------
 */
 gulp.task("default", ["compile", "server", "scan"]);
-gulp.task("compile", ["styles", "templates"]);
+gulp.task("compile", ["styles", "templates:inject"]);
 
-// Wipe first. Move, produce. Images if --full. Strip if --uncss.
-gulp.task("build", ["build-move", "build-images", "build-strip"]);
+// Wipe first. Move, produce. Images if --full.
+gulp.task("build", ["build:inject", "build:images"]);
 
-gulp.task("styleguide", ["build-compile", "styleguide-compile"]);
+gulp.task("guide", ["guide:inject"]);
