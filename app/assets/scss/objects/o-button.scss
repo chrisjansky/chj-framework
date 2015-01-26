@@ -16,8 +16,8 @@ Styleguide 4.1.
 [class*=" o-button--"] {
   display: inline-block;
 
-  padding-left: em($ratio--b);
-  padding-right: em($ratio--b);
+  padding-left: em($ratio--m);
+  padding-right: em($ratio--m);
   line-height: em($height--b);
   
   border-radius: $radius--b;
