@@ -1,0 +1,18 @@
+extends _shared
+
+append template-head
+  <!-- site:css -->
+  <!-- endinject -->
+
+  <!-- vendor:js -->
+  <!-- endinject -->
+
+block template-body
+  include ../mixins/_dummy
+
+block template-content
+  p Basic template.
+
+append template-foot
+  <!-- site:js -->
+  <!-- endinject -->
