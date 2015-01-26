@@ -1,46 +1,75 @@
 {
-  "paths": {
-    "development": ".",
-    "production": "public/",
-    "styleguide": "public/styleguide/",
+  "dev": {
+    "root": "app/",
+    "styleguide": "app/guide/",
 
-    "pages": "*.html",
-    "jade": "assets/jade/*.jade",
-    "jade_glob": "assets/jade/**/*.jade",
-    "jade_ignore": "!assets/jade/**/_*",
+    "pagesGlob": "app/**/*.html",
+    "pagesIgnore": "!app/{assets,guide}/**/*.html",
 
-    "scss": "assets/scss/",
-    "scss_root": "assets/scss/*.scss",
-    "scss_glob": "assets/scss/**/*.scss",
+    "jadeRoot": "app/assets/jade/",
+    "jadeGlob": "app/assets/jade/**/*.jade",
+    "jadeIgnore": "!app/assets/jade/**/_*.jade",
 
-    "css": "assets/css/",
-    "css_glob": "assets/css/*.css",
+    "scssRoot": "app/assets/scss/",
+    "scssBase": "app/assets/scss/*.scss",
+    "scssGlob": "app/assets/scss/**/*.scss",
 
-    "js": "assets/js/*.js",
-    "js_glob": "assets/js/**/*.js",
+    "cssRoot": "app/assets/css/",
 
-    "images_glob": "assets/images/**/*",
-    "images_ignore": "!assets/images/_ignore{,/**}",
+    "jsGlob": "app/assets/js/**/*.js",
 
-    "svg": "assets/svg/_build/",
-    "svg_glob": "assets/svg/_build/**/*",
-    "svg_source_glob": "assets/svg/_source/**/*",
+    "imagesGlob": "app/assets/images/**/*",
+    "imagesIgnore": "!app/assets/images/_ignore{,/**}",
 
-    "fallbacks": "assets/images/fallbacks/",
+    "svgSourceGlob": "app/assets/svg/_source/**/*",
+    "svgBuild": "app/assets/svg/_build/",
+    "svgBuildGlob": "app/assets/svg/_build/**/*",
 
-    "data": "assets/data/",
-    "data_glob": "assets/data/*.json",
+    "fallbacks": "app/assets/images/fallbacks/",
 
-    "kss": "assets/kss/",
-    "kss_css": "assets/css/styleguide.css"
+    "dataRoot": "app/assets/data/",
+    "dataGlob": "app/assets/data/*.json",
+
+    "kssRoot": "app/assets/kss/",
+    "kssCss": "app/assets/css/guide.css"
   },
-  "files": [
-    "assets/fonts/*",
-    "assets/favicon.ico"
+  "dist": {
+    "root": "dist/",
+    "styleguide": "dist/guide"
+  },
+  "toMove": [
+    "app/assets/fonts/*",
+    "!app/assets/**/*.html",
+    "app/**/*.html"
   ],
-  "styleguide": [
-    "assets/kss/assets/prism.css"
-  ],
+  "injectDev": {
+    "site": [
+      "bower_components/normalize-css/normalize.css",
+      "app/assets/css/style.css"
+    ],
+    "vendor": [
+      "bower_components/modernizr/modernizr.js"
+    ],
+    "guide": [
+      "app/assets/css/guide.css",
+      "app/guide/public/prism.css",
+      "app/guide/public/prism.js",
+      "app/guide/public/guide.js"
+    ]
+  },
+  "injectDist": {
+    "site": [
+      "dist/assets/css/style-min.css",
+      "dist/assets/js/site-min.js"
+    ],
+    "vendor": [
+      "dist/assets/js/vendor-min.js"
+    ],
+    "guide": [
+      "dist/assets/css/guide-min.css",
+      "dist/assets/js/guide-min.js"
+    ]
+  },
   "ftp": {
     "host": "chrisjansky.cz",
     "user": "w85799",
