@@ -5,7 +5,7 @@ var
   glob = require("glob"),
   gulp = require("gulp"),
   vinyl = require("vinyl-paths"),
-  plugins = require('gulp-load-plugins')({
+  plugins = require("gulp-load-plugins")({
     pattern: ["gulp-*", "browser-*", "hygienist-*", "json-sass"]
   }),
   config = require("./gulpconfig.json");
@@ -104,14 +104,12 @@ gulp.task("templates:reload", ["templates:inject"], function() {
   plugins.browserSync.reload();
 });
 
-gulp.task("refresh", function() {
-  plugins.browserSync.reload();
-});
-
 gulp.task("scan", function() {
   gulp.watch(config.dev.scssGlob, ["styles"]);
   gulp.watch([config.dev.jadeGlob, config.dev.dataGlob], ["templates:reload"]);
-  gulp.watch(config.dev.jsGlob, ["refresh"]);
+  gulp.watch(config.dev.jsGlob, function() {
+    plugins.browserSync.reload();
+  });
 });
 
 /*
@@ -263,16 +261,19 @@ gulp.task("guide:scaffold", ["guide:wipe"], function() {
     .pipe(gulp.dest(config.dev.kssRoot));
 });
 
-gulp.task("guide:compile", ["guide:scaffold"], plugins.shell.task([
-  "kss-node <%= source %> <%= destination %> --template <%= template %>"
-  ], {
-    templateData: {
-      source:      config.dev.cssRoot,
-      destination: config.dev.styleguide,
-      template:    config.dev.kssRoot
-    }
-  }
-));
+gulp.task("guide:compile", ["guide:scaffold"], function() {
+  return gulp.src("", {read: false})
+    .pipe(plugins.shell([
+      "kss-node <%= source %> <%= destination %> --template <%= template %>"
+      ], {
+        templateData: {
+          source:      config.dev.cssRoot,
+          destination: config.dev.styleguide,
+          template:    config.dev.kssRoot
+        }
+      }
+    ));
+});
 
 gulp.task("guide:inject", ["guide:compile"], function() {
   return gulp.src(config.dev.styleguide + "**/*.html")
@@ -301,9 +302,9 @@ gulp.task("guide:inject", ["guide:compile"], function() {
 -------------------------- Task groups. ---------------------------
 */
 gulp.task("default", ["compile", "server", "scan"]);
-gulp.task("compile", ["styles", "templates:inject"]);
+gulp.task("compile", ["styles", "templates:reload"]);
 
 // Wipe first. Move, produce. Images if --full.
-gulp.task("build", ["build:inject", "build:images"]);
+gulp.task("build", ["build:reload", "build:images"]);
 
 gulp.task("guide", ["guide:inject"]);
