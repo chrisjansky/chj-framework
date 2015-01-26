@@ -1,22 +1,24 @@
-// Slider
-//
-// Using Swiper Javascript library.
-//
-// Markup:
-// <div class="o-slider swiper-container" data-slider>
-//   <ul class="o-slider__list swiper-wrapper">
-//     <li class="o-slider__item swiper-slide">
-//       <img class="o-slider__image" src="http://unsplash.it/600/300/?random" alt="Slider image">
-//     </li>
-//     <li class="o-slider__item swiper-slide">
-//       <img class="o-slider__image" src="http://unsplash.it/600/300/?random" alt="Slider image">
-//     </li>
-//   </ul>
-//   <a href="#" class="o-slider__arrow--prev" data-swiper--prev>&larr;</a>
-//   <a href="#" class="o-slider__arrow--next" data-swiper--next>&rarr;</a>
-// </div>
-//
-// Styleguide 4.54.
+/*
+Slider
+
+Using Swiper Javascript library.
+
+Markup:
+<div class="o-slider swiper-container" data-slider>
+  <ul class="o-slider__list swiper-wrapper">
+    <li class="o-slider__item swiper-slide">
+      <img class="o-slider__image" src="http://unsplash.it/600/300/?random" alt="Slider image">
+    </li>
+    <li class="o-slider__item swiper-slide">
+      <img class="o-slider__image" src="http://unsplash.it/600/300/?random" alt="Slider image">
+    </li>
+  </ul>
+  <a href="#" class="o-slider__arrow--prev" data-swiper--prev>&larr;</a>
+  <a href="#" class="o-slider__arrow--next" data-swiper--next>&rarr;</a>
+</div>
+
+Styleguide 4.54.
+*/
 
 .o-slider {
   user-select: none;

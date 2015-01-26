@@ -1,23 +1,25 @@
-// Form
-//
-// Markup:
-// <form class="o-form">
-//   <fieldset class="o-form__fieldset">
-//     <legend class="o-form__legend">Fill this out, please</legend>
-//     <table class="o-form__table">
-//       <tr>
-//         <td>Form cell</td>
-//         <td>Form cell</td>
-//       </tr>
-//       <tr>
-//         <td>Form cell</td>
-//         <td>Form cell</td>
-//       </tr>
-//     </table>
-//   </fieldset>
-// </form>
-//
-// Styleguide 4.36.
+/*
+Form
+
+Markup:
+<form class="o-form">
+  <fieldset class="o-form__fieldset">
+    <legend class="o-form__legend">Fill this out, please</legend>
+    <table class="o-form__table">
+      <tr>
+        <td>Form cell</td>
+        <td>Form cell</td>
+      </tr>
+      <tr>
+        <td>Form cell</td>
+        <td>Form cell</td>
+      </tr>
+    </table>
+  </fieldset>
+</form>
+
+Styleguide 4.36.
+*/
 
 .o-form__fieldset {
   padding: em($ratio--b);

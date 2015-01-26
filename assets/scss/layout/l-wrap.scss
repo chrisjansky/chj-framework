@@ -1,18 +1,20 @@
-// Wrap
-//
-// Added offwhite background for styleguide purposes.
-//
-// .l-wrap--small - Smaller.
-// .l-wrap--big - Bigger.
-// .l-wrap--vertical - Only vertical.
-// .l-wrap--horizontal - Only horizontal.
-// .l-wrap--no-top - No top padding.
-// .l-wrap--no-bottom - No bottom padding.
-//
-// Markup:
-// <div class="l-wrap {$modifiers}">Text.</div>
-//
-// Styleguide 2.1.
+/*
+Wrap
+
+Added offwhite background for styleguide purposes.
+
+.l-wrap--small - Smaller.
+.l-wrap--big - Bigger.
+.l-wrap--vertical - Only vertical.
+.l-wrap--horizontal - Only horizontal.
+.l-wrap--no-top - No top padding.
+.l-wrap--no-bottom - No bottom padding.
+
+Markup:
+<div class="l-wrap {$modifiers}">Text.</div>
+
+Styleguide 2.1.
+*/
 
 .l-wrap {
   padding: em($ratio--b);

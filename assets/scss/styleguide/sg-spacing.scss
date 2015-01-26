@@ -1,16 +1,18 @@
-// Spacing
-//
-// .sg-spacing--xxs - Extremely small spacing.
-// .sg-spacing--xs - Smaller spacing.
-// .sg-spacing--s - Small spacing.
-// .sg-spacing--b - Base spacing.
-// .sg-spacing--m - Medium spacing.
-// .sg-spacing--l - Big spacing.
-//
-// Markup:
-// <span class="{$modifiers}">A rather long text that<br>looks great</span>
-//
-// Styleguide 1.4.
+/*
+Spacing
+
+.sg-spacing--xxs - Extremely small spacing.
+.sg-spacing--xs - Smaller spacing.
+.sg-spacing--s - Small spacing.
+.sg-spacing--b - Base spacing.
+.sg-spacing--m - Medium spacing.
+.sg-spacing--l - Big spacing.
+
+Markup:
+<span class="{$modifiers}">A rather long text that<br>looks great</span>
+
+Styleguide 1.4.
+*/
 
 [class^="sg-spacing--"],
 [class*=" sg-spacing--"] {

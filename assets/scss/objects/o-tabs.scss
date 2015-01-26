@@ -1,22 +1,24 @@
-// Tabs
-//
-// Markup:
-// <ul class="o-tabs" data-tabs>
-//   <li class="o-tabs__item">
-//     <a href="#" class="o-tabs__link">Tab title</a>
-//     <div class="o-tabs__content"><p>Tab content</p></div>
-//   </li>
-//   <li class="o-tabs__item">
-//     <a href="#" class="o-tabs__link">Tab title</a>
-//     <div class="o-tabs__content"><p>Another content</p></div>
-//   </li>
-//   <li class="o-tabs__item">
-//     <a href="#" class="o-tabs__link">Tab title</a>
-//     <div class="o-tabs__content"><p>Last piece of content</p></div>
-//   </li>
-// </ul>
-//
-// Styleguide 4.51.
+/*
+Tabs
+
+Markup:
+<ul class="o-tabs" data-tabs>
+  <li class="o-tabs__item">
+    <a href="#" class="o-tabs__link">Tab title</a>
+    <div class="o-tabs__content"><p>Tab content</p></div>
+  </li>
+  <li class="o-tabs__item">
+    <a href="#" class="o-tabs__link">Tab title</a>
+    <div class="o-tabs__content"><p>Another content</p></div>
+  </li>
+  <li class="o-tabs__item">
+    <a href="#" class="o-tabs__link">Tab title</a>
+    <div class="o-tabs__content"><p>Last piece of content</p></div>
+  </li>
+</ul>
+
+Styleguide 4.51.
+*/
 
 .o-tabs {
   padding-left: 0;

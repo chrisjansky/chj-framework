@@ -1,16 +1,18 @@
-// Headlines
-//
-// .t-head--top - First headline.
-// .t-head--higher - Second headline.
-// .t-head--high - Third headline.
-// .t-head--low - Fourth headline.
-// .t-head--lower - Fifth headline.
-// .t-head--bottom - Sixth headline. 
-//
-// Markup:
-// <h1 class="{$modifiers}">Headline</h1>
-//
-// Styleguide 3.1.
+/*
+Headlines
+
+.t-head--top - First headline.
+.t-head--higher - Second headline.
+.t-head--high - Third headline.
+.t-head--low - Fourth headline.
+.t-head--lower - Fifth headline.
+.t-head--bottom - Sixth headline. 
+
+Markup:
+<h1 class="{$modifiers}">Headline</h1>
+
+Styleguide 3.1.
+*/
 
 .t-head--top {
   // font-size: em($ratio--m);

@@ -30,26 +30,32 @@
 @import "base/b-interactive";
 @import "base/b-typography";
 
-// Layout
-// 
-// Styleguide 2.
+/*
+Layout
+
+Styleguide 2.
+*/
 @import "layout/l-wrap";
 @import "layout/l-inline";
 @import "layout/l-grid";
 @import "layout/l-spacer";
 @import "layout/l-section";
 
-// Typography
-//
-// Styleguide 3.
+/*
+Typography
+
+Styleguide 3.
+*/
 @import "typography/t-head";
 @import "typography/t-caps";
 @import "typography/t-text";
 @import "typography/t-link";
 
-// Objects
-//
-// Styleguide 4.
+/*
+Objects
+
+Styleguide 4.
+*/
 @import "objects/o-button";
 @import "objects/o-button-group";
 @import "objects/o-dotlist";

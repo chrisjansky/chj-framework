@@ -1,14 +1,16 @@
-// Icon
-//
-// .o-icon--big - Big icon.
-// .o-icon--medium - Medium icon.
-// .o-icon - Basic icon.
-// .o-icon--small - Small icon.
-//
-// Markup:
-// <span class="{$modifiers} ss-index"></span>
-//
-// Styleguide 4.20.
+/*
+Icon
+
+.o-icon--big - Big icon.
+.o-icon--medium - Medium icon.
+.o-icon - Basic icon.
+.o-icon--small - Small icon.
+
+Markup:
+<span class="{$modifiers} ss-index"></span>
+
+Styleguide 4.20.
+*/
 
 .o-icon {
   font-size: #{$icon--b}px;

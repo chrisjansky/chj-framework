@@ -1,22 +1,24 @@
-// Accordion
-//
-// Markup:
-// <dl class="o-accordion" data-accordion>
-//   <dt class="o-accordion__title">
-//     <a href="#" class="o-accordion__link" data-accordion-opened>Opened item</a>
-//     <dd class="o-accordion__content">Content</dd>
-//   </dt>
-//   <dt class="o-accordion__title">
-//     <a href="#" class="o-accordion__link">Accordion item</a>
-//     <dd class="o-accordion__content">Content</dd>
-//   </dt>
-//   <dt class="o-accordion__title">
-//     <a href="#" class="o-accordion__link">Accordion item</a>
-//     <dd class="o-accordion__content">Content</dd>
-//   </dt>
-// </dl>
-//
-// Styleguide 4.50.
+/*
+Accordion
+
+Markup:
+<dl class="o-accordion" data-accordion>
+  <dt class="o-accordion__title">
+    <a href="#" class="o-accordion__link" data-accordion-opened>Opened item</a>
+    <dd class="o-accordion__content">Content</dd>
+  </dt>
+  <dt class="o-accordion__title">
+    <a href="#" class="o-accordion__link">Accordion item</a>
+    <dd class="o-accordion__content">Content</dd>
+  </dt>
+  <dt class="o-accordion__title">
+    <a href="#" class="o-accordion__link">Accordion item</a>
+    <dd class="o-accordion__content">Content</dd>
+  </dt>
+</dl>
+
+Styleguide 4.50.
+*/
 
 .o-accordion__title {
   background-color: $grey--000;

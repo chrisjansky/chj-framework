@@ -1,21 +1,23 @@
-// Units
-//
-// Basic unit scale with smaller increments than golden ratio.
-//
-// Markup:
-// <div class="sg-unit--xxh">XXH</div>
-// <div class="sg-unit--xh">XH</div>
-// <div class="sg-unit--h">H</div>
-// <div class="sg-unit--xxl">XXL</div>
-// <div class="sg-unit--xl">XL</div>
-// <div class="sg-unit--l">L</div>
-// <div class="sg-unit--m">M</div>
-// <div class="sg-unit--b">B</div>
-// <div class="sg-unit--s">S</div>
-// <div class="sg-unit--xs">XS</div>
-// <div class="sg-unit--xxs">XXS</div>
-//
-// Styleguide 1.1.
+/*
+Units
+
+Basic unit scale with smaller increments than golden ratio.
+
+Markup:
+<div class="sg-unit--xxh">XXH</div>
+<div class="sg-unit--xh">XH</div>
+<div class="sg-unit--h">H</div>
+<div class="sg-unit--xxl">XXL</div>
+<div class="sg-unit--xl">XL</div>
+<div class="sg-unit--l">L</div>
+<div class="sg-unit--m">M</div>
+<div class="sg-unit--b">B</div>
+<div class="sg-unit--s">S</div>
+<div class="sg-unit--xs">XS</div>
+<div class="sg-unit--xxs">XXS</div>
+
+Styleguide 1.1.
+*/
 
 [class^="sg-unit--"],
 [class*=" sg-unit--"] {

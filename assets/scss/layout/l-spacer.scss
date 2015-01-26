@@ -1,13 +1,15 @@
-// Spacer
-//
-// .l-spacer - Invisible horizontal rule, default styling.
-// .l-spacer--big - Bigger margin.
-// .l-spacer--small - Smaller margin.
-//
-// Markup:
-// <hr class="{$modifiers}">
-//
-// Styleguide 2.4.
+/*
+Spacer
+
+.l-spacer - Invisible horizontal rule, default styling.
+.l-spacer--big - Bigger margin.
+.l-spacer--small - Smaller margin.
+
+Markup:
+<hr class="{$modifiers}">
+
+Styleguide 2.4.
+*/
 
 [class^="l-spacer"],
 [class*=" l-spacer"] {

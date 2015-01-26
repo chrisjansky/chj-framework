@@ -1,26 +1,28 @@
-// Carousel
-//
-// Using Swiper Javascript library, pretty much identical to o-slider. Example with Featherlight links inside.
-//
-// Markup:
-// <div class="o-carousel swiper-container" data-carousel>
-//   <ul class="o-carousel__list swiper-wrapper">
-//     <li class="o-carousel__item swiper-slide">
-//       <a href="http://unsplash.it/800/500/?random" class="o-carousel__link" data-featherlight="image">
-//         <img class="o-carousel__image" src="http://unsplash.it/600/300/?random" alt="Carousel image">
-//       </a>
-//     </li>
-//     <li class="o-carousel__item swiper-slide">
-//       <a href="http://unsplash.it/800/500/?random" class="o-carousel__link" data-featherlight="image">
-//         <img class="o-carousel__image" src="http://unsplash.it/600/300/?random" alt="Carousel image">
-//       </a>
-//     </li>
-//   </ul>
-//   <a href="#" class="o-carousel__arrow--prev" data-swiper--prev>&larr;</a>
-//   <a href="#" class="o-carousel__arrow--next" data-swiper--next>&rarr;</a>
-// </div>
-//
-// Styleguide 4.55.
+/*
+Carousel
+
+Using Swiper Javascript library, pretty much identical to o-slider. Example with Featherlight links inside.
+
+Markup:
+<div class="o-carousel swiper-container" data-carousel>
+  <ul class="o-carousel__list swiper-wrapper">
+    <li class="o-carousel__item swiper-slide">
+      <a href="http://unsplash.it/800/500/?random" class="o-carousel__link" data-featherlight="image">
+        <img class="o-carousel__image" src="http://unsplash.it/600/300/?random" alt="Carousel image">
+      </a>
+    </li>
+    <li class="o-carousel__item swiper-slide">
+      <a href="http://unsplash.it/800/500/?random" class="o-carousel__link" data-featherlight="image">
+        <img class="o-carousel__image" src="http://unsplash.it/600/300/?random" alt="Carousel image">
+      </a>
+    </li>
+  </ul>
+  <a href="#" class="o-carousel__arrow--prev" data-swiper--prev>&larr;</a>
+  <a href="#" class="o-carousel__arrow--next" data-swiper--next>&rarr;</a>
+</div>
+
+Styleguide 4.55.
+*/
 
 .o-carousel {
   user-select: none;

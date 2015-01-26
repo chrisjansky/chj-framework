@@ -1,17 +1,19 @@
-// Select
-//
-// Markup:
-// <div class="o-select">
-//   <select class="o-select__content">
-//     <optgroup label="Awesome Group">
-//       <option>Option 1</option>
-//       <option>Option 2</option>
-//       <option>Option 3</option>
-//     </optgroup>
-//   </select>
-// </div>
-//
-// Styleguide 4.32.
+/*
+Select
+
+Markup:
+<div class="o-select">
+  <select class="o-select__content">
+    <optgroup label="Awesome Group">
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </optgroup>
+  </select>
+</div>
+
+Styleguide 4.32.
+*/
 
 .o-select {
   display: inline-block;

@@ -1,25 +1,27 @@
-// Grid
-//
-// Various column setups. Added margin-bottom and background for styleguide purposes.
-//
-// Markup:
-// <div class="l-grid--4">
-//   <div class="l-grid__item--4">Quarter</div>
-//   <div class="l-grid__item--4">Quarter</div>
-//   <div class="l-grid__item--4">Quarter</div>
-//   <div class="l-grid__item--4">Quarter</div>
-// </div>
-// <div class="l-grid--3">
-//   <div class="l-grid__item--3">Third</div>
-//   <div class="l-grid__item--3">Third</div>
-//   <div class="l-grid__item--3">Third</div>
-// </div>
-// <div class="l-grid--2">
-//   <div class="l-grid__item--2">Half</div>
-//   <div class="l-grid__item--2">Half</div>
-// </div>
-//
-// Styleguide 2.3.
+/*
+Grid
+
+Various column setups. Added margin-bottom and background for styleguide purposes.
+
+Markup:
+<div class="l-grid--4">
+  <div class="l-grid__item--4">Quarter</div>
+  <div class="l-grid__item--4">Quarter</div>
+  <div class="l-grid__item--4">Quarter</div>
+  <div class="l-grid__item--4">Quarter</div>
+</div>
+<div class="l-grid--3">
+  <div class="l-grid__item--3">Third</div>
+  <div class="l-grid__item--3">Third</div>
+  <div class="l-grid__item--3">Third</div>
+</div>
+<div class="l-grid--2">
+  <div class="l-grid__item--2">Half</div>
+  <div class="l-grid__item--2">Half</div>
+</div>
+
+Styleguide 2.3.
+*/
 
 [class^="l-grid--"],
 [class*=" l-grid--"] {

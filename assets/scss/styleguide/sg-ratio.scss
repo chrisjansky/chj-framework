@@ -1,22 +1,24 @@
-// Ratios
-//
-// Golden ratio increments derived from base font-size.
-//
-// Markup:
-// <div class="sg-ratio--xxh">XXH</div>
-// <div class="sg-ratio--xh">XH</div>
-// <div class="sg-ratio--h">H</div>
-// <div class="sg-ratio--xxl">XXL</div>
-// <div class="sg-ratio--xl">XL</div>
-// <div class="sg-ratio--l">L</div>
-// <div class="sg-ratio--m">M</div>
-// <div class="sg-ratio--b">B</div>
-// <div class="sg-ratio--s">S</div>
-// <div class="sg-ratio--xs">XS</div>
-// <div class="sg-ratio--xxs">XXS</div>
-// <div class="sg-ratio--t">T</div>
-//
-// Styleguide 1.2.
+/*
+Ratios
+
+Golden ratio increments derived from base font-size.
+
+Markup:
+<div class="sg-ratio--xxh">XXH</div>
+<div class="sg-ratio--xh">XH</div>
+<div class="sg-ratio--h">H</div>
+<div class="sg-ratio--xxl">XXL</div>
+<div class="sg-ratio--xl">XL</div>
+<div class="sg-ratio--l">L</div>
+<div class="sg-ratio--m">M</div>
+<div class="sg-ratio--b">B</div>
+<div class="sg-ratio--s">S</div>
+<div class="sg-ratio--xs">XS</div>
+<div class="sg-ratio--xxs">XXS</div>
+<div class="sg-ratio--t">T</div>
+
+Styleguide 1.2.
+*/
 
 [class^="sg-ratio--"],
 [class*=" sg-ratio--"] {

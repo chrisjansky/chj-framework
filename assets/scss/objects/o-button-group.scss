@@ -1,15 +1,17 @@
-// Button group
-//
-// .o-button-group--inline - Inline buttons.
-// .o-button-group--stacked - Stacked buttons.
-//
-// Markup:
-// <div class="{$modifiers}">
-//   <a href="#" class="o-button--solid">Button</a>
-//   <a href="#" class="o-button--outline">Button</a>
-// </div>
-//
-// Styleguide 4.2.
+/*
+Button group
+
+.o-button-group--inline - Inline buttons.
+.o-button-group--stacked - Stacked buttons.
+
+Markup:
+<div class="{$modifiers}">
+  <a href="#" class="o-button--solid">Button</a>
+  <a href="#" class="o-button--outline">Button</a>
+</div>
+
+Styleguide 4.2.
+*/
 
 .o-button-group--inline {
   [class^="o-button--"],

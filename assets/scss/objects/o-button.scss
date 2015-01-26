@@ -1,14 +1,16 @@
-// Button
-//
-// .o-button--solid - Solid background.
-// .o-button--outline - Outline variant.
-// .o-button--block.o-button--outline - Full-width, e.g. outline.
-// .o-button--selected - Selected.
-//
-// Markup:
-// <a href="#" class="{$modifiers}">Button</a>
-//
-// Styleguide 4.1.
+/*
+Button
+
+.o-button--solid - Solid background.
+.o-button--outline - Outline variant.
+.o-button--block.o-button--outline - Full-width, e.g. outline.
+.o-button--selected - Selected.
+
+Markup:
+<a href="#" class="{$modifiers}">Button</a>
+
+Styleguide 4.1.
+*/
 
 [class^="o-button--"],
 [class*=" o-button--"] {

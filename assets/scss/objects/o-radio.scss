@@ -1,18 +1,20 @@
-// Radio
-//
-// Markup:
-// <label class="o-radio">
-//   <input class="o-radio__input" type="radio" name="radio-group">
-//   <span class="o-radio__mark"></span>
-//   <span class="o-radio__text">Pick me please</span>
-// </label>
-// <label class="o-radio">
-//   <input class="o-radio__input" type="radio" name="radio-group">
-//   <span class="o-radio__mark"></span>
-//   <span class="o-radio__text">No, pick me</span>
-// </label>
-//
-// Styleguide 4.33.
+/*
+Radio
+
+Markup:
+<label class="o-radio">
+  <input class="o-radio__input" type="radio" name="radio-group">
+  <span class="o-radio__mark"></span>
+  <span class="o-radio__text">Pick me please</span>
+</label>
+<label class="o-radio">
+  <input class="o-radio__input" type="radio" name="radio-group">
+  <span class="o-radio__mark"></span>
+  <span class="o-radio__text">No, pick me</span>
+</label>
+
+Styleguide 4.33.
+*/
 
 .o-radio {
   cursor: pointer;
