@@ -16,13 +16,6 @@ node_modules
 ## Bower
 bower_components
 
-ignore
-dist
-source_files
-app/assets/css
-app/assets/fonts
-/*.html
-
 ## Sass
 .sass-cache
 
@@ -40,3 +33,17 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+## Custom
+_ignore
+_source_files
+
+dist
+
+app/guide
+app/assets/css
+app/assets/fonts
+app/assets/images/fallbacks
+app/assets/svg
+
+app/**/*.html
