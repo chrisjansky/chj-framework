@@ -17,10 +17,10 @@ node_modules
 bower_components
 
 ignore
-public
+dist
 source_files
-assets/css
-assets/fonts
+app/assets/css
+app/assets/fonts
 /*.html
 
 ## Sass
