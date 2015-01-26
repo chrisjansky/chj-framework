@@ -1,4 +1,4 @@
-.sg-section {
+.g-section {
   @include clearfix;
 
   & + & {
@@ -10,38 +10,38 @@
   cursor: pointer;
 }
 
-[class^="sg-group--"],
-[class*=" sg-group--"] {
+[class^="g-group--"],
+[class*=" g-group--"] {
   @include clearfix;
 }
-.sg-group--greys {
+.g-group--greys {
   margin-top: em($ratio--m);
 }
 
-.sg-group__column,
-.sg-item {
+.g-group__column,
+.g-item {
   float: left;
 
   text-align: center;
 }
 
-.sg-title {
+.g-title {
   text-transform: capitalize;
 }
 
 // Overlay.
-.sg-overlay {
+.g-overlay {
   @include stretch-overlay;
   @include pseudo-center--parent;
 }
 
-.sg-overlay__content {
+.g-overlay__content {
   display: inline-block;
 
   vertical-align: middle;
 }
 
-.sg-small {
+.g-small {
   display: block;
 
   margin-top: em($ratio--b);
@@ -49,15 +49,15 @@
   opacity: .5;
 }
 
-[class^="sg-glyph"],
-[class*=" sg-glyph"] {
+[class^="g-glyph"],
+[class*=" g-glyph"] {
   & + & {
     margin-left: em($ratio--xl);
   }
 }
-.sg-glyph--white {
+.g-glyph--white {
   color: white;
 }
-.sg-glyph--black {
+.g-glyph--black {
   color: black;
 }

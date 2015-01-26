@@ -1,0 +1,122 @@
+<!-- kss-header -->
+<header class="kss-header">
+  <a href="index" class="kss-header__link"><h1 class="t-head--high">Styleguide</h1></a>
+
+  <nav class="kss-nav">
+    <ul class="kss-menu--main" data-menu data-kss-ref="{{rootNumber}}">
+      {{#eachRoot}}
+        <li data-menu-item>
+          <a class="kss-nav__link" href="section-{{reference}}">
+            <strong class="kss-reference">{{reference}}</strong> 
+            {{header}}
+          </a>
+        </li>
+      {{/eachRoot}}
+    </ul>
+
+    {{#if overview}}
+    {{else}}
+      <ul class="kss-menu--sub" data-submenu>
+        {{#eachSection rootNumber}}
+        {{#ifDepth 1}}
+        {{else}}
+          <li>
+            <a class="kss-nav__link" href="#section-{{reference}}">
+              <strong class="kss-reference">{{reference}}</strong> 
+              {{header}}
+            </a>
+          </li>
+        {{/ifDepth}}
+        {{/eachSection}}
+      </ul>
+    {{/if}}
+  </nav>
+</header>
+
+<!-- kss-main -->
+<main class="kss-main">
+  {{#if overview}}
+    {{{overview}}}
+  {{else}}
+
+    {{!
+      Find each section, in order.
+      If there's no markup or modifiers supplied, use a Markdown-only
+      layout instead.
+
+      The "root" element comes first in this loop, and can be detected using
+      the "#ifDepth 1" block as seen below.
+   }}
+    
+    {{#eachSection rootNumber}}
+      {{#ifDepth 1}}
+        <!-- 0.0 heading -->
+        <h1 class="kss-main__title t-head--top">
+          <span class="kss-reference">{{reference}}</span> 
+          {{header}}
+        </h1>
+      {{else}}
+        <!-- 0.1 heading -->
+        <section id="section-{{reference}}" class="kss-item kss-item--depth-{{refDepth}}">
+          <header class="kss-item__info">
+            <h2 class="kss-item__title t-head--low">
+              <span class="kss-reference">{{reference}}</span> 
+              {{header}}
+            </h2>
+            {{#if modifiers}}
+              <div class="kss-description">
+                <small class="kss-small">{{{description}}}</small>
+              </div>
+            {{/if}}
+          </header>
+
+      {{/ifDepth}}
+
+        {{#if markup}}
+          <div class="kss-item__content">
+
+            <!-- Show default if no modifiers present -->
+            {{#unless modifiers}}
+              <article class="kss-variant kss-variant--default">
+                <div class="kss-example">{{modifierMarkup}}</div>
+                {{#if description}}
+                  <div class="kss-description">
+                    <small class="kss-small">{{{description}}}</small>
+                  </div>
+                {{/if}}
+              </article>
+            {{/unless}}
+
+            <!-- Variants -->
+            {{#eachModifier}}
+              <article class="kss-variant kss-variant--modifier">
+                <div class="kss-example">{{modifierMarkup}}</div>
+                <div class="kss-description">
+                  <h3 class="kss-variant__title t-head--lower">{{name}}</h3>
+                  <small class="kss-small">{{{description}}}</small>
+                </div>
+              </article>
+            {{/eachModifier}}
+
+            <!-- Markup -->
+            <div class="kss-markup">
+              <pre><code class="language-markup">{{markup}}</code></pre>
+            </div>
+
+          <!-- End list -->
+          </div>
+
+        <!-- End if markup modifiers -->
+        {{/if}}
+
+      {{#ifDepth 1}}
+      {{else}}
+        </section>
+      {{/ifDepth}}
+
+    {{/eachSection}}
+  <!-- End if else overview -->
+  {{/if}}
+
+<!-- end kss-main -->
+</main>

@@ -1,0 +1,42 @@
+.l-wrap
+  
+  each swatch in ["text", "outline", "circle", "rectangle"]
+    - var property
+    case swatch
+      when "outline"
+        - property = "border"
+      when "text"
+        - property = "color"
+      default
+        - property = "background"
+
+    section.g-section
+
+      .g-group--colors
+        each group, index in colors
+          .g-group__column
+            each shade in group.shades
+              div(class="g-swatch--#{swatch} #{property}-#{index + 1}--#{shade.name}")
+                case swatch
+                  when "rectangle"
+                    .g-overlay
+                      .g-overlay__content
+                        span.g-glyph--white Aa
+                        span.g-glyph--black Aa
+                        small.g-small= shade.value
+                  when "text"
+                    span.g-title= shade.name
+
+      .g-group--greys
+        each grey, index in greys
+          .g-item
+            div(class="g-swatch--#{swatch} #{property}-grey--#{grey.name}")
+              case swatch
+                when "rectangle"
+                  .g-overlay
+                    .g-overlay__content
+                      span.g-glyph--white Aa
+                      span.g-glyph--black Aa
+                      small.g-small= grey.value
+                when "text"
+                  span.g-title= grey.name

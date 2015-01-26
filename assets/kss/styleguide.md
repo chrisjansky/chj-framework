@@ -1,3 +1,0 @@
-# Styleguide
-
-A wonderful description.

@@ -23,22 +23,22 @@
 @import "vendor/neat";
 
 // Styleguide
-@import "styleguide/kss";
-@import "styleguide/specific";
+@import "guide/kss";
+@import "guide/specific";
 
-@import "styleguide/json";
+@import "guide/json";
 
-@import "styleguide/sg-config";
-@import "styleguide/sg-temp";
-@import "styleguide/sg-swatch";
-@import "styleguide/sg-color";
+@import "guide/g-config";
+@import "guide/g-temp";
+@import "guide/g-swatch";
+@import "guide/g-color";
 
 /*
 Basics
 
 Styleguide 1.
 */
-@import "styleguide/sg-unit";
-@import "styleguide/sg-ratio";
-@import "styleguide/sg-height";
-@import "styleguide/sg-spacing";
+@import "guide/g-unit";
+@import "guide/g-ratio";
+@import "guide/g-height";
+@import "guide/g-spacing";

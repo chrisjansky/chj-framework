@@ -4,24 +4,24 @@ Ratios
 Golden ratio increments derived from base font-size.
 
 Markup:
-<div class="sg-ratio--xxh">XXH</div>
-<div class="sg-ratio--xh">XH</div>
-<div class="sg-ratio--h">H</div>
-<div class="sg-ratio--xxl">XXL</div>
-<div class="sg-ratio--xl">XL</div>
-<div class="sg-ratio--l">L</div>
-<div class="sg-ratio--m">M</div>
-<div class="sg-ratio--b">B</div>
-<div class="sg-ratio--s">S</div>
-<div class="sg-ratio--xs">XS</div>
-<div class="sg-ratio--xxs">XXS</div>
-<div class="sg-ratio--t">T</div>
+<div class="g-ratio--xxh">XXH</div>
+<div class="g-ratio--xh">XH</div>
+<div class="g-ratio--h">H</div>
+<div class="g-ratio--xxl">XXL</div>
+<div class="g-ratio--xl">XL</div>
+<div class="g-ratio--l">L</div>
+<div class="g-ratio--m">M</div>
+<div class="g-ratio--b">B</div>
+<div class="g-ratio--s">S</div>
+<div class="g-ratio--xs">XS</div>
+<div class="g-ratio--xxs">XXS</div>
+<div class="g-ratio--t">T</div>
 
 Styleguide 1.2.
 */
 
-[class^="sg-ratio--"],
-[class*=" sg-ratio--"] {
+[class^="g-ratio--"],
+[class*=" g-ratio--"] {
   display: inline-block;
   vertical-align: top;
 
@@ -42,62 +42,62 @@ Styleguide 1.2.
   }
 }
 
-.sg-ratio--xxh:after {
+.g-ratio--xxh:after {
   min-width: em($ratio--xxh);
   line-height: em($ratio--xxh);
   content: "#{$ratio--xxh}";
 }
-.sg-ratio--xh:after {
+.g-ratio--xh:after {
   min-width: em($ratio--xh);
   line-height: em($ratio--xh);
   content: "#{$ratio--xh}";
 }
-.sg-ratio--h:after {
+.g-ratio--h:after {
   min-width: em($ratio--h);
   line-height: em($ratio--h);
   content: "#{$ratio--h}";
 }
-.sg-ratio--xxl:after {
+.g-ratio--xxl:after {
   min-width: em($ratio--xxl);
   line-height: em($ratio--xxl);
   content: "#{$ratio--xxl}";
 }
-.sg-ratio--xl:after {
+.g-ratio--xl:after {
   min-width: em($ratio--xl);
   line-height: em($ratio--xl);
   content: "#{$ratio--xl}";
 }
-.sg-ratio--l:after {
+.g-ratio--l:after {
   min-width: em($ratio--l);
   line-height: em($ratio--l);
   content: "#{$ratio--l}";
 }
-.sg-ratio--m:after {
+.g-ratio--m:after {
   min-width: em($ratio--m);
   line-height: em($ratio--m);
   content: "#{$ratio--m}";
 }
-.sg-ratio--b:after {
+.g-ratio--b:after {
   min-width: em($ratio--b);
   line-height: em($ratio--b);
   content: "#{$ratio--b}";
 }
-.sg-ratio--s:after {
+.g-ratio--s:after {
   min-width: em($ratio--s);
   line-height: em($ratio--s);
   content: "#{$ratio--s}";
 }
-.sg-ratio--xs:after {
+.g-ratio--xs:after {
   min-width: em($ratio--xs);
   line-height: em($ratio--xs);
   content: "#{$ratio--xs}";
 }
-.sg-ratio--xxs:after {
+.g-ratio--xxs:after {
   min-width: em($ratio--xxs);
   line-height: em($ratio--xxs);
   content: "#{$ratio--xxs}";
 }
-.sg-ratio--t:after {
+.g-ratio--t:after {
   min-width: em($ratio--t);
   line-height: em($ratio--t);
   content: "#{$ratio--t}";
