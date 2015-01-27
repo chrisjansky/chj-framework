@@ -14,7 +14,7 @@ var
 ------------------------------ Basic. -----------------------------
 */
 
-gulp.task("server", function() {
+gulp.task("server", ["templates:inject"], function() {
   plugins.browserSync({
     server: {
       baseDir: config.dev.root,
@@ -106,7 +106,9 @@ gulp.task("templates:reload", ["templates:inject"], function() {
 
 gulp.task("scan", function() {
   gulp.watch(config.dev.scssGlob, ["styles"]);
+
   gulp.watch([config.dev.jadeGlob, config.dev.dataGlob], ["templates:reload"]);
+
   gulp.watch(config.dev.jsGlob, function() {
     plugins.browserSync.reload();
   });
