@@ -83,16 +83,16 @@ gulp.task("templates:compile", ["templates:read"], function() {
     .pipe(gulp.dest(config.dev.root));
 });
 
-gulp.task("templates:inject", ["templates:compile"], function() {
+gulp.task("templates:inject", ["templates:compile", "resources:read"], function() {
   return gulp.src([config.dev.pagesGlob, config.dev.pagesIgnore])
     .pipe(plugins.inject(gulp.src(
-      config.injectDev.site, {read: false}), {
+      resources.injectDev.site, {read: false}), {
         relative: true,
         name: "site"
       }
     ))
     .pipe(plugins.inject(gulp.src(
-      config.injectDev.vendor, {read: false}), {
+      resources.injectDev.vendor, {read: false}), {
         relative: true,
         name: "vendor"
       }
@@ -107,11 +107,25 @@ gulp.task("templates:reload", ["templates:inject"], function() {
 gulp.task("scan", function() {
   gulp.watch(config.dev.scssGlob, ["styles"]);
 
-  gulp.watch([config.dev.jadeGlob, config.dev.dataGlob], ["templates:reload"]);
+  gulp.watch(
+    [config.dev.jadeGlob, config.dev.dataGlob, "./resources.json"],
+    ["templates:reload"]
+  );
 
   gulp.watch(config.dev.jsGlob, function() {
     plugins.browserSync.reload();
   });
+});
+
+/*
+------------------------- Resources. --------------------------
+*/
+
+var resources;
+
+gulp.task("resources:read", function() {
+  var readFile = fs.readFileSync("./resources.json", "utf8");
+  resources = JSON.parse(readFile);
 });
 
 /*
@@ -139,8 +153,8 @@ gulp.task("build:wipe", function() {
 });
 
 // Move other assets to production folder.
-gulp.task("build:move", ["build:wipe"], function() {
-  return gulp.src(config.toMove, {base: config.dev.root})
+gulp.task("build:move", ["build:wipe", "resources:read"], function() {
+  return gulp.src(resources.toMove, {base: config.dev.root})
     .pipe(gulp.dest(config.dist.root));
 });
 
@@ -169,19 +183,19 @@ gulp.task("build:compile", ["build:move"], function() {
 gulp.task("build:inject", ["build:compile"], function() {
   return gulp.src(config.dist.root + "**/*.html")
     .pipe(plugins.inject(gulp.src(
-        config.injectDist.site, {read: false}), {
+        resources.injectDist.site, {read: false}), {
           relative: true,
           name: "site"
         }
       ))
       .pipe(plugins.inject(gulp.src(
-        config.injectDist.vendor, {read: false}), {
+        resources.injectDist.vendor, {read: false}), {
           relative: true,
           name: "vendor"
         }
       ))
       .pipe(plugins.inject(gulp.src(
-        config.injectDist.guide, {read: false}), {
+        resources.injectDist.guide, {read: false}), {
           relative: true,
           name: "guide"
         }
@@ -277,22 +291,22 @@ gulp.task("guide:compile", ["guide:scaffold"], function() {
     ));
 });
 
-gulp.task("guide:inject", ["guide:compile"], function() {
+gulp.task("guide:inject", ["guide:compile", "resources:read"], function() {
   return gulp.src(config.dev.styleguide + "**/*.html")
     .pipe(plugins.inject(gulp.src(
-      config.injectDev.site, {read: false}), {
+      resources.injectDev.site, {read: false}), {
         relative: true,
         name: "site"
       }
     ))
     .pipe(plugins.inject(gulp.src(
-      config.injectDev.vendor, {read: false}), {
+      resources.injectDev.vendor, {read: false}), {
         relative: true,
         name: "vendor"
       }
     ))
     .pipe(plugins.inject(gulp.src(
-      config.injectDev.guide, {read: false}), {
+      resources.injectDev.guide, {read: false}), {
         relative: true,
         name: "guide"
       }
