@@ -97,6 +97,12 @@ gulp.task("templates:inject", ["templates:compile", "resources:read"], function(
         name: "vendor"
       }
     ))
+    .pipe(plugins.inject(gulp.src(
+      resources.injectDev.guide, {read: false}), {
+        relative: true,
+        name: "guide"
+      }
+    ))
     .pipe(gulp.dest(config.dev.root));
 });
 
@@ -123,6 +129,7 @@ gulp.task("scan", function() {
 
 var resources;
 
+// Read paths to assets.
 gulp.task("resources:read", function() {
   var readFile = fs.readFileSync("./resources.json", "utf8");
   resources = JSON.parse(readFile);
@@ -259,11 +266,13 @@ gulp.task("svg", ["svg:optimize"], function() {
 -------------------------- Styleguide. --------------------------
 */
 
+// Delete previous KSS build.
 gulp.task("guide:wipe", function() {
   return gulp.src(config.dev.styleguide, {read: false})
     .pipe(vinyl(del));
 });
 
+// Construct KSS template using JADE and HTML partial.
 gulp.task("guide:scaffold", ["guide:wipe"], function() {
   return gulp.src(config.dev.jadeRoot + "templates/_guide.jade")
     .pipe(plugins.plumber())
@@ -277,6 +286,7 @@ gulp.task("guide:scaffold", ["guide:wipe"], function() {
     .pipe(gulp.dest(config.dev.kssRoot));
 });
 
+// Run KSS in shell.
 gulp.task("guide:compile", ["guide:scaffold"], function() {
   return gulp.src("", {read: false})
     .pipe(plugins.shell([
@@ -291,6 +301,7 @@ gulp.task("guide:compile", ["guide:scaffold"], function() {
     ));
 });
 
+// Inject dev styles into styleguide.
 gulp.task("guide:inject", ["guide:compile", "resources:read"], function() {
   return gulp.src(config.dev.styleguide + "**/*.html")
     .pipe(plugins.inject(gulp.src(
