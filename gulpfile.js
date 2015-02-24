@@ -110,6 +110,10 @@ gulp.task("templates:reload", ["templates:inject"], function() {
   plugins.browserSync.reload();
 });
 
+gulp.task("reload", function() {
+  plugins.browserSync.reload();
+});
+
 gulp.task("scan", function() {
   gulp.watch(config.dev.scssGlob, ["styles"]);
 
@@ -118,9 +122,7 @@ gulp.task("scan", function() {
     ["templates:reload"]
   );
 
-  gulp.watch(config.dev.jsGlob, function() {
-    plugins.browserSync.reload();
-  });
+  gulp.watch(config.dev.jsGlob, ["reload"]);
 });
 
 /*
@@ -332,6 +334,6 @@ gulp.task("default", ["compile", "server", "scan"]);
 gulp.task("compile", ["styles", "templates:reload"]);
 
 // Wipe first. Move, produce. Images if --full.
-gulp.task("build", ["build:reload", "build:images"]);
+gulp.task("build", ["build:inject", "build:images"]);
 
 gulp.task("guide", ["guide:inject"]);
