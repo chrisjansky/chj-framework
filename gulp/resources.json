@@ -8,6 +8,7 @@
     "site": [
       "bower_components/normalize-css/normalize.css",
       "app/assets/css/style.css",
+      "bower_components/smoothstate/jquery.smoothState.js",
       "app/assets/js/chj-base.js",
       "app/assets/js/chj-accordion.js",
       "app/assets/js/chj-toggle.js"

@@ -3,6 +3,8 @@
     "root": "app/",
     "styleguide": "app/guide/",
 
+    "resources": "gulp/resources.json",
+
     "pagesGlob": "app/**/*.html",
     "pagesIgnore": "!app/{assets,guide}/**/*.html",
 
