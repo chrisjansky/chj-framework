@@ -1,0 +1,15 @@
+[class^="o-list--"],
+[class*=" o-list--"] {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.o-list__item {
+  display: inline-block;
+
+  line-height: em($height--b);
+
+  & + & {
+    margin-left: em($ratio--l);
+  }
+}
