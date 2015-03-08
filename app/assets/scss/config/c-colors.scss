@@ -1,5 +1,4 @@
 $hue-1: 170;
-$hue-2: $hue-1 - 120;
 
 $neutral-1: 210;
 
@@ -7,10 +6,6 @@ $neutral-1: 210;
 $color1--300: hsb($hue-1, 016, 095);
 $color1--500: hsb($hue-1, 085, 080);
 $color1--700: hsb($hue-1, 050, 065);
-
-$color2--300: hsb($hue-2, 020, 100);
-$color2--500: hsb($hue-2, 075, 095);
-$color2--700: hsb($hue-2, 030, 060);
 
 // Increments of 9, only B52 missing
 $grey--000: hsb($neutral-1, 02, 97);
@@ -31,5 +26,5 @@ $c-visited:      $color1--500;
 $c-hover:        $color1--700;
 $c-active:       $color1--700;
 
-$c-select__bg:   $color2--300;
-$c-select__text: $color2--700;
+$c-select__bg:   $color1--300;
+$c-select__text: $color1--700;
