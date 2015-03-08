@@ -29,7 +29,7 @@ Styleguide 4.5.
   background-color: $color1--300;
 }
 
-// .o-note--negative {
-//   color: $color-4--dark;
-//   background-color: $color-4--light;
-// }
+.o-note--negative {
+  color: $grey--300;
+  background-color: $grey--100;
+}
