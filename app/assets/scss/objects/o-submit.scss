@@ -1,8 +1,11 @@
 /*
 Submit
 
+.o-submit - Basic variant.
+.o-submit--reset - Reset button.
+
 Markup:
-<input type="submit" class="o-submit" value="Make it happen">
+<input type="submit" class="{$modifiers}" value="Make it happen">
 
 Styleguide 4.34.
 */
@@ -20,26 +23,17 @@ Styleguide 4.34.
 
   @include state--hover {
     color: $c-hover;
-    border-color: $c-link;
   }
   @include state--focus {
-    // color: $c-link--dark;
-    // background-color: $c-link--light;
-    // border-color: $c-link;
+    color: $grey--900;
     outline: 0;
   }
 }
 
-// .o-submit--reset {
-//   color: $color-4;
+.o-submit--reset {
+  color: $grey--400;
 
-//   @include state--hover {
-//     color: $color-4--dark;
-//     border-color: $color-4;
-//   }
-//   @include state--focus {
-//     color: $color-4--dark;
-//     background-color: $color-4--light;
-//     border-color: $color-4;
-//   }
-// }
+  @include state--hover {
+    color: $grey--600;
+  }
+}
