@@ -1,21 +1,3 @@
-$multiplier-1: $golden;
-$multiplier-2: 1.15;
-
-// Units
-$unit--b:   16;
-
-$unit--xxh: round(modular-scale($unit--b, +9, $multiplier-2));
-$unit--xh:  round(modular-scale($unit--b, +8, $multiplier-2));
-$unit--h:   round(modular-scale($unit--b, +6, $multiplier-2));
-$unit--xxl: round(modular-scale($unit--b, +5, $multiplier-2));
-$unit--xl:  round(modular-scale($unit--b, +3, $multiplier-2));
-$unit--l:   round(modular-scale($unit--b, +2, $multiplier-2));
-$unit--m:   round(modular-scale($unit--b, +1, $multiplier-2));
-
-$unit--s:   round(modular-scale($unit--b, -1, $multiplier-2));
-$unit--xs:  round(modular-scale($unit--b, -2, $multiplier-2));
-$unit--xxs: round(modular-scale($unit--b, -5, $multiplier-2));
-
 // Spacing
 $spacing--l:   2;
 $spacing--m:   1.75;
@@ -23,20 +5,6 @@ $spacing--b:   1.5;
 $spacing--s:   1.35;
 $spacing--xs:  1.25;
 $spacing--xxs: 1.125;
-
-// Radius
-$radius--b: 2px;
-
-// Thickness
-$line--l: 3px;
-$line--b: 2px;
-$line--s: 1px;
-
-// Icons
-$icon--l: 48;
-$icon--m: 32;
-$icon--b: 24;
-$icon--s: 16;
 
 // Z-index
 $index--xl:  400;
@@ -47,29 +15,38 @@ $index--s:   50;
 $index--xs:  10;
 $index--xxs: 1;
 
-// Widths
-$width--xl: 800;
-$width--l:  740;
-$width--m:  560;
-$width--b:  400;
-$width--s:  220;
+// Source:
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_modular-scale.scss
+$multiplier-1: $minor-sixth;
+$multiplier-2: $major-second;
 
-// Heights
-$height--l: round(modular-scale($unit--b * $spacing--l, 1, $multiplier-1));
-$height--m: round(modular-scale($unit--b * $spacing--m, 1, $multiplier-1));
-$height--b: round(modular-scale($unit--b * $spacing--b, 1, $multiplier-1));
-$height--s: round(modular-scale($unit--b * $spacing--s, 1, $multiplier-1));
+// Bases
+$base-1: 16;
+$base-2: 18;
 
 // Ratios
-$ratio--xxh: round(modular-scale($unit--b, +7, $multiplier-1));
-$ratio--xh:  round(modular-scale($unit--b, +6, $multiplier-1));
-$ratio--h:   round(modular-scale($unit--b, +5, $multiplier-1));
-$ratio--xxl: round(modular-scale($unit--b, +4, $multiplier-1));
-$ratio--xl:  round(modular-scale($unit--b, +3, $multiplier-1));
-$ratio--l:   round(modular-scale($unit--b, +2, $multiplier-1));
-$ratio--m:   round(modular-scale($unit--b, +1, $multiplier-1));
-$ratio--b:   $unit--b;
-$ratio--s:   round(modular-scale($unit--b, -1, $multiplier-1));
-$ratio--xs:  round(modular-scale($unit--b, -2, $multiplier-1));
-$ratio--xxs: round(modular-scale($unit--b, -3, $multiplier-1));
-$ratio--t:   round(modular-scale($unit--b, -4, $multiplier-1));
+$ratio--xxh: round(modular-scale($base-1, +7, $multiplier-1));
+$ratio--xh:  round(modular-scale($base-1, +6, $multiplier-1));
+$ratio--h:   round(modular-scale($base-1, +5, $multiplier-1));
+$ratio--xxl: round(modular-scale($base-1, +4, $multiplier-1));
+$ratio--xl:  round(modular-scale($base-1, +3, $multiplier-1));
+$ratio--l:   round(modular-scale($base-1, +2, $multiplier-1));
+$ratio--m:   round(modular-scale($base-1, +1, $multiplier-1));
+$ratio--b:   $base-1;
+$ratio--s:   round(modular-scale($base-1, -1, $multiplier-1));
+$ratio--xs:  round(modular-scale($base-1, -2, $multiplier-1));
+$ratio--xxs: round(modular-scale($base-1, -3, $multiplier-1));
+$ratio--t:   round(modular-scale($base-1, -4, $multiplier-1));
+
+//Units
+$unit--xxh: round(modular-scale($base-2, +13, $multiplier-2));
+$unit--xh:  round(modular-scale($base-2, +12, $multiplier-2));
+$unit--h:   round(modular-scale($base-2, +9,  $multiplier-2));
+$unit--xxl: round(modular-scale($base-2, +6,  $multiplier-2));
+$unit--xl:  round(modular-scale($base-2, +5,  $multiplier-2));
+$unit--l:   round(modular-scale($base-2, +2,  $multiplier-2));
+$unit--m:   round(modular-scale($base-2, +1,  $multiplier-2));
+$unit--b:   $base-2;
+$unit--s:   round(modular-scale($base-2, -2,  $multiplier-2));
+$unit--xs:  floor(modular-scale($base-2, -3,  $multiplier-2));
+$unit--xxs: floor(modular-scale($base-2, -6,  $multiplier-2));

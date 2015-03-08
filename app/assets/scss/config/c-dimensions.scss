@@ -1,0 +1,26 @@
+// Widths
+$width--xl: 800;
+$width--l:  740;
+$width--m:  560;
+$width--b:  400;
+$width--s:  220;
+
+// Heights
+$height--l: round(modular-scale($unit--b * $spacing--l, 1, $multiplier-1));
+$height--m: round(modular-scale($unit--b * $spacing--m, 1, $multiplier-1));
+$height--b: round(modular-scale($unit--b * $spacing--b, 1, $multiplier-1));
+$height--s: round(modular-scale($unit--b * $spacing--s, 1, $multiplier-1));
+
+// Radius
+$radius--b: 2px;
+
+// Thickness
+$line--l: 3px;
+$line--b: 2px;
+$line--s: 1px;
+
+// Icons
+$icon--l: 48;
+$icon--m: 32;
+$icon--b: 24;
+$icon--s: 16;
