@@ -24,7 +24,7 @@ Styleguide 4.53.
 }
 
 .o-hero__overlay {
-  @include stretch-overlay;
+  @include position(absolute, 0 0 0 0);
   color: white;
   z-index: $index--b;
 }
