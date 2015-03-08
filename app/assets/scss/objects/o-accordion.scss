@@ -39,7 +39,7 @@ Styleguide 4.50.
 
   .accordion--is-active & {
     @include state--all {
-      color: $color2--700;
+      color: $color1--700;
     }
   }
 }
@@ -49,5 +49,5 @@ Styleguide 4.50.
 }
 
 .accordion--is-active {
-  background-color: $color2--300;
+  background-color: $color1--300;
 }
