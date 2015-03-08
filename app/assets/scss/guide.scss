@@ -1,34 +1,37 @@
-// Bourbon
+/*
+
+Config
+
+*/
 @import "bourbon";
 
-// Framework mixins
-@import "mixins/_mixins";
+@import "mixins/_helpers";
 @import "mixins/_center";
 @import "mixins/_color";
-@import "mixins/_reset";
 @import "mixins/_state";
-@import "mixins/_wrap";
 
-// Site config
 @import "config/c-colors";
 @import "config/c-units";
+@import "config/c-dimensions";
 @import "config/c-fonts";
 @import "config/c-transitions";
 @import "config/c-bourbon";
 
-// Neat
 @import "neat";
 
-// Vendor
 @import "vendor/neat";
 
-// Styleguide
-@import "guide/kss";
-@import "guide/specific";
+/*
 
-@import "guide/json";
+Styleguide
 
+*/
 @import "guide/g-config";
+@import "guide/g-json";
+
+@import "guide/g-kss";
+@import "guide/g-specific";
+
 @import "guide/g-temp";
 @import "guide/g-swatch";
 @import "guide/g-color";
