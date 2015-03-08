@@ -77,7 +77,7 @@ gulp.task("guide:parse", function () {
     .pipe(plugins.jsonSass({
       prefix: "$json: ",
     }))
-    .pipe(fs.createWriteStream(config.dev.scssRoot + "guide/json.scss"));
+    .pipe(fs.createWriteStream(config.dev.scssRoot + "guide/g-json.scss"));
 });
 
 
