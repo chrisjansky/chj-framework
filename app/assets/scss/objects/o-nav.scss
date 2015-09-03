@@ -23,7 +23,7 @@ Styleguide 4.4.
     display: none;
   }
 }
-@include media($tablet__up) {
+@include media($large) {
   .o-nav__toggle {
     display: none;
   }

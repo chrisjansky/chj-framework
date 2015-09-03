@@ -35,7 +35,7 @@ Styleguide 4.3.
 
 // Inline dotlist.
 .o-dotlist--inline {
-  @include media($phone--landscape__up) {
+  @include media($portable) {
     li {
       display: inline-block;
       padding-left: em($ratio--s);
@@ -56,7 +56,7 @@ Styleguide 4.3.
 }
 
 // Outside bullets.
-@include media($phone--landscape__up) {
+@include media($portable) {
   .o-dotlist--outside {
     li {
       padding-left: 0;

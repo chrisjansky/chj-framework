@@ -20,7 +20,7 @@ Styleguide 2.2.
   }
 }
 
-@include media($tablet__up) {
+@include media($large) {
   .l-inline {
     display: table;
     width: 100%;

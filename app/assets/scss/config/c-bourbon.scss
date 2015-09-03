@@ -3,9 +3,10 @@ $em-base: $unit--b;
 
 // Neat settings.
 $columns__desktop: 12;
-$columns__landscape: 8;
-$columns__portrait: 6;
+$columns__tablet: 9;
+$columns__phablet: 6;
 $columns__phone: 4;
+
 
 $grid-columns: $columns__desktop;
 $column: em($ratio--l);

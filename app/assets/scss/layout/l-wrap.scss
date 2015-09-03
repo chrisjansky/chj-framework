@@ -24,7 +24,7 @@ Styleguide 2.1.
   @include clearfix;
   @include collapse-children;
 
-  @include media($phone--landscape) {
+  @include media($phablet) {
     padding: em($ratio--m);
   }
   @include media($tablet) {
@@ -38,10 +38,10 @@ Styleguide 2.1.
 .l-wrap--small {
   @include padding(em($ratio--s) null);
   
-  @include media($tablet--portrait) {
+  @include media($phablet) {
     @include padding(em($ratio--b) null);
   }
-  @include media($tablet--landscape__up) {
+  @include media($large) {
     @include padding(em($ratio--m) null);
   }
 }
@@ -49,10 +49,10 @@ Styleguide 2.1.
 .l-wrap--big {
   @include padding(em($ratio--m) null);
 
-  @include media($tablet--portrait) {
+  @include media($phablet) {
     @include padding(em($ratio--l) null);
   }
-  @include media($tablet--landscape__up) {
+  @include media($large) {
     @include padding(em($ratio--xl) null);
   }
 }
