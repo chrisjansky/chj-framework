@@ -6,10 +6,10 @@ $width--b:  400;
 $width--s:  220;
 
 // Heights
-$height--l: round(modular-scale($unit--b * $spacing--l, 1, $multiplier-1));
-$height--m: round(modular-scale($unit--b * $spacing--m, 1, $multiplier-1));
-$height--b: round(modular-scale($unit--b * $spacing--b, 1, $multiplier-1));
-$height--s: round(modular-scale($unit--b * $spacing--s, 1, $multiplier-1));
+$height--l: round(modular-scale(1, $unit--b * $spacing--l, $multiplier-1));
+$height--m: round(modular-scale(1, $unit--b * $spacing--m, $multiplier-1));
+$height--b: round(modular-scale(1, $unit--b * $spacing--b, $multiplier-1));
+$height--s: round(modular-scale(1, $unit--b * $spacing--s, $multiplier-1));
 
 // Radius
 $radius--b: 2px;
