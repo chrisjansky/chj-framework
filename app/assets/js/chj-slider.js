@@ -24,11 +24,11 @@ $("[data-slider]").each(function(index, instance) {
 
   $(instance).find("[data-swiper--prev]").on("click", function(event) {
     event.preventDefault();
-    sliderSwiper.swipePrev();
+    sliderSwiper.slidePrev();
   });
   $(instance).find("[data-swiper--next]").on("click", function(event) {
     event.preventDefault();
-    sliderSwiper.swipeNext();
+    sliderSwiper.slideNext();
   });
 
 });

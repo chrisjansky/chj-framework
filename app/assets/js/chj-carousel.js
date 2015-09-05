@@ -25,11 +25,11 @@ $("[data-carousel]").each(function(index, instance) {
 
   $(instance).find("[data-swiper--prev]").on("click", function(event) {
     event.preventDefault();
-    carouselSwiper.swipePrev();
+    carouselSwiper.slidePrev();
   });
   $(instance).find("[data-swiper--next]").on("click", function(event) {
     event.preventDefault();
-    carouselSwiper.swipeNext();
+    carouselSwiper.slideNext();
   });
 
 });
