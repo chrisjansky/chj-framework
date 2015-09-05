@@ -7,11 +7,17 @@
   "injectDev": {
     "site": [
       "bower_components/normalize-css/normalize.css",
+      "bower_components/idangerous-swiper/dist/css/swiper.css",
+      "bower_components/featherlight/src/featherlight.css",
       "app/assets/css/style.css",
-      "bower_components/smoothstate/jquery.smoothState.js",
+      "bower_components/idangerous-swiper/dist/js/swiper.jquery.js",
+      "bower_components/featherlight/src/featherlight.js",
       "app/assets/js/chj-base.js",
+      "app/assets/js/chj-tabs.js",
       "app/assets/js/chj-accordion.js",
-      "app/assets/js/chj-toggle.js"
+      "app/assets/js/chj-toggle.js",
+      "app/assets/js/chj-carousel.js",
+      "app/assets/js/chj-slider.js"
     ],
     "vendor": [
       "bower_components/modernizr/modernizr.js"
