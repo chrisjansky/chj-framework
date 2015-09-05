@@ -1,7 +1,7 @@
 /*
 Carousel
 
-Using Swiper Javascript library, pretty much identical to o-slider. Example with Featherlight links inside.
+Using Swiper Javascript library, pretty much identical to o-slider. Example with Featherlight links inside. Customize by defining item width.
 
 Markup:
 <div class="o-carousel swiper-container" data-carousel>
@@ -36,6 +36,8 @@ Styleguide 4.55.
   }
 }
 .o-carousel__item {
+  // Add item width.
+
   & + & {
     padding-left: em($ratio--b);
   }
