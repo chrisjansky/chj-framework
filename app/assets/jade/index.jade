@@ -1,8 +1,12 @@
 extends templates/_site
 
 block template-content
+  #js-smoothstate.l-wrap.l-wrap--no-bottom
+    .smoothstate-animate
+      h1.t-head--high Smoothstate Example
+    a.o-button(href="sub/smoothstate-page") Smoothstate link
+
   .l-wrap
-    a(href="sub/test") Test
     include partials/_nav
     hr
     include partials/_typography

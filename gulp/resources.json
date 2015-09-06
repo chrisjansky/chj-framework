@@ -12,12 +12,14 @@
       "app/assets/css/style.css",
       "bower_components/idangerous-swiper/dist/js/swiper.jquery.js",
       "bower_components/featherlight/src/featherlight.js",
+      "bower_components/smoothstate/src/jquery.smoothState.js",
       "app/assets/js/chj-base.js",
       "app/assets/js/chj-tabs.js",
       "app/assets/js/chj-accordion.js",
       "app/assets/js/chj-toggle.js",
       "app/assets/js/chj-carousel.js",
-      "app/assets/js/chj-slider.js"
+      "app/assets/js/chj-slider.js",
+      "app/assets/js/chj-smoothstate.js"
     ],
     "vendor": [
       "bower_components/modernizr/modernizr.js"
