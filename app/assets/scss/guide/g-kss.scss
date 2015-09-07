@@ -1,13 +1,13 @@
-$kss-width: 240;
+$kss-width: 200;
 
 // Wrappers
 .kss-header {
-  padding: em($ratio--b);
+  padding: em($ratio--b) 0 em($ratio--b) em($ratio--b);
 
   @include collapse-children;
 
   @include media($large) {
-    padding: em($ratio--m);
+    padding: em($ratio--m) 0 em($ratio--m) em($ratio--m);
   }
   @include media($desktop) {
     @include position(fixed, 0 null 0 0);
@@ -32,8 +32,6 @@ $kss-width: 240;
 }
 
 .kss-main {
-  background-color: $grey--000;
-
   padding: em($ratio--s);
 
 
@@ -120,9 +118,6 @@ $kss-width: 240;
   }
 }
 .kss-item__content {
-  background-color: white;
-
-  box-shadow: 0 em($ratio--xxs) em($ratio--xs) $grey--200;
 }
 
 .kss-example {
@@ -134,10 +129,6 @@ $kss-width: 240;
 .kss-description {
   @include collapse-children;
 
-  @include media($portable) {
-    margin-top: em($ratio--b);
-  }
-
   @include media($desktop) {
     @include span-columns(3);
   }
@@ -148,15 +139,10 @@ $kss-width: 240;
 }
 
 .kss-variant {
-  padding: em($ratio--b) em($ratio--s);
+  @include padding(em($ratio--b) null);
 
-  @include media($large) {
-    padding: em($ratio--b);
-  }
   @include media($desktop) {
     @include clearfix;
-
-    padding-left: em($ratio--m);
   }
 
   & + & {
@@ -171,5 +157,29 @@ $kss-width: 240;
 }
 
 .kss-markup {
+  @include clearfix;
+
+  margin-top: em($ratio--b);
+
   font-size: em($unit--xs);
 }
+
+.kss-toggle {
+  float: left;
+
+  margin-right: em($ratio--b);
+}
+
+.kss-preformat {
+  display: none;
+
+  .kss-markup & {
+    // prism.css specificity issue.
+    @include margin(0 null);
+  }
+
+  .kss-markup--open & {
+    display: block;
+  }
+}
+
