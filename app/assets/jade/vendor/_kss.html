@@ -1,6 +1,6 @@
 <!-- kss-header -->
 <header class="kss-header">
-  <a href="index" class="kss-header__link"><h1 class="t-head--high">Styleguide</h1></a>
+  <a href="index" class="kss-header__link"><h1 class="t-head--lower">Styleguide</h1></a>
 
   <nav class="kss-nav">
     <ul class="kss-menu--main" data-menu data-kss-ref="{{rootNumber}}">
@@ -51,7 +51,7 @@
     {{#eachSection rootNumber}}
       {{#ifDepth 1}}
         <!-- 0.0 heading -->
-        <h1 class="kss-main__title t-head--top">
+        <h1 class="kss-main__title t-head--high">
           <span class="kss-reference">{{reference}}</span> 
           {{header}}
         </h1>
@@ -59,7 +59,7 @@
         <!-- 0.1 heading -->
         <section id="section-{{reference}}" class="kss-item kss-item--depth-{{refDepth}}">
           <header class="kss-item__info">
-            <h2 class="kss-item__title t-head--low">
+            <h2 class="kss-item__title t-head--lower">
               <span class="kss-reference">{{reference}}</span> 
               {{header}}
             </h2>
@@ -92,7 +92,7 @@
               <article class="kss-variant kss-variant--modifier">
                 <div class="kss-example">{{modifierMarkup}}</div>
                 <div class="kss-description">
-                  <h3 class="kss-variant__title t-head--lower">{{name}}</h3>
+                  <h3 class="kss-variant__title t-head--bottom">{{name}}</h3>
                   <small class="kss-small">{{{description}}}</small>
                 </div>
               </article>
@@ -100,7 +100,8 @@
 
             <!-- Markup -->
             <div class="kss-markup">
-              <pre><code class="language-markup">{{markup}}</code></pre>
+              <button class="kss-toggle" data-toggle="kss-markup--open" data-target=".kss-markup">Toggle Markup</button>
+              <pre class="kss-preformat"><code class="language-markup">{{markup}}</code></pre>
             </div>
 
           <!-- End list -->
