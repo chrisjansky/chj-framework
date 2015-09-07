@@ -23,7 +23,7 @@
   <a href="index" class="kss-header__link"><h1 class="t-head--lower">Styleguide</h1></a>
 
   <nav class="kss-nav">
-    <ul class="kss-menu--main" data-menu data-kss-ref="{{rootNumber}}">
+    <ul class="kss-menu--main" data-menu data-kss-ref="{{rootName}}">
       {{#eachRoot}}
         <li data-menu-item>
           <a class="kss-nav__link" href="section-{{reference}}">
@@ -37,7 +37,7 @@
     {{#if overview}}
     {{else}}
       <ul class="kss-menu--sub" data-submenu>
-        {{#eachSection rootNumber}}
+        {{#eachSection rootName}}
         {{#ifDepth 1}}
         {{else}}
           <li>
@@ -68,7 +68,7 @@
       the "#ifDepth 1" block as seen below.
    }}
     
-    {{#eachSection rootNumber}}
+    {{#eachSection rootName}}
       {{#ifDepth 1}}
         <!-- 0.0 heading -->
         <h1 class="kss-main__title t-head--high">
@@ -77,7 +77,7 @@
         </h1>
       {{else}}
         <!-- 0.1 heading -->
-        <section id="section-{{reference}}" class="kss-item kss-item--depth-{{refDepth}}">
+        <section id="section-{{reference}}" class="kss-item kss-item--depth-{{depth}}">
           <header class="kss-item__info">
             <h2 class="kss-item__title t-head--lower">
               <span class="kss-reference">{{reference}}</span> 
@@ -98,7 +98,7 @@
             <!-- Show default if no modifiers present -->
             {{#unless modifiers}}
               <article class="kss-variant kss-variant--default">
-                <div class="kss-example">{{modifierMarkup}}</div>
+                <div class="kss-example">{{{markup}}}</div>
                 {{#if description}}
                   <div class="kss-description">
                     <small class="kss-small">{{{description}}}</small>
@@ -110,7 +110,7 @@
             <!-- Variants -->
             {{#eachModifier}}
               <article class="kss-variant kss-variant--modifier">
-                <div class="kss-example">{{modifierMarkup}}</div>
+                <div class="kss-example">{{{markup}}}</div>
                 <div class="kss-description">
                   <h3 class="kss-variant__title t-head--bottom">{{name}}</h3>
                   <small class="kss-small">{{{description}}}</small>
@@ -121,7 +121,7 @@
             <!-- Markup -->
             <div class="kss-markup">
               <button class="kss-toggle" data-toggle="kss-markup--open" data-target=".kss-markup">Toggle Markup</button>
-              <pre class="kss-preformat"><code class="language-markup">{{markup}}</code></pre>
+              <pre class="kss-preformat"><code class="language-markup">{{{markup}}}</code></pre>
             </div>
 
           <!-- End list -->
