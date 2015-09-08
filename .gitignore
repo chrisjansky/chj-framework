@@ -40,7 +40,7 @@ _source_files
 
 dist
 
-app/guide
+app/guide/*.html
 app/assets/css
 app/assets/fonts
 app/assets/images/fallbacks
