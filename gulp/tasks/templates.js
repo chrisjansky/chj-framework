@@ -2,7 +2,7 @@ var
   gulp = require("gulp"),
   fs = require("fs"),
   plugins = require("gulp-load-plugins")({
-    pattern: ["glob", "gulp-*", "browser-*"]
+    pattern: ["glob", "gulp-*", "beepbeep", "browser-*"]
   }),
   config = require("../gulpconfig.json");
 
@@ -37,7 +37,12 @@ gulp.task("templates:read", function() {
 
 gulp.task("templates:compile", ["templates:read"], function() {
   return gulp.src([config.dev.jadeGlob, config.dev.jadeIgnore])
-    .pipe(plugins.plumber())
+  
+    .pipe(plugins.plumber(function(error) {
+      plugins.beepbeep();
+      console.log(error);
+      this.emit("end");
+    }))
 
     .pipe(plugins.jade({
       pretty: true,
