@@ -82,7 +82,3 @@ gulp.task("templates", ["templates:compile", "templates:resources"], function() 
     ))
     .pipe(gulp.dest(config.dev.root));
 });
-
-gulp.task("templates:reload", ["templates"], function() {
-  plugins.browserSync.reload();
-});

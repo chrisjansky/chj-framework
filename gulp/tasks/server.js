@@ -6,7 +6,7 @@ var
   config = require("../gulpconfig.json");
 
 gulp.task("server", ["styles", "templates"], function() {
-  plugins.browserSync({
+  plugins.browserSync.init({
     server: {
       baseDir: config.dev.root,
       routes: {

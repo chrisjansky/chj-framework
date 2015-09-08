@@ -16,10 +16,8 @@ gulp.task("watch", function() {
     ["templates:reload"]
   );
 
-  gulp.watch(
-    config.dev.jsGlob,
-    function() {
-      plugins.browserSync.reload();
-    }
-  );
+  gulp.task("templates:reload", ["templates"], plugins.browserSync.reload)
+
+  gulp.watch(config.dev.jsGlob, plugins.browserSync.reload);
+
 });
