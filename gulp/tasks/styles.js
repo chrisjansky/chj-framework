@@ -7,12 +7,10 @@ var
 
 gulp.task("styles", function () {
   return gulp.src(config.dev.scssBase)
-    .pipe(plugins.plumber())
 
     .pipe(plugins.sass({
-      errLogToConsole: true,
       includePaths: require("node-neat").with("bower_components/")
-    }))
+    }).on("error", plugins.sass.logError))
 
     .pipe(gulp.dest(config.dev.cssRoot))
     
