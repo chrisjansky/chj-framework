@@ -5,7 +5,7 @@ Submit
 .o-submit--reset - Reset button.
 
 Markup:
-<input type="submit" class="{$modifiers}" value="Make it happen">
+<input type="submit" class="{{modifier_class}}" value="Make it happen">
 
 Styleguide 4.34.
 */

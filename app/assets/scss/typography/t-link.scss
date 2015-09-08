@@ -6,10 +6,10 @@ Text link
 .t-link--dark - Dark color.
 
 Markup:
-<a href="#" class="{$modifiers}">Anchor link</a>
-<a href="#" class="{$modifiers} l-section--light">Anchor link</a>
-<a href="#" class="{$modifiers} l-section--dark">Anchor link</a>
-<a href="#" class="{$modifiers} l-section--black">Anchor link</a>
+<a href="#" class="{{modifier_class}}">Anchor link</a>
+<a href="#" class="{{modifier_class}} l-section--light">Anchor link</a>
+<a href="#" class="{{modifier_class}} l-section--dark">Anchor link</a>
+<a href="#" class="{{modifier_class}} l-section--black">Anchor link</a>
 
 Styleguide 3.4.
 */

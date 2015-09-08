@@ -4,7 +4,7 @@ Inline
 Table-cell display to put things beside.
 
 Markup:
-<div class="l-inline {$modifiers}">
+<div class="l-inline {{modifier_class}}">
   <div class="l-inline__cell">Text.</div>
   <div class="l-inline__cell">Another text.</div>
 </div>

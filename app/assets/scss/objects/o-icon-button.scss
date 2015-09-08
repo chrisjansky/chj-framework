@@ -7,7 +7,7 @@ Icon button
 .o-icon-button--small - Small icon.
 
 Markup:
-<a href="#" class="{$modifiers} ss-write"></a>
+<a href="#" class="{{modifier_class}} ss-write"></a>
 
 Styleguide 4.21.
 */

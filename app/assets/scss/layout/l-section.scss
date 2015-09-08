@@ -8,7 +8,7 @@ Added padding for styleguide purposes.
 .l-section--black - Very dark background.
 
 Markup:
-<div class="{$modifiers}">A new section of layout.</div>
+<div class="{{modifier_class}}">A new section of layout.</div>
 
 Styleguide 2.5.
 */

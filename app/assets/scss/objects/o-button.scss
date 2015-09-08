@@ -7,7 +7,7 @@ Button
 .o-button--selected - Selected.
 
 Markup:
-<a href="#" class="{$modifiers}">Button</a>
+<a href="#" class="{{modifier_class}}">Button</a>
 
 Styleguide 4.1.
 */

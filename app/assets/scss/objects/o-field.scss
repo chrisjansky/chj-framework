@@ -5,7 +5,7 @@ Field
 .o-field--number - Hide icon on :hover and :focus.
 
 Markup:
-<div class="{$modifiers}">
+<div class="{{modifier_class}}">
   <label class="o-field__label">Label</label>
   <input type="text" placeholder="Value" class="o-field__content o-input">
   <span class="o-field__icon ss-notebook"></span>

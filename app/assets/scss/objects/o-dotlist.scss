@@ -6,7 +6,7 @@ Dotlist
 .o-dotlist--inline - Inline-block display.
 
 Markup:
-<ul class="{$modifiers}">
+<ul class="{{modifier_class}}">
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>

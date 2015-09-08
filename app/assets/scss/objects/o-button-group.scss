@@ -5,7 +5,7 @@ Button group
 .o-button-group--stacked - Stacked buttons.
 
 Markup:
-<div class="{$modifiers}">
+<div class="{{modifier_class}}">
   <a href="#" class="o-button--solid">Button</a>
   <a href="#" class="o-button--outline">Button</a>
 </div>

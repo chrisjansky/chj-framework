@@ -6,7 +6,7 @@ Text size
 .t-text--tiny - Unimportant text.
 
 Markup:
-<p class="{$modifiers}">A somewhat long and pretty readable paragraph.</p>
+<p class="{{modifier_class}}">A somewhat long and pretty readable paragraph.</p>
 
 Styleguide 3.3.
 */

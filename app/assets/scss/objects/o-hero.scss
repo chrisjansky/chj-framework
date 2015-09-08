@@ -6,7 +6,7 @@ Hero
 .o-hero--center - Center the overlay.
 
 Markup:
-<div class="{$modifiers}">
+<div class="{{modifier_class}}">
   <div class="o-hero__overlay">
     <div class="o-hero__content"><p>Hero overlay text.</p></div>
   </div>

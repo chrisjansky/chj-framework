@@ -5,7 +5,7 @@ Caps
 .t-caps--small - Small-caps.
 
 Markup:
-<strong class="{$modifiers}">Emphasis text</strong>
+<strong class="{{modifier_class}}">Emphasis text</strong>
 
 Styleguide 3.2.
 */

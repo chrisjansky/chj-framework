@@ -5,7 +5,7 @@ Note
 .o-note--positive - Success message.
 
 Markup:
-<mark class="{$modifiers}">Look ma, here!</mark>
+<mark class="{{modifier_class}}">Look ma, here!</mark>
 
 Styleguide 4.5.
 */
