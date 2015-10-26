@@ -15,7 +15,7 @@ gulp.task("guide:wipe", function() {
 // Construct KSS template using JADE and HTML partial.
 gulp.task("guide:scaffold", ["guide:wipe"], function() {
   return gulp.src(config.dev.jadeRoot + "templates/_guide.jade")
-    .pipe(plugins.plumber())
+
     .pipe(plugins.jade({
       pretty: true,
       basedir: config.dev.root
