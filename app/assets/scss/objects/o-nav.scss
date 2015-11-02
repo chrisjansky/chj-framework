@@ -18,22 +18,37 @@ Markup:
 Styleguide 4.4.
 */
 
-@include media($phone) {
-  .o-nav__list {
+.o-nav__toggle {
+  // Reset <button> styles
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  
+  background-color: transparent;
+  padding: 0;
+  border: none;
+
+  @include state--focus {
+    outline: none;
+  }
+
+  @include media($large) {
     display: none;
   }
 }
-@include media($large) {
-  .o-nav__toggle {
+
+.o-nav__list {
+  @include media($phone) {
     display: none;
   }
 }
+
 .o-nav__link--selected {
   border-bottom: $line--s solid;
   @include state--all {
     color: $c-active;
   }
 }
+
 // Toggled with [data-nav].
 .nav--is-open {
   & + .o-nav__list {
