@@ -1,5 +1,4 @@
 $hue-1: 210;
-$hue-2: $hue-1 + 120;
 
 $neutral-1: 210;
 
@@ -7,9 +6,6 @@ $neutral-1: 210;
 $color1--300: hsb($hue-1, 015, 095);
 $color1--500: hsb($hue-1, 085, 085);
 $color1--700: hsb($hue-1, 080, 050);
-
-$color2--300: hsb($hue-2, 015, 095);
-$color2--500: hsb($hue-2, 085, 080);
 
 // Increments of 9, only B52 missing
 $grey--000: hsb($neutral-1, 02, 97);

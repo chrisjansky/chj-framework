@@ -16,19 +16,6 @@
          "value": "$color1--700"
         }
       ]
-    },
-    {
-      "name": "secondary",
-      "shades": [
-        {
-          "name": "light",
-          "value": "$color2--300"
-        },
-        {
-          "name": "base",
-          "value": "$color2--500"
-        }
-      ]
     }
   ],
   "greys": [
