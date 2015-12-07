@@ -1,0 +1,35 @@
+// Bases
+$base-1: 16;
+$base-2: 18;
+
+// Multipliers
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_modular-scale.scss
+$multiplier-1: $minor-sixth;
+$multiplier-2: $major-second;
+
+// Ratios
+$ratio--xxh: round(modular-scale(+7, $base-1, $multiplier-1));
+$ratio--xh:  round(modular-scale(+6, $base-1, $multiplier-1));
+$ratio--h:   round(modular-scale(+5, $base-1, $multiplier-1));
+$ratio--xxl: round(modular-scale(+4, $base-1, $multiplier-1));
+$ratio--xl:  round(modular-scale(+3, $base-1, $multiplier-1));
+$ratio--l:   round(modular-scale(+2, $base-1, $multiplier-1));
+$ratio--m:   round(modular-scale(+1, $base-1, $multiplier-1));
+$ratio--b:   $base-1;
+$ratio--s:   round(modular-scale(-1, $base-1, $multiplier-1));
+$ratio--xs:  round(modular-scale(-2, $base-1, $multiplier-1));
+$ratio--xxs: round(modular-scale(-3, $base-1, $multiplier-1));
+$ratio--t:   round(modular-scale(-4, $base-1, $multiplier-1));
+
+//Units
+$unit--xxh: round(modular-scale(+13, $base-2, $multiplier-2));
+$unit--xh:  round(modular-scale(+12, $base-2, $multiplier-2));
+$unit--h:   round(modular-scale( +9, $base-2, $multiplier-2));
+$unit--xxl: round(modular-scale( +6, $base-2, $multiplier-2));
+$unit--xl:  round(modular-scale( +5, $base-2, $multiplier-2));
+$unit--l:   round(modular-scale( +2, $base-2, $multiplier-2));
+$unit--m:   round(modular-scale( +1, $base-2, $multiplier-2));
+$unit--b:   $base-2;
+$unit--s:   round(modular-scale( -2, $base-2, $multiplier-2));
+$unit--xs:  floor(modular-scale( -3, $base-2, $multiplier-2));
+$unit--xxs: floor(modular-scale( -6, $base-2, $multiplier-2));

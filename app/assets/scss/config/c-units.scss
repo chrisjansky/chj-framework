@@ -1,3 +1,8 @@
+// Tracking
+$tracking--m: .25em;
+$tracking--b: .125em;
+$tracking--s: .0625em;
+
 // Spacing
 $spacing--l:   2;
 $spacing--m:   1.75;
@@ -6,47 +11,39 @@ $spacing--s:   1.35;
 $spacing--xs:  1.25;
 $spacing--xxs: 1.125;
 
+// Widths
+$width--xxl: 1280;
+$width--xl:  1024;
+$width--l:   720;
+$width--m:   640;
+$width--b:   400;
+$width--s:   320;
+
+// Heights
+$height--l: round(modular-scale(1, $unit--b * $spacing--l, $multiplier-1));
+$height--m: round(modular-scale(1, $unit--b * $spacing--m, $multiplier-1));
+$height--b: round(modular-scale(1, $unit--b * $spacing--b, $multiplier-1));
+$height--s: round(modular-scale(1, $unit--b * $spacing--s, $multiplier-1));
+
+// Thickness
+$line--l: 3px;
+$line--b: 2px;
+$line--s: 1px;
+
+// Icons
+$icon--l: 48;
+$icon--m: 32;
+$icon--b: 24;
+$icon--s: 16;
+
+// Radius
+$radius--b: 2px;
+
 // Z-index
-$index--xl:  400;
-$index--l:   300;
-$index--m:   200;
-$index--b:   100;
-$index--s:   50;
-$index--xs:  10;
-$index--xxs: 1;
-
-// Source:
-// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_modular-scale.scss
-$multiplier-1: $minor-sixth;
-$multiplier-2: $major-second;
-
-// Bases
-$base-1: 16;
-$base-2: 18;
-
-// Ratios
-$ratio--xxh: round(modular-scale(+7, $base-1, $multiplier-1));
-$ratio--xh:  round(modular-scale(+6, $base-1, $multiplier-1));
-$ratio--h:   round(modular-scale(+5, $base-1, $multiplier-1));
-$ratio--xxl: round(modular-scale(+4, $base-1, $multiplier-1));
-$ratio--xl:  round(modular-scale(+3, $base-1, $multiplier-1));
-$ratio--l:   round(modular-scale(+2, $base-1, $multiplier-1));
-$ratio--m:   round(modular-scale(+1, $base-1, $multiplier-1));
-$ratio--b:   $base-1;
-$ratio--s:   round(modular-scale(-1, $base-1, $multiplier-1));
-$ratio--xs:  round(modular-scale(-2, $base-1, $multiplier-1));
-$ratio--xxs: round(modular-scale(-3, $base-1, $multiplier-1));
-$ratio--t:   round(modular-scale(-4, $base-1, $multiplier-1));
-
-//Units
-$unit--xxh: round(modular-scale(+13, $base-2, $multiplier-2));
-$unit--xh:  round(modular-scale(+12, $base-2, $multiplier-2));
-$unit--h:   round(modular-scale(+9, $base-2, $multiplier-2));
-$unit--xxl: round(modular-scale(+6, $base-2, $multiplier-2));
-$unit--xl:  round(modular-scale(+5, $base-2, $multiplier-2));
-$unit--l:   round(modular-scale(+2, $base-2, $multiplier-2));
-$unit--m:   round(modular-scale(+1, $base-2, $multiplier-2));
-$unit--b:   $base-2;
-$unit--s:   round(modular-scale(-2, $base-2, $multiplier-2));
-$unit--xs:  floor(modular-scale(-3, $base-2, $multiplier-2));
-$unit--xxs: floor(modular-scale(-6, $base-2, $multiplier-2));
+$index--xl:    400;
+$index--l:     300;
+$index--m:     200;
+$index--b:     100;
+$index--s:     50;
+$index--xs:    10;
+$index--xxs:   1;
