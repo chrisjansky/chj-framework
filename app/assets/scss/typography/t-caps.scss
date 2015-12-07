@@ -12,7 +12,7 @@ Styleguide 3.2.
 
 [class^="t-caps"],
 [class*=" t-caps"] {
-  letter-spacing: em($ratio--t);
+  letter-spacing: $tracking--b;
   text-transform: uppercase;
   vertical-align: middle;
 }
