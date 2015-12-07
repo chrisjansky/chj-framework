@@ -7,6 +7,8 @@ Added offwhite background for styleguide purposes.
 .l-wrap--big - Bigger.
 .l-wrap--vertical - Only vertical.
 .l-wrap--horizontal - Only horizontal.
+.l-wrap--top - Only top padding.
+.l-wrap--bottom - Only bottom padding.
 .l-wrap--no-top - No top padding.
 .l-wrap--no-bottom - No bottom padding.
 
@@ -16,23 +18,17 @@ Markup:
 Styleguide 2.1.
 */
 
-.l-wrap {
-  padding: em($ratio--b);
-
+[class^="l-wrap"],
+[class*=" l-wrap"] {
   margin-right: auto;
   margin-left: auto;
+  
   @include clearfix;
   @include collapse-children;
+}
 
-  @include media($phablet) {
-    padding: em($ratio--m);
-  }
-  @include media($tablet) {
-    padding: em($ratio--l);
-  }
-  @include media($desktop) {
-    padding: em($ratio--xl);
-  }
+.l-wrap {
+  @include offset();
 }
 
 .l-wrap--small {
@@ -58,11 +54,18 @@ Styleguide 2.1.
 }
 
 .l-wrap--vertical {
-  @include padding(null 0);
+  @include offset(vertical);
 }
 .l-wrap--horizontal {
-  @include padding(0 null);
+  @include offset(horizontal);
 }
+.l-wrap--top {
+  @include offset(top);
+}
+.l-wrap--bottom {
+  @include offset(bottom);
+}
+
 .l-wrap--no-top {
   padding-top: 0;
 }
