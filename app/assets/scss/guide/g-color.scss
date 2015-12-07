@@ -20,68 +20,37 @@ $color-attributes: (
 
   $color-groups: map-get($json, "colors");
 
-  // Count how many color groups are there
-  @if (type-of($color-groups) == "list") {
-    @each $color-group in $color-groups {
+  @each $color-group in $color-groups {
 
-      $index: index($color-groups, $color-group);
+    $index: index($color-groups, $color-group);
 
+    // It's a map if only one group is present
+    @if (type-of($color-groups) == "map") {
+      $color-name: nth(nth($color-groups, 1), 2);
+      $color-shades: nth(nth($color-groups, 2), 2);
+    } @else {
       $color-name: map-get($color-group, "name");
       $color-shades: map-get($color-group, "shades");
-
-      /* Color group: #{$color-name} */
-
-      // Check the number of shades and react accordingly
-      @if (type-of($color-shades) == "list") {
-        @each $color-shade in $color-shades {
-          $shade-name: map-get($color-shade, "name");
-          $shade-value: map-get($color-shade, "value");
-
-          .#{$attribute-name}-#{$index}--#{$shade-name} {
-            @if ($shade-value == "transparent") {
-              visibility: hidden;
-            } @else {
-              #{$attribute-property}: $shade-value;
-            }
-          }
-        }
-      } @else {
-        // Skip the @each loop if only one shade present
-        $shade-name: map-get($color-shades, "name");
-        $shade-value: map-get($color-shades, "value");
-
-        .#{$attribute-name}-#{$index}--#{$shade-name} {
-          #{$attribute-property}: $shade-value;
-        }
-      }
     }
-  } @else {
-    // Skip the @each loop if only one color group present
-    $color-name: map-get($color-groups, "name");
-    $color-shades: map-get($color-groups, "shades");
 
     /* Color group: #{$color-name} */
 
-    // Check the number of shades and react accordingly
-    @if (type-of($color-shades) == "list") {
-      @each $color-shade in $color-shades {
+    @each $color-shade in $color-shades {
+      // It's a map if only one shade is present
+      @if (type-of($color-shades) == "map") {
+        $shade-name: nth(nth($color-shades, 1), 2);
+        $shade-value: nth(nth($color-shades, 2), 2);
+      } @else {
         $shade-name: map-get($color-shade, "name");
         $shade-value: map-get($color-shade, "value");
-
-        .#{$attribute-name}-1--#{$shade-name} {
-          @if ($shade-value == "transparent") {
-            visibility: hidden;
-          } @else {
-            #{$attribute-property}: $shade-value;
-          }
-        }
       }
-    } @else {
-      $shade-name: map-get($color-shades, "name");
-      $shade-value: map-get($color-shades, "value");
 
-      .#{$attribute-name}-1--#{$shade-name} {
-        #{$attribute-property}: $shade-value;
+      .#{$attribute-name}-#{$index}--#{$shade-name} {
+        @if ($shade-value == "transparent") {
+          visibility: hidden;
+        } @else {
+          #{$attribute-property}: $shade-value;
+        }
       }
     }
   }
