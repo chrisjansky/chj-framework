@@ -1,36 +1,15 @@
-/*
-
-Config
-
-*/
-@import "bourbon";
-
-@import "mixins/_helpers";
-@import "mixins/_center";
-@import "mixins/_color";
-@import "mixins/_state";
-@import "mixins/_offset";
-
-@import "config/c-colors";
-@import "config/c-scales";
-@import "config/c-units";
-@import "config/c-fonts";
-@import "config/c-transitions";
-@import "config/c-bourbon";
-
-@import "neat";
-
-@import "vendor/neat";
-@import "vendor/featherlight";
-@import "vendor/smoothstate";
-@import "vendor/symbolset";
-@import "vendor/symbolset-custom";
+@import "_shared";
 
 /*
 
 Site
 
 */
+@import "vendor/featherlight";
+@import "vendor/smoothstate";
+@import "vendor/symbolset";
+@import "vendor/symbolset-custom";
+
 @import "base/b-default";
 @import "base/b-interactive";
 @import "base/b-typography";
