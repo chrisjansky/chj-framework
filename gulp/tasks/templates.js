@@ -38,7 +38,7 @@ gulp.task("templates:read", function() {
 gulp.task("templates:compile", ["templates:read"], function() {
   return gulp.src([config.dev.jadeGlob, config.dev.jadeIgnore])
   
-    .pipe(plugins.plumber(function(error) {
+    .pipe(plugins.plumber(function (error) {
       plugins.beepbeep();
       console.log(error);
       this.emit("end");
@@ -48,6 +48,10 @@ gulp.task("templates:compile", ["templates:read"], function() {
       pretty: true,
       locals: JSON.parse(jsonOutput),
       basedir: config.dev.root
+    }))
+
+    .pipe(plugins.rename(function (path) {
+      path.extname = config.dev.pagesFormat;
     }))
 
     .pipe(gulp.dest(config.dev.root));

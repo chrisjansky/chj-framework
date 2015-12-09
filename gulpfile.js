@@ -6,7 +6,7 @@ require("./gulp/tasks/templates.js");
 require("./gulp/tasks/styles.js");
 require("./gulp/tasks/watch.js");
 
-gulp.task("default", ["server", "watch"]);
+gulp.task("default", ["server:html", "watch"]);
 
 /* Advanced */
 require("./gulp/tasks/guide.js");
