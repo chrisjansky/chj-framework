@@ -14,6 +14,8 @@ gulp.task("styles", function () {
       this.emit("end");
     }))
 
+    .pipe(plugins.sassBulkImport())
+
     .pipe(plugins.sass({
       includePaths: require("node-neat").with("bower_components/")
     }))
