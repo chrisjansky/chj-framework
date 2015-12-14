@@ -39,7 +39,7 @@
   },
   "dist": {
     "root": "dist/",
-    "styleguide": "dist/guide"
+    "styleguide": "dist/guide/"
   },
   "ftp": {
     "host": "chrisjansky.cz",
