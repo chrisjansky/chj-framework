@@ -36,14 +36,13 @@ $RECYCLE.BIN/
 
 ## Custom
 _ignore
-_source_files
+_source
+_build
 
 dist
 
 app/guide/*.html
 app/assets/css
 app/assets/fonts
-app/assets/images/fallbacks
-app/assets/svg
 
 app/**/*.html
