@@ -1,11 +1,15 @@
 extends _shared
 
 append template-head
+  <!-- build:css assets/css/style-min.css -->
   <!-- site:css -->
   <!-- endinject -->
+  <!-- endbuild -->
 
+  <!-- build:js assets/js/vendor-min.js -->
   <!-- vendor:js -->
   <!-- endinject -->
+  <!-- endbuild -->
 
 block template-body
   include ../mixins/_dummy
@@ -14,5 +18,7 @@ block template-content
   p Basic template.
 
 append template-foot
+  <!-- build:js assets/js/site-min.js -->
   <!-- site:js -->
   <!-- endinject -->
+  <!-- endbuild -->

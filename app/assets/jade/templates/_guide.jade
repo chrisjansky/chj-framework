@@ -1,34 +1,28 @@
 block template-variables
-  - var pageSettings = {title: "Styleguide", description: "Test."}
+  - var pageSettings = {title: "Styleguide", description: "Styleguide description."}
 
 extends _shared
 
 append template-head
-  <!-- build:css ../assets/css/style-min.css -->
   <!-- site:css -->
   <!-- endinject -->
-  <!-- endbuild -->
 
-  <!-- build:css ../assets/css/guide-min.css -->
+  <!-- build:css assets/css/guide-min.css -->
   <!-- guide:css -->
   <!-- endinject -->
   <!-- endbuild -->
 
-  <!-- build:js ../assets/js/vendor-min.js -->
   <!-- vendor:js -->
   <!-- endinject -->
-  <!-- endbuild -->
 
 block template-content
   include ../vendor/_kss.html
 
 append template-foot
-  <!-- build:js ../assets/js/site-min.js -->
   <!-- site:js -->
   <!-- endinject -->
-  <!-- endbuild -->
 
-  <!-- build:js ../assets/js/guide-min.js -->
+  <!-- build:js assets/js/guide-min.js -->
   <!-- guide:js -->
   <!-- endinject -->
   <!-- endbuild -->
