@@ -44,10 +44,7 @@ gulp.task("build:compile", ["build:move"], function() {
         }]
       }
     ))
-    .pipe(gulp.dest(config.dist.root))
-    .pipe(plugins.size({
-      showFiles: true
-    }));
+    .pipe(gulp.dest(config.dist.root));
 });
 
 // Inject production assets into all pages.
