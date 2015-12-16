@@ -1,30 +1,29 @@
-$hue-1: 210;
-
-$neutral-1: 210;
+$hue-1: 205;
+$hue-2: 225;
 
 // Primary colors
 $color1--300: hsb($hue-1, 010, 095);
-$color1--500: hsb($hue-1, 085, 085);
-$color1--700: hsb($hue-1, 080, 050);
+$color1--500: hsb($hue-1, 085, 055);
+$color1--700: hsb($hue-1, 080, 035);
 
-// Increments of 9, only B52 missing
-$grey--000: hsb($neutral-1, 02, 97);
-$grey--100: hsb($neutral-1, 04, 88);
-$grey--200: hsb($neutral-1, 06, 79);
-$grey--300: hsb($neutral-1, 08, 70);
-$grey--400: hsb($neutral-1, 10, 61);
-$grey--500: hsb($neutral-1, 12, 43);
-$grey--600: hsb($neutral-1, 14, 34);
-$grey--700: hsb($neutral-1, 16, 25);
-$grey--800: hsb($neutral-1, 18, 16);
-$grey--900: hsb($neutral-1, 20, 07);
+// Neutral
+$grey--000: hsb($hue-2, 02, 97);
+$grey--100: hsb($hue-2, 04, 88);
+$grey--200: hsb($hue-2, 06, 79);
+$grey--300: hsb($hue-2, 08, 70);
+$grey--400: hsb($hue-2, 10, 61);
+$grey--500: hsb($hue-2, 12, 43);
+$grey--600: hsb($hue-2, 14, 34);
+$grey--700: hsb($hue-2, 16, 25);
+$grey--800: hsb($hue-2, 18, 16);
+$grey--900: hsb($hue-2, 20, 07);
 
 // Interactive
 $c-link:         $color1--500;
-$c-visited:      $color1--500;
+$c-visited:      $c-link;
 
 $c-hover:        $color1--700;
-$c-active:       $color1--700;
+$c-active:       $c-hover;
 
 $c-select__bg:   $color1--300;
-$c-select__text: $color1--700;
+$c-select__text: $color1--500;
