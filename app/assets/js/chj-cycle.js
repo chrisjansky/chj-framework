@@ -18,7 +18,7 @@ $("[data-cycle]").on("click", function(event) {
       $destinationEl = $thisEl.siblings(targetAttr);
 
     // Find data-target going up the DOM.
-    } else if ($thisEl.closest(targetAttr) > 0) {
+    } else if ($thisEl.closest(targetAttr).length > 0) {
       $destinationEl = $thisEl.closest(targetAttr);
 
     // Find all instances in the document.
