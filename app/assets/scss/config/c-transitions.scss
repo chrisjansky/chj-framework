@@ -1,19 +1,6 @@
-// Transitions.
-$duration--xl: .75s;
-$duration--l:  .5s;
-$duration--b:  .25s;
-$duration--s:  .125s;
+// Durations
+$duration--b: .25s;
 
-$timing--xf: $ease-in-out-back;
-
-$timing--f: $ease-in-out-quint;
-$timing--f-in: $ease-in-quint;
-$timing--f-out: $ease-out-quint;
-
+// Easings
 $timing--b: $ease-in-out-cubic;
-$timing--b-in: $ease-in-cubic;
-$timing--b-out: $ease-out-cubic;
-
 $timing--s: $ease-in-out-quad;
-$timing--s-in: $ease-in-quad;
-$timing--s-out: $ease-out-quad;

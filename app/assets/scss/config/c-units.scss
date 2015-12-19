@@ -1,38 +1,25 @@
 // Tracking
-$tracking--m: .25em;
 $tracking--b: .125em;
-$tracking--s: .0625em;
 
-// Spacing
-$spacing--l:   2;
-$spacing--m:   1.75;
-$spacing--b:   1.5;
-$spacing--s:   1.35;
-$spacing--xs:  1.25;
-$spacing--xxs: 1.125;
+// Leading
+$leading--b: 1.5;
 
 // Widths
-$width--xxl: 1280;
-$width--xl:  1024;
-$width--l:   720;
-$width--m:   640;
-$width--b:   400;
-$width--s:   320;
+$width-group: (
+  l: 800
+);
 
 // Heights
-$height--l: round(modular-scale(1, $unit--b * $spacing--l, $multiplier-1));
-$height--m: round(modular-scale(1, $unit--b * $spacing--m, $multiplier-1));
-$height--b: round(modular-scale(1, $unit--b * $spacing--b, $multiplier-1));
-$height--s: round(modular-scale(1, $unit--b * $spacing--s, $multiplier-1));
+$height-group: (
+  b: round(modular-scale(1, $base-1 * $leading--b, $multi-1))
+);
 
 // Thickness
-$line--l: 3px;
-$line--b: 2px;
-$line--s: 1px;
+$stroke--b: 2px;
+$stroke--s: 1px;
 
 // Icons
-$icon--l: 48;
-$icon--m: 32;
+$icon--l: 32;
 $icon--b: 24;
 $icon--s: 16;
 
@@ -40,10 +27,5 @@ $icon--s: 16;
 $radius--b: 2px;
 
 // Z-index
-$index--xl:    400;
-$index--l:     300;
-$index--m:     200;
-$index--b:     100;
-$index--s:     50;
-$index--xs:    10;
-$index--xxs:   1;
+$index--m:  200;
+$index--b:  100;

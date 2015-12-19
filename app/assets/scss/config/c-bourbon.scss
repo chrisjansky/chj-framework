@@ -2,11 +2,11 @@
 $em-base: $default__size;
 
 // Neat settings.
-$columns__desktop: 12;
-$columns__tablet: 9;
-$columns__phablet: 6;
-$columns__phone: 4;
+$col__desktop: 12;
+$col__tablet: 9;
+$col__phablet: 6;
+$col__phone: 4;
 
-$grid-columns: $columns__desktop;
-$column: em($ratio--l);
-$gutter: em($ratio--s);
+$grid-columns: $col__desktop;
+$column: sem(l);
+$gutter: sem(b);

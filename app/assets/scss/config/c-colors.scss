@@ -1,29 +1,32 @@
+$hue-0: 225;
 $hue-1: 205;
-$hue-2: 225;
 
-// Primary colors
-$color1--300: hsb($hue-1, 010, 095);
-$color1--500: hsb($hue-1, 085, 055);
-$color1--700: hsb($hue-1, 080, 035);
-
-// Neutral
-$grey--000: hsb($hue-2, 02, 97);
-$grey--100: hsb($hue-2, 04, 88);
-$grey--200: hsb($hue-2, 06, 79);
-$grey--300: hsb($hue-2, 08, 70);
-$grey--400: hsb($hue-2, 10, 61);
-$grey--500: hsb($hue-2, 12, 43);
-$grey--600: hsb($hue-2, 14, 34);
-$grey--700: hsb($hue-2, 16, 25);
-$grey--800: hsb($hue-2, 18, 16);
-$grey--900: hsb($hue-2, 20, 07);
+$color-palette: (
+  neutral: (
+    000: hsb($hue-0, 02, 97),
+    100: hsb($hue-0, 04, 88),
+    200: hsb($hue-0, 06, 79),
+    300: hsb($hue-0, 08, 70),
+    400: hsb($hue-0, 10, 61),
+    500: hsb($hue-0, 12, 43),
+    600: hsb($hue-0, 14, 34),
+    700: hsb($hue-0, 16, 25),
+    800: hsb($hue-0, 18, 16),
+    900: hsb($hue-0, 20, 07)
+  ),
+  primary: (
+    300: hsb($hue-1, 010, 095),
+    500: hsb($hue-1, 085, 055),
+    700: hsb($hue-1, 080, 035)
+  )
+);
 
 // Interactive
-$c-link:         $color1--500;
+$c-link:         chroma(1, 500);
 $c-visited:      $c-link;
 
-$c-hover:        $color1--700;
+$c-hover:        chroma(1, 700);
 $c-active:       $c-hover;
 
-$c-select__bg:   $color1--300;
-$c-select__text: $color1--500;
+$c-select__bg:   chroma(1, 300);
+$c-select__text: chroma(1, 500);
