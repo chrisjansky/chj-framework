@@ -32,8 +32,7 @@
     "dataRoot": "app/assets/data/",
     "dataGlob": "app/assets/data/*.json",
 
-    "kssRoot": "app/assets/kss/",
-    "kssCss": "app/assets/css/guide.css"
+    "kssRoot": "app/assets/kss/"
   },
   "dist": {
     "root": "dist/",

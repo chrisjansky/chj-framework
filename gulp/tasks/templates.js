@@ -2,7 +2,7 @@ var
   gulp = require("gulp"),
   fs = require("fs"),
   plugins = require("gulp-load-plugins")({
-    pattern: ["glob", "gulp-*", "beepbeep", "browser-*"]
+    pattern: ["glob", "gulp-*", "beepbeep"]
   }),
   config = require("../gulpconfig.json");
 
