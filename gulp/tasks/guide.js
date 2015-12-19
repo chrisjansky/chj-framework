@@ -2,7 +2,7 @@ var
   gulp = require("gulp"),
   fs = require("fs"),
   plugins = require("gulp-load-plugins")({
-    pattern: ["gulp-*", "del", "vinyl-paths", "json-sass"]
+    pattern: ["gulp-*", "del", "vinyl-paths"]
   }),
   config = require("../gulpconfig.json");
 
@@ -72,13 +72,4 @@ gulp.task("guide:inject", ["guide:compile", "guide:resources"], function() {
     .pipe(gulp.dest(config.dev.styleguide));
 });
 
-gulp.task("guide:parse", function () {
-  return fs.createReadStream(config.dev.dataRoot + "palette.json")
-    .pipe(plugins.jsonSass({
-      prefix: "$json: ",
-    }))
-    .pipe(fs.createWriteStream(config.dev.scssRoot + "guide/g-json.scss"));
-});
-
-
-gulp.task("guide", ["guide:inject", "guide:parse"]);
+gulp.task("guide", ["guide:inject"]);
