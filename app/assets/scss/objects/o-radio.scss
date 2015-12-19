@@ -19,10 +19,10 @@ Styleguide 4.33.
 .o-radio {
   cursor: pointer;
   position: relative;
-  line-height: em($height--b);
+  line-height: sheight(b);
   
   & + & {
-    margin-left: em($ratio--b);
+    margin-left: sem(b);
   }
 }
 
@@ -37,25 +37,25 @@ Styleguide 4.33.
   position: relative;
   display: inline-block;
 
-  width: em($ratio--b);
-  height: em($ratio--b);
+  width: sem(b);
+  height: sem(b);
 
-  margin-right: em($ratio--s);
+  margin-right: sem(s);
 
-  border: $line--b solid $grey--200;
+  border: $stroke--b solid chroma(0, 200);
   border-radius: 50%;
   vertical-align: middle;
 
   :checked + & {
-    border-color: $color1--500;
-    background-color: $color1--300;
+    border-color: chroma(1, 500);
+    background-color: chroma(1, 300);
   }
 }
 
 .o-radio__text {
-  color: $grey--500;
+  color: chroma(0, 500);
 
   :checked + * + & {
-    color: $color1--700;
+    color: chroma(1, 700);
   }
 }

@@ -13,20 +13,15 @@ Styleguide 2.4.
 
 [class^="l-spacer"],
 [class*=" l-spacer"] {
+  height: sem(l);
+  
   border: none;
   margin: 0;
-  height: em($ratio--l);
 }
 
 .l-spacer--big {
-  height: em($ratio--xl);
+  height: sem(xl);
 }
 .l-spacer--small {
-  height: em($ratio--m);
+  height: sem(m);
 }
-
-// @include media($large) {
-//   .l-spacer {
-//     height: em($ratio--l);
-//   }
-// }

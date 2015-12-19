@@ -16,7 +16,7 @@ Styleguide 4.2.
 .o-button-group--inline {
   [class^="o-button--"],
   [class*=" o-button--"] {
-      margin-left: em($ratio--xs);
+      margin-left: sem(xs);
 
       &:first-child {
         margin-left: 0;
@@ -30,7 +30,8 @@ Styleguide 4.2.
   [class^="o-button--"],
   [class*=" o-button--"] {
     display: block;
-    margin-top: em($ratio--s);
+    
+    margin-top: sem(s);
     
     &:first-child {
       margin-top: 0;

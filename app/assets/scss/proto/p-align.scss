@@ -1,3 +1,16 @@
+/*
+Align
+
+.p-align--left - Flush left.
+.p-align--right - Flush right.
+.p-align--center - Aligned to center.
+
+Markup:
+<div class="{{modifier_class}}">Text to align</div>
+
+Styleguide 5.1.
+*/
+
 .p-align--left {
   text-align: left;
 }

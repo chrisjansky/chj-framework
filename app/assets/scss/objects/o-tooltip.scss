@@ -16,30 +16,31 @@ Styleguide 4.6.
 
   &:hover:after {
     position: absolute;
-    bottom: em($ratio--m + $ratio--b / 2);
+    bottom: srem(m) + srem(b) / 2;
     left: 0;
 
     content: attr(title);
     white-space: nowrap;
 
-    line-height: em($height--b);
-    @include padding(null em($ratio--b));
+    line-height: sheight(b);
+    @include padding(null sem(b));
+
     border-radius: $radius--b;
     
     color: white;
-    background-color: rgba($grey--800, .85);
+    background-color: rgba(chroma(0, 800), .85);
   }
 
   &:hover:before {
     position: absolute;
-    bottom: em($ratio--m);
-    left: em($ratio--b);
+    bottom: srem(m);
+    left: srem(b);
 
     content: "";
-    @include triangle(em($ratio--b), rgba($grey--800, .85), down);
+    @include triangle(srem(b), rgba(chroma(0, 800), .85), down);
   }
   
   &:after, &:before {
-    font-size: rem($unit--s);
+    font-size: sem(s, 2);
   }
 }

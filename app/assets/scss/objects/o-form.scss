@@ -22,20 +22,20 @@ Styleguide 4.36.
 */
 
 .o-form__fieldset {
-  padding: em($ratio--b);
+  padding: sem(b);
   margin: 0;
 
-  border: $line--s solid $grey--100;
+  border: $stroke--s solid chroma(0, 100);
   border-radius: $radius--b;
 }
 
 .o-form__table {
   td + td {
-    padding-left: em($ratio--m);
+    padding-left: sem(m);
   }
   tr + tr {
     td {
-      padding-top: em($ratio--b);
+      padding-top: sem(b);
     }
   }
 }

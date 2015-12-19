@@ -30,53 +30,53 @@ Styleguide 2.3.
 
 [class^="l-grid__item"],
 [class*=" l-grid__item"] {
-  @include media($large) {
-    @include collapse-children;
+  @include media($dr__large) {
+    @include reset-children;
   }
 }
 
 .l-grid__item--2 {
-  @include media($tablet) {
-    @include span-columns($columns__tablet / 2);
+  @include media($bp__tablet) {
+    @include span-columns($col__tablet / 2);
   }
 
-  @include media($desktop) {
-    @include span-columns($columns__desktop / 2);
+  @include media($bp__desktop) {
+    @include span-columns($col__desktop / 2);
   }
 }
 
 .l-grid__item--3 {
-  @include media($tablet) {
-    @include span-columns($columns__tablet / 2);
+  @include media($bp__tablet) {
+    @include span-columns($col__tablet / 2);
     @include omega(2n);
 
     &:last-child {
-      margin-top: em($ratio--m);
-      @include shift($columns__tablet / 4);
+      margin-top: sem(m);
+      @include shift($col__tablet / 4);
     }
   }
 
-  @include media($desktop) {
-    @include span-columns($columns__desktop / 3);
+  @include media($bp__desktop) {
+    @include span-columns($col__desktop / 3);
   }
 }
 
 .l-grid__item--4 {
-  @include media($phablet) {
-    @include span-columns($columns__phone / 2);
+  @include media($bp__phablet) {
+    @include span-columns($col__phone / 2);
     @include omega(2n);
   }
 
-  @include media($phablet) {
-    @include span-columns($columns__phablet / 2);
+  @include media($bp__phablet) {
+    @include span-columns($col__phablet / 2);
     @include omega(2n);
   }
 
-  @include media($tablet) {
-    @include span-columns($columns__tablet / 4);
+  @include media($bp__tablet) {
+    @include span-columns($col__tablet / 4);
   }
   
-  @include media($desktop) {
-    @include span-columns($columns__desktop / 4);
+  @include media($bp__desktop) {
+    @include span-columns($col__desktop / 4);
   }
 }

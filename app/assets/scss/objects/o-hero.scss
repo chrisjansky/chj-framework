@@ -20,7 +20,7 @@ Styleguide 4.53.
 [class*=" o-hero--"] {
   position: relative;
 
-  background-color: $grey--800;
+  background-color: chroma(0, 800);
 }
 
 .o-hero__overlay {
@@ -30,8 +30,8 @@ Styleguide 4.53.
 }
 
 .o-hero__content {
-  padding: em($ratio--b);
-  @include collapse-children;
+  padding: sem(b);
+  @include reset-children;
 }
 
 .o-hero__image {
@@ -64,16 +64,16 @@ Styleguide 4.53.
 .o-hero--center {
 
   .o-hero__overlay {
-    @include pseudo-center--parent;
+    @include pseudo-center();
 
-    margin-left: em(-$ratio--b); // Offseting white-space from pseudo-centering
+    margin-left: -1em; // Offseting white-space from pseudo-centering
 
     text-align: center;
     white-space: nowrap;
   }
   
   .o-hero__content {
-    @include pseudo-center--child;
+    @include pseudo-center(child);
     white-space: normal;
   }
 }

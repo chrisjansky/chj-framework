@@ -12,28 +12,28 @@ Styleguide 4.34.
 
 [class^="o-submit"],
 [class*=" o-submit"] {
-  height: em($height--b);
-  padding: 0 em($ratio--b);
+  height: sheight(b);
+  padding: 0 sem(b);
 
   background-color: transparent;
   color: $c-link;
 
-  border: $line--b solid;
+  border: $stroke--b solid;
   border-radius: $radius--b;
 
   @include state--hover {
     color: $c-hover;
   }
   @include state--focus {
-    color: $grey--900;
+    color: chroma(0, 900);
     outline: 0;
   }
 }
 
 .o-submit--reset {
-  color: $grey--400;
+  color: chroma(0, 400);
 
   @include state--hover {
-    color: $grey--600;
+    color: chroma(0, 600);
   }
 }

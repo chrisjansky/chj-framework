@@ -20,18 +20,20 @@ Styleguide 2.2.
   }
 }
 
-@include media($large) {
+@include media($dr__large) {
   .l-inline {
     display: table;
     width: 100%;
   }
+
   .l-inline__cell {
     display: table-cell;
     vertical-align: middle;
-    @include collapse-children;
+
+    @include reset-children;
 
     &:first-child {
-      text-align: left; 
+      text-align: left;
     }
     &:last-child {
       text-align: right;

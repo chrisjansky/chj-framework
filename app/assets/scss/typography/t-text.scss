@@ -12,13 +12,13 @@ Styleguide 3.3.
 */
 
 .t-text--lead {
-  font-size: em($unit--l);
+  font-size: sem(m);
 }
 
 .t-text--small {
-  font-size: em($unit--s);
+  font-size: sem(s, 2);
 }
 
 .t-text--tiny {
-  font-size: em($unit--xs);
+  font-size: sem(s);
 }

@@ -1,8 +1,7 @@
 /*
 Icon
 
-.o-icon--big - Big icon.
-.o-icon--medium - Medium icon.
+.o-icon--large - Large icon.
 .o-icon - Basic icon.
 .o-icon--small - Small icon.
 
@@ -18,9 +17,6 @@ Styleguide 4.20.
 .o-icon--small {
   font-size: #{$icon--s}px;
 }
-.o-icon--medium {
-  font-size: #{$icon--m}px;
-}
-.o-icon--big {
+.o-icon--large {
   font-size: #{$icon--l}px;
 }

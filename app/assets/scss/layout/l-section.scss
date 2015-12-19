@@ -14,17 +14,17 @@ Styleguide 2.5.
 */
 
 .l-section--light {
-  background-color: $grey--000;
+  background-color: chroma(0, 000);
 
-  color: $grey--400;
+  color: chroma(0, 400);
 }
 .l-section--dark {
-  background-color: $grey--500;
+  background-color: chroma(0, 500);
 
-  color: $grey--200;
+  color: chroma(0, 200);
 }
 .l-section--black {
-  background-color: $grey--700;
+  background-color: chroma(0, 700);
 
-  color: $grey--400;
+  color: chroma(0, 400);
 }

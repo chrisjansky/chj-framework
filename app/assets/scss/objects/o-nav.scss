@@ -31,19 +31,20 @@ Styleguide 4.4.
     outline: none;
   }
 
-  @include media($large) {
+  @include media($dr__large) {
     display: none;
   }
 }
 
 .o-nav__list {
-  @include media($phone) {
+  @include media($dr__small) {
     display: none;
   }
 }
 
 .o-nav__link--selected {
-  border-bottom: $line--s solid;
+  border-bottom: $stroke--s solid;
+  
   @include state--all {
     color: $c-active;
   }

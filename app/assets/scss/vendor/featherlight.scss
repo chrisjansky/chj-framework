@@ -1,15 +1,15 @@
 .featherlight {
   z-index: $index--m;
 
-  @include media($phone) {
+  @include media($bp__phone) {
     -webkit-overflow-scrolling: touch;
   }
   &:last-of-type {
-    background: rgba($grey--800, .85);
+    background: rgba(chroma(0, 800), .85);
   }
 
   .featherlight-content {
-    @include margin(null em($ratio--b));
+    @include margin(null sem(b));
     border: 0;
     padding: 0;
     background-color: transparent;
@@ -19,14 +19,15 @@
     width: auto;
     height: auto;
 
-    top: em($ratio--b);
-    right: em($ratio--b);
+    top: 0;
+    right: 0;
 
-    line-height: em($height--b);
-    @include padding(null em($ratio--s));
+    line-height: sheight(b);
 
+    @include padding(null sem(s));
+
+    color: white;
     background-color: transparent;
-    @include rgba(color, $grey--800, .675);
 
     @include state--active {
       color: $c-hover;

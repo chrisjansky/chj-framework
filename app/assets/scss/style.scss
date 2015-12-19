@@ -10,9 +10,7 @@ Site
 @import "vendor/symbolset";
 @import "vendor/symbolset-custom";
 
-@import "base/b-default";
-@import "base/b-interactive";
-@import "base/b-typography";
+@import "base/*";
 
 /*
 Layout
@@ -65,5 +63,14 @@ Styleguide 4.
 @import "objects/o-hero";
 @import "objects/o-slider";
 @import "objects/o-carousel";
+
+/*
+Prototyping
+
+Styleguide 5.
+*/
+@import "proto/p-align";
+@import "proto/p-pad";
+@import "proto/p-push";
 
 @import "misc/temp";

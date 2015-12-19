@@ -18,13 +18,13 @@ Styleguide 4.32.
 .o-select {
   display: inline-block;
 
-  line-height: em($height--b - $line--s * 2);
+  line-height: sheight(b) - em($stroke--s * 2);
 
-  border: $line--s solid $grey--200;
+  border: $stroke--s solid chroma(0, 200);
   border-radius: $radius--b;
 
   @include state--hover {
-    border-color: $grey--400;
+    border-color: chroma(0, 400);
   }
 }
 .o-select__content {
@@ -33,7 +33,7 @@ Styleguide 4.32.
   border: none;
   cursor: pointer;
 
-  @include padding(null em($ratio--l) null em($ratio--s));
+  @include padding(null sem(l) null sem(s));
 
   // Extremely stupid fix for Firefox styling.
   // https://bugzilla.mozilla.org/show_bug.cgi?id=649849

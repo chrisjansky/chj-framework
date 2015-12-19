@@ -21,8 +21,9 @@ Styleguide 4.51.
 */
 
 .o-tabs {
-  padding-left: 0;
   @include clearfix;
+  
+  padding-left: 0;
 }
 
 .o-tabs__item {
@@ -32,9 +33,10 @@ Styleguide 4.51.
 .o-tabs__link {
   display: inline-block;
   
-  line-height: em($height--b);
-  @include padding(null em($ratio--b));
-  margin-bottom: -$line--s;
+  line-height: sheight(b);
+
+  @include padding(null sem(b));
+  margin-bottom: -$stroke--s;
 
   text-decoration: none;
 }
@@ -42,19 +44,19 @@ Styleguide 4.51.
 .o-tabs__content {
   display: none;
   width: 100%;
-  border-top: $line--s solid $grey--100;
+
+  border-top: $stroke--s solid chroma(0, 100);
 }
 
 // Tab states.
 .tab--is-active {
-  // background-color: $c-active;
   @include state--all {
-    // color: $c-active--dark;
-    border-bottom: $line--s solid $c-active;
+    border-bottom: $stroke--s solid $c-active;
   }
 }
 
 .tab--is-open {
   display: block;
+
   float: left;
 }

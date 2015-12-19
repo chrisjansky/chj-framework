@@ -7,9 +7,9 @@
 .o-list__item {
   display: inline-block;
 
-  line-height: em($height--b);
+  line-height: sheight(b);
 
   & + & {
-    margin-left: em($ratio--l);
+    margin-left: sem(l);
   }
 }

@@ -8,26 +8,26 @@ Styleguide 4.30.
 */
 
 .o-input {
-  height: em($height--b);
-  padding: 0 em($ratio--s);
+  height: sheight(b);
+  padding: 0 sem(s);
 
   background-color: transparent;
 
-  border: $line--s solid $grey--100;
+  border: $stroke--s solid chroma(0, 100);
   border-radius: $radius--b;
   
   @include state--hover {
-    border-color: $grey--300;
+    border-color: chroma(0, 300);
   }
   @include state--focus {
-    border-color: $color1--500;
+    border-color: chroma(1, 500);
     outline: 0;
   }
   // iOS reset.
   -webkit-appearance: none;
   
   &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 em($ratio--l) $grey--100 inset;
-    border-color: $grey--200;
+    -webkit-box-shadow: 0 0 0 sem(l) chroma(0, 100) inset;
+    border-color: chroma(0, 200);
   }
 }

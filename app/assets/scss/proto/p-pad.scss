@@ -1,97 +1,111 @@
+/*
+Align
+
+.p-pad--1 - Padded from all sides.
+.p-pad--20 - Padding applied to verticals only.
+.p-pad--03 - Padding applied to horizontals only.
+.p-pad--0004 - Padded only from one side.
+
+Markup:
+<div class="{{modifier_class}}">Padded element.</div>
+
+Styleguide 5.2.
+*/
+
 // All directions
 .p-pad--1 {
-  padding: em($ratio--s);
+  padding: sem(s);
 }
 .p-pad--2 {
-  padding: em($ratio--b);
+  padding: sem(b);
 }
 .p-pad--3 {
-  padding: em($ratio--m);
+  padding: sem(m);
 }
 .p-pad--4 {
-  padding: em($ratio--l);
+  padding: sem(l);
 }
 
 // Vertical
 .p-pad--10 {
-  @include padding(em($ratio--s) null);
+  @include padding(sem(s) null);
 }
 .p-pad--20 {
-  @include padding(em($ratio--b) null);
+  @include padding(sem(b) null);
 }
 .p-pad--30 {
-  @include padding(em($ratio--m) null);
+  @include padding(sem(m) null);
 }
 .p-pad--40 {
-  @include padding(em($ratio--l) null);
+  @include padding(sem(l) null);
 }
 
 // Horizontal
 .p-pad--01 {
-  @include padding(null em($ratio--s));
+  @include padding(null sem(s));
 }
 .p-pad--02 {
-  @include padding(null em($ratio--b));
+  @include padding(null sem(b));
 }
 .p-pad--03 {
-  @include padding(null em($ratio--m));
+  @include padding(null sem(m));
 }
 .p-pad--04 {
-  @include padding(null em($ratio--l));
+  @include padding(null sem(l));
 }
 
 // Top
 .p-pad--1000 {
-  padding-top: em($ratio--s);
+  padding-top: sem(s);
 }
 .p-pad--2000 {
-  padding-top: em($ratio--b);
+  padding-top: sem(b);
 }
 .p-pad--3000 {
-  padding-top: em($ratio--m);
+  padding-top: sem(m);
 }
 .p-pad--4000 {
-  padding-top: em($ratio--l);
+  padding-top: sem(l);
 }
 
 // Right
 .p-pad--0100 {
-  padding-right: em($ratio--s);
+  padding-right: sem(s);
 }
 .p-pad--0200 {
-  padding-right: em($ratio--b);
+  padding-right: sem(b);
 }
 .p-pad--0300 {
-  padding-right: em($ratio--m);
+  padding-right: sem(m);
 }
 .p-pad--0400 {
-  padding-right: em($ratio--l);
+  padding-right: sem(l);
 }
 
 // Bottom
 .p-pad--0010 {
-  padding-bottom: em($ratio--s);
+  padding-bottom: sem(s);
 }
 .p-pad--0020 {
-  padding-bottom: em($ratio--b);
+  padding-bottom: sem(b);
 }
 .p-pad--0030 {
-  padding-bottom: em($ratio--m);
+  padding-bottom: sem(m);
 }
 .p-pad--0040 {
-  padding-bottom: em($ratio--l);
+  padding-bottom: sem(l);
 }
 
 // Left
 .p-pad--0001 {
-  padding-left: em($ratio--s);
+  padding-left: sem(s);
 }
 .p-pad--0002 {
-  padding-left: em($ratio--b);
+  padding-left: sem(b);
 }
 .p-pad--0003 {
-  padding-left: em($ratio--m);
+  padding-left: sem(m);
 }
 .p-pad--0004 {
-  padding-left: em($ratio--l);
+  padding-left: sem(l);
 }

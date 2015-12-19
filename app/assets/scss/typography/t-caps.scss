@@ -14,8 +14,9 @@ Styleguide 3.2.
 [class*=" t-caps"] {
   letter-spacing: $tracking--b;
   text-transform: uppercase;
+  
   vertical-align: middle;
 }
 .t-caps--small {
-  font-size: em($unit--xs);
+  font-size: sem(s);
 }

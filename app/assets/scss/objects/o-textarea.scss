@@ -9,18 +9,18 @@ Styleguide 4.31.
 
 .o-textarea {
   width: 100%;
-  padding: em($ratio--xs) em($ratio--s);
+  padding: sem(xs) sem(s);
 
   background-color: transparent;
 
-  border: $line--s solid $grey--200;
+  border: $stroke--s solid chroma(0, 200);
   border-radius: $radius--b;
 
   @include state--hover {
-    border-color: $grey--300;
+    border-color: chroma(0, 300);
   }
   @include state--focus {
-    border-color: $color1--500;
+    border-color: chroma(1, 500);
     outline: 0;
   }
   // iOS fix.

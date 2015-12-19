@@ -21,33 +21,33 @@ Styleguide 4.50.
 */
 
 .o-accordion__title {
-  background-color: $grey--000;
+  background-color: chroma(0, 000);
   border-radius: $radius--b;
 
   .o-accordion__content + & {
-    margin-top: em($ratio--xs);
+    margin-top: sem(xs);
   }
 }
 
 .o-accordion__link {
   display: block;
 
-  line-height: em($height--b);
-  @include padding(null em($ratio--b));
+  line-height: sheight(b);
+  @include padding(null sem(b));
 
   text-decoration: none;
 
   .accordion--is-active & {
     @include state--all {
-      color: $color1--700;
+      color: chroma(1, 700);
     }
   }
 }
 
 .o-accordion__content {
-  @include margin(em($ratio--s) null em($ratio--m) em($ratio--b));
+  @include margin(sem(s) null sem(m) sem(b));
 }
 
 .accordion--is-active {
-  background-color: $color1--300;
+  background-color: chroma(1, 300);
 }

@@ -12,7 +12,7 @@ Styleguide 4.52.
 
 .o-modal {
   display: none;
-  max-width: em($width--xl);
+  max-width: swidth(l);
   
   color: white;
   text-align: center;

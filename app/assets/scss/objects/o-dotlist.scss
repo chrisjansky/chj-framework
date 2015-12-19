@@ -22,7 +22,7 @@ Styleguide 4.3.
 
   li {
     position: relative;
-    padding-left: em($ratio--b);
+    padding-left: sem(b);
   }
 
   li:before {
@@ -35,13 +35,14 @@ Styleguide 4.3.
 
 // Inline dotlist.
 .o-dotlist--inline {
-  @include media($portable) {
+  @include media($dr__portable) {
     li {
       display: inline-block;
-      padding-left: em($ratio--s);
+      padding-left: sem(s);
+
       &:before {
         position: relative;
-        margin-right: em($ratio--s);
+        margin-right: sem(s);
       }
     }
 
@@ -56,13 +57,13 @@ Styleguide 4.3.
 }
 
 // Outside bullets.
-@include media($portable) {
+@include media($dr__portable) {
   .o-dotlist--outside {
     li {
       padding-left: 0;
     }
     li:before {
-      left: em(-$ratio--b);
+      left: -#{sem(s)};
     }
   }
 }

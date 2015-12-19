@@ -1,8 +1,7 @@
 /*
 Icon button
 
-.o-icon-button--big - Big icon size.
-.o-icon-button--medium - Medium size.
+.o-icon-button--large - Large icon size.
 .o-icon-button - Default size.
 .o-icon-button--small - Small icon.
 
@@ -15,11 +14,12 @@ Styleguide 4.21.
 [class^="o-icon-button"],
 [class*=" o-icon-button"] {
   text-decoration: none;
+
   &:before {
-    margin-right: em($ratio--xxs);
+    margin-right: sem(xs);
   }
   &:after {
-    margin-left: em($ratio--xxs);
+    margin-left: sem(xs);
   }
 }
 
@@ -35,13 +35,7 @@ Styleguide 4.21.
   }
 }
 
-.o-icon-button--medium {
-  &:before, &:after {
-    font-size: #{$icon--m}px;
-  }
-}
-
-.o-icon-button--big {
+.o-icon-button--large {
   &:before, &:after {
     font-size: #{$icon--l}px;
   }

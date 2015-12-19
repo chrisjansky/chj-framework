@@ -39,7 +39,7 @@ Styleguide 4.55.
   // Add item width.
 
   & + & {
-    padding-left: em($ratio--b);
+    padding-left: sem(b);
   }
 }
 .o-carousel__link {
@@ -51,7 +51,7 @@ Styleguide 4.55.
 
 [class^="o-carousel__arrow"],
 [class*=" o-carousel__arrow"] {
-  padding: em($ratio--b);
+  padding: sem(b);
   text-decoration: none; 
 }
 

@@ -24,7 +24,7 @@ Styleguide 4.35.
   display: table-cell;
   width: 1%;
 
-  padding-right: em($ratio--b);
+  padding-right: sem(b);
 
   white-space: nowrap;
   vertical-align: middle;
@@ -38,7 +38,7 @@ Styleguide 4.35.
 
 .o-field__icon {
   position: absolute;
-  right: em($ratio--s);
+  right: sem(s);
   top: 0;
   bottom: 0;
 

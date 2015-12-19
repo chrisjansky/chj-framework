@@ -1,8 +1,8 @@
 /*
 Note
 
-.o-note - Important message.
-.o-note--positive - Success message.
+.o-note - Subtle message.
+.o-note--primary - Emphasized message.
 
 Markup:
 <mark class="{{modifier_class}}">Look ma, here!</mark>
@@ -13,23 +13,18 @@ Styleguide 4.5.
 [class^="o-note"],
 [class*=" o-note"] {
   display: inline-block;
-  line-height: em($height--b);
+  line-height: sheight(b);
 
-  @include padding(null em($ratio--b));
+  @include padding(null sem(b));
 
   border-radius: $radius--b;
 }
 
 .o-note {
-  background-color: $grey--000;
+  background-color: chroma(0, 000);
 }
 
-.o-note--positive {
-  color: $color1--700;
-  background-color: $color1--300;
-}
-
-.o-note--negative {
-  color: $grey--300;
-  background-color: $grey--100;
+.o-note--primary {
+  color: chroma(1, 700);
+  background-color: chroma(1, 300);
 }

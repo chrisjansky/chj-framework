@@ -19,24 +19,24 @@ Styleguide 3.4.
     color: white;
   }
   @include state--active {
-    @include rgba(color, white, .75);
+    color: rgba(white, .75);
   }
 }
 
 .t-link--light {
   @include state--link {
-    color: rgba($grey--400, .5);
+    color: rgba(chroma(0, 400), .5);
   }
   @include state--active {
-    color: rgba($grey--200, .5);
+    color: rgba(chroma(0, 200), .5);
   }
 }
 
 .t-link--dark {
   @include state--link {
-    color: rgba($grey--800, .75);
+    color: rgba(chroma(0, 800), .75);
   }
   @include state--active {
-    color: $grey--900;
+    color: chroma(0, 900);
   }
 }

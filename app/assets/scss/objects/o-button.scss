@@ -16,9 +16,10 @@ Styleguide 4.1.
 [class*=" o-button--"] {
   display: inline-block;
 
-  padding-left: em($ratio--m);
-  padding-right: em($ratio--m);
-  line-height: em($height--b);
+  padding-left: sem(m);
+  padding-right: sem(m);
+
+  line-height: sheight(b);
   
   border-radius: $radius--b;
 
@@ -38,8 +39,9 @@ Styleguide 4.1.
 
 // Outline border.
 .o-button--outline {
-  border: $line--b solid;
-  line-height: em($height--b - $line--b * 2);
+  border: $stroke--b solid;
+  line-height: sheight(b) - em($stroke--b * 2);
+  
   @include state--link {
     color: $c-link;
   }
@@ -51,19 +53,14 @@ Styleguide 4.1.
 // Block, centered text.
 .o-button--block {
   display: block;
-  padding-left: 0;
-  padding-right: 0;
+  
   text-align: center;
-
-  & + & {
-    margin-top: em($ratio--s);
-  }
 }
 
 // Selected.
 .o-button--selected {
   @include state--all {
-    background-color: $grey--100;
-    color: $grey--300;
+    background-color: chroma(0, 100);
+    color: chroma(0, 300);
   }
 }
