@@ -6,10 +6,9 @@ Config
 @import "bourbon";
 
 @import "mixins/_helpers";
-@import "mixins/_center";
 @import "mixins/_color";
 @import "mixins/_state";
-@import "mixins/_offset";
+@import "mixins/_metric";
 
 @import "config/c-colors";
 @import "config/c-scales";
