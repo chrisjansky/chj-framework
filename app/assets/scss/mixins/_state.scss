@@ -4,12 +4,14 @@
     @content
   }
 }
+
 @mixin state--hover {
   &:hover,
   &:active {
     @content
   }
 }
+
 @mixin state--active {
   &:hover,
   &:active,
@@ -17,11 +19,13 @@
     @content
   }
 }
+
 @mixin state--focus {
   &:focus {
     @content
   }
 }
+
 @mixin state--all {
   &:link,
   &:visited,

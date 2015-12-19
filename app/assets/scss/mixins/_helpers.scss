@@ -1,21 +1,15 @@
-@mixin text-ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin collapse-children {
+@mixin reset-children {
   & > :first-child {
     margin-top: 0;
   }
   & > :last-child {
     margin-bottom: 0;
   }
-}
-
-@mixin px-rem ($property, $value) {
-  #{$property}: $value * $unit--b + px;
-  #{$property}: #{$value}rem;
 }
 
 @mixin reset-list {
@@ -25,4 +19,34 @@
 
   margin-top: 0;
   margin-bottom: 0;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin pseudo-center($type: null) {
+
+  @if ($type == "child") {
+    display: inline-block;
+
+    vertical-align: middle;
+
+  } @else {
+
+    &:before {
+      content: "";
+
+      display: inline-block;
+
+      width: 0;
+      height: 100%;
+
+      vertical-align: middle;
+    }
+
+  }
 }

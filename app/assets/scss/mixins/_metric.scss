@@ -1,0 +1,38 @@
+// Get em value from $scales map
+@function sem($scale-letter, $scale-index: 1, $strip-unit: false) {
+  $scale-group: map-get($scales, $scale-index);
+
+  @if $strip-unit {
+    @return map-get($scale-group, $scale-letter);
+  } @else {
+    @return em(map-get($scale-group, $scale-letter));
+  }
+
+}
+
+// Get rm value from $scales map
+@function srem($scale-letter, $scale-index: 1) {
+  $scale-group: map-get($scales, $scale-index);
+
+  @return rem(map-get($scale-group, $scale-letter));
+}
+
+// Get block height from $height-group map
+@function sheight($height-letter, $strip-unit: false) {
+
+  @if $strip-unit {
+    @return map-get($height-group, $height-letter);
+  } @else {
+    @return em(map-get($height-group, $height-letter));
+  }
+}
+
+// Get block width from $width-group map
+@function swidth($width-letter, $strip-unit: false) {
+
+  @if $strip-unit {
+    @return map-get($width-group, $width-letter);
+  } @else {
+    @return em(map-get($width-group, $width-letter));
+  }
+}
