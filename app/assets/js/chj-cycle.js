@@ -1,10 +1,14 @@
-$("[data-toggle]").on("click", function(event) {
+$("[data-cycle]").on("click", function(event) {
   event.preventDefault();
-  
+
   var
     $thisEl = $(this),
+    classArray = $thisEl.data("cycle").split(", "),
+    currentClass = $thisEl.data("current") || 0,
     targetAttr = $thisEl.attr("data-target"),
     $destinationEl;
+
+  classArray.unshift("");
 
   // If data-target attribute provided.
   if (targetAttr) {
@@ -27,6 +31,11 @@ $("[data-toggle]").on("click", function(event) {
     $destinationEl = $thisEl;
   }
 
-  $destinationEl
-    .toggleClass($thisEl.attr("data-toggle"));
+  $destinationEl.removeClass(classArray[currentClass]);
+
+  currentClass = (currentClass + 1) % classArray.length;
+
+  $thisEl.data("current", currentClass);
+
+  $destinationEl.addClass(classArray[currentClass]);
 });
