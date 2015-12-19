@@ -16,7 +16,7 @@
   </head>
   <body><!-- kss-header -->
 <header class="kss-header">
-  <a href="index" class="kss-header__link"><h1 class="t-head--lower">Styleguide</h1></a>
+  <a href="index" class="kss-header__link"><h1 class="kss-head--normal">Styleguide</h1></a>
 
   <nav class="kss-nav">
     <ul class="kss-menu--main" data-menu data-kss-ref="{{rootName}}">
@@ -34,15 +34,15 @@
     {{else}}
       <ul class="kss-menu--sub" data-submenu>
         {{#eachSection rootName}}
-        {{#ifDepth 1}}
-        {{else}}
-          <li>
-            <a class="kss-nav__link" href="#section-{{reference}}">
-              <strong class="kss-reference">{{reference}}</strong> 
-              {{header}}
-            </a>
-          </li>
-        {{/ifDepth}}
+          {{#ifDepth 1}}
+          {{else}}
+            <li>
+              <a class="kss-nav__link" href="#section-{{reference}}">
+                <strong class="kss-reference">{{reference}}</strong> 
+                {{header}}
+              </a>
+            </li>
+          {{/ifDepth}}
         {{/eachSection}}
       </ul>
     {{/if}}
@@ -67,7 +67,7 @@
     {{#eachSection rootName}}
       {{#ifDepth 1}}
         <!-- 0.0 heading -->
-        <h1 class="kss-main__title t-head--high">
+        <h1 class="kss-main__title kss-head--normal">
           <span class="kss-reference">{{reference}}</span> 
           {{header}}
         </h1>
@@ -75,7 +75,7 @@
         <!-- 0.1 heading -->
         <section id="section-{{reference}}" class="kss-item kss-item--depth-{{depth}}">
           <header class="kss-item__info">
-            <h2 class="kss-item__title t-head--lower">
+            <h2 class="kss-item__title kss-head--low">
               <span class="kss-reference">{{reference}}</span> 
               {{header}}
             </h2>
@@ -108,7 +108,7 @@
               <article class="kss-variant kss-variant--modifier">
                 <div class="kss-example">{{{markup}}}</div>
                 <div class="kss-description">
-                  <h3 class="kss-variant__title t-head--bottom">{{name}}</h3>
+                  <h3 class="kss-variant__title kss-head--low">{{name}}</h3>
                   <small class="kss-small">{{{description}}}</small>
                 </div>
               </article>
