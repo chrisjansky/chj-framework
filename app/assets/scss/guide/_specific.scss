@@ -1,16 +1,19 @@
 // Specific KSS styles.
 .kss-item {
-  .l-wrap,
+  [class^="l-wrap"],
+  [class*=" l-wrap"],
   [class^="l-spacer"],
-  [class*=" l-spacer"] {
-    background-color: $grey--000;
+  [class*=" l-spacer"],
+  [class^="p-pad--"],
+  [class*=" p-pad--"] {
+    background-color: chroma(0, 000);
   }
 
   [class^="l-grid__item--"],
   [class*=" l-grid__item--"] {
-    margin-bottom: em($ratio--s);
+    margin-bottom: .625em;
 
-    background-color: $grey--000;
+    background-color: chroma(0, 000);
   }
 
   [class^="t-link--"],
@@ -20,6 +23,6 @@
 
   [class^="l-section--"],
   [class*=" l-section--"] {
-    padding: em($ratio--m);
+    padding: sem(m);
   }
 }

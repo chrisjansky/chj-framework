@@ -1,48 +1,30 @@
+$html-heights: "";
+
+@each $height-letter, $height-value in $height-group {
+
+  $html-heights: $html-heights + '<div class="g-height height--#{$height-letter} pseudo-height--#{$height-letter}">#{$height-letter}&emsp;</div>\A';
+
+}
+
 /*
 Heights
 
 Common block element heights. Perfect for buttons, inputs, forms etc.
 
-.g-height--big - Big height.
-.g-height--medium - Medium height.
-.g-height--base - Base height.
-.g-height--small - Small height.
-
 Markup:
-<div class="{{modifier_class}}"></div>
+#{$html-heights}
 
-Styleguide 1.3.
+Styleguide 1.5.
 */
 
-[class^="g-height--"],
-[class*=" g-height--"] {
-  color: $grey--400;
-  background-color: $grey--000;
+.g-height {
+  color: chroma(0, 400);
+  background-color: chroma(0, 000);
 
   text-align: center;
-}
+  text-transform: uppercase;
 
-.g-height--big {
-  line-height: em($height--l);
-  &:after {
-    content: "#{$height--l}";
-  }
-}
-.g-height--medium {
-  line-height: em($height--m);
-  &:after {
-    content: "#{$height--m}";
-  }
-}
-.g-height--base {
-  line-height: em($height--b);
-  &:after {
-    content: "#{$height--b}";
-  }
-}
-.g-height--small {
-  line-height: em($height--s);
-  &:after {
-    content: "#{$height--s}";
+  & + & {
+    margin-top: $kss-unit-medium;
   }
 }

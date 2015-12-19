@@ -1,0 +1,40 @@
+$html-sizes: "";
+
+@each $scale-name, $scale-steps in $scales {
+
+  // Start a new group
+  $html-sizes: $html-sizes + '<div class="g-size-group">\A';
+
+  @each $step-letter, $step-value in $scale-steps {
+    // Add this item to group
+    $html-sizes: $html-sizes + '  <div class="g-size"><span class="g-size__caption pseudo-scale-#{$scale-name}--#{$step-letter}">#{$scale-name $step-letter}&emsp;</span><span class="g-size__text text-#{$scale-name}--#{$step-letter}">Hamburger</span></div>\A';
+  }
+
+  $html-sizes: $html-sizes + '</div>\A';
+}
+
+/*
+Font sizes
+
+Modular increments derived from base sizes.
+
+Markup:
+#{$html-sizes}
+
+Styleguide 1.6.
+*/
+
+.g-size-group {
+  & + & {
+    margin-top: 2em;
+  }
+}
+
+.g-size__caption {
+  display: inline-block;
+  width: 5em;
+  
+  font-size: $kss-unit-small;
+
+  text-transform: uppercase;
+}

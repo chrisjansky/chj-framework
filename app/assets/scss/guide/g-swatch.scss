@@ -1,38 +1,59 @@
-[class^="g-swatch"],
-[class*=" g-swatch"] {
-  position: relative;
+$html-swatches: "";
+
+@each $group-name, $group-shades in $color-palette {
+
+  // Start a new group
+  $html-swatches: $html-swatches + '<div class="g-swatch-group">\A';
+
+  @each $shade-name, $shade-value in $group-shades {
+    // Add this item to group
+    $html-swatches: $html-swatches + '  <div class="g-swatch background-#{$group-name}--#{$shade-name}"></div>\A';
+  }
+
+  // Close this group
+  $html-swatches: $html-swatches + '</div>\A';
 }
 
-.g-swatch--outline {
-  width: em($ratio--m);
-  height: em($ratio--m);
+/*
+Swatches
 
-  @include margin(null auto em($ratio--b));
+<button data-cycle="large, block" data-prefix="swatches--" data-target=".kss-item">Cycle sizes</button>
 
-  border-width: $line--l;
-  border-style: solid;
+Markup:
+#{$html-swatches}
+
+Styleguide 1.1.
+*/
+
+.g-swatch-group {
+  @include clearfix;
+
+  text-align: center;
+}
+
+.g-swatch {
+  display: inline-block;
+  
+  width: 5vw;
+  height: 5vw;
+
+  margin: 1vw;
+
   border-radius: 50%;
+
+  .swatches--large & {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .swatches--block & {
+    display: block;
+
+    width: 100%;
+    height: 25vh;
+
+    margin: 0;
+
+    border-radius: 0;
+  }
 }
-
-.g-swatch--circle {
-  width: em($ratio--xl);
-  height: em($ratio--xl);
-
-  @include margin(null auto em($ratio--b));
-
-  border-radius: 50%;
-}
-
-.g-swatch--rectangle {
-  padding-bottom: 60%;
-}
-
-.g-swatch--text {
-  line-height: em($height--b);
-  // @include padding(em($ratio--s) null);
-  // font-size: em($ratio--m);
-}
-
-// .g-swatch--full {
-//   height: 25vh;
-// }

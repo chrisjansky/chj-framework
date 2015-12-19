@@ -1,0 +1,67 @@
+$html-outlines: "";
+
+@each $group-name, $group-shades in $color-palette {
+
+  // Start a new group
+  $html-outlines: $html-outlines + '<div class="g-outline-group">\A';
+
+  @each $shade-name, $shade-value in $group-shades {
+    // Add this item to group
+    $html-outlines: $html-outlines + '  <div class="g-outline color-#{$group-name}--#{$shade-name}"><span class="g-outline__name">#{$shade-name}</span></div>\A';
+  }
+
+  // Close this group
+  $html-outlines: $html-outlines + '</div>';
+}
+
+/*
+Outlines
+
+<button data-cycle="large, huge" data-prefix="outlines--" data-target=".kss-item">Cycle sizes</button>
+<button data-cycle="0, 100, 200, 300, 400, 500, 600, 700, 800, 900" data-prefix="background-neutral--" data-target=".kss-item">Cycle backgrounds</button>
+
+Markup:
+#{$html-outlines}
+
+Styleguide 1.2.
+*/
+
+.g-outline-group {
+  @include clearfix;
+
+  text-align: center;
+}
+
+.g-outline {
+  position: relative;
+
+  display: inline-block;
+  
+  width: 5vw;
+  height: 5vw;
+
+  margin: 1vw;
+
+  border-radius: 50%;
+
+  border: 3px solid currentColor;
+
+  .outlines--large & {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .outlines--huge & {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+
+.g-outline__name {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+
+  transform: translateY(-50%);
+}

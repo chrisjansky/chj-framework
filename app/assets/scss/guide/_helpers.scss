@@ -1,0 +1,57 @@
+$color-attributes: (
+  border: border-color,
+  background: background-color,
+  color: color
+);
+
+@each $attribute-name, $attribute-property in $color-attributes {
+
+  @each $group-name, $group-shades in $color-palette {
+
+    @each $shade-name, $shade-value in $group-shades {
+
+      .#{$attribute-name}-#{$group-name}--#{$shade-name} {
+        #{$attribute-property}: $shade-value;
+      }
+    }
+  }
+}
+
+@each $scale-name, $scale-steps in $scales {
+
+  @each $step-letter, $step-value in $scale-steps {
+
+    .text-#{$scale-name}--#{$step-letter} {
+      font-size: em($step-value);
+    }
+
+    .size-#{$scale-name}--#{$step-letter} {
+      width: em($step-value);
+      height: em($step-value);
+    }
+
+    .pseudo-scale-#{$scale-name}--#{$step-letter}:after {
+      content: "#{$step-value}";
+    }
+  }
+}
+
+@each $width-letter, $width-value in $width-group {
+  .width--#{$width-letter} {
+    width: em($width-value);
+  }
+
+  .pseudo-width--#{$width-letter}:after {
+    content: "#{$width-value}";
+  }
+}
+
+@each $height-letter, $height-value in $height-group {
+  .height--#{$height-letter} {
+    line-height: em($height-value);
+  }
+
+  .pseudo-height--#{$height-letter}:after {
+    content: "#{$height-value}";
+  }
+}

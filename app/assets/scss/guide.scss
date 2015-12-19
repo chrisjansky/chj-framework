@@ -5,22 +5,22 @@
 Styleguide
 
 */
-@import "guide/g-config";
-@import "guide/g-json";
-
-@import "guide/g-kss";
-@import "guide/g-specific";
-
-@import "guide/g-temp";
-@import "guide/g-swatch";
-@import "guide/g-color";
+@import "guide/_config";
+@import "guide/_helpers";
+@import "guide/_kss";
+@import "guide/_specific";
 
 /*
 Basics
 
 Styleguide 1.
 */
-@import "guide/g-unit";
-@import "guide/g-ratio";
+@import "guide/g-swatch";
+@import "guide/g-outline";
+@import "guide/g-square";
+
+@import "guide/g-width";
 @import "guide/g-height";
-@import "guide/g-spacing";
+
+@import "guide/g-size";
+

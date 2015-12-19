@@ -1,0 +1,32 @@
+$html-widths: "";
+
+@each $width-letter, $width-value in $width-group {
+
+  $html-widths: $html-widths + '<div class="g-width width--#{$width-letter} pseudo-width--#{$width-letter}">#{$width-letter}&emsp;</div>\A';
+
+}
+
+/*
+Widths
+
+Common block element widths. Perfect for buttons, inputs, forms etc.
+
+Markup:
+#{$html-widths}
+
+Styleguide 1.4.
+*/
+
+.g-width {
+  color: chroma(0, 400);
+  background-color: chroma(0, 000);
+
+  text-align: center;
+  text-transform: uppercase;
+
+  @include margin(null auto);
+
+  & + & {
+    margin-top: $kss-unit-medium;
+  }
+}
