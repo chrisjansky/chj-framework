@@ -5,7 +5,8 @@ $("[data-cycle]").on("click", function(event) {
     $thisEl = $(this),
     classArray = $thisEl.data("cycle").split(", "),
     currentClass = $thisEl.data("current") || 0,
-    targetAttr = $thisEl.attr("data-target"),
+    classPrefix = $thisEl.data("prefix") || "",
+    targetAttr = $thisEl.data("target"),
     $destinationEl;
 
   classArray.unshift("");
@@ -31,11 +32,13 @@ $("[data-cycle]").on("click", function(event) {
     $destinationEl = $thisEl;
   }
 
-  $destinationEl.removeClass(classArray[currentClass]);
+  $destinationEl.removeClass(classPrefix + classArray[currentClass]);
 
   currentClass = (currentClass + 1) % classArray.length;
 
   $thisEl.data("current", currentClass);
 
-  $destinationEl.addClass(classArray[currentClass]);
+  if (currentClass !== 0) {
+    $destinationEl.addClass(classPrefix + classArray[currentClass]);
+  }
 });
