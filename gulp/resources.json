@@ -14,11 +14,13 @@
       "bower_components/featherlight/src/featherlight.js",
       "bower_components/smoothstate/src/jquery.smoothState.js",
       "app/assets/js/chj-base.js",
+      "app/assets/js/chj-cycle.js",
       "app/assets/js/chj-tabs.js",
       "app/assets/js/chj-accordion.js",
       "app/assets/js/chj-toggle.js",
       "app/assets/js/chj-carousel.js",
       "app/assets/js/chj-slider.js",
+      "app/assets/js/chj-nav.js",
       "app/assets/js/chj-smoothstate.js"
     ],
     "vendor": [
