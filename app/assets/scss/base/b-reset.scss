@@ -3,22 +3,16 @@ body {
   overflow-y: scroll;
 }
 
-hr {
-  border-top: $line--s solid;
-  border-bottom: none;
-
-  @include margin(em($ratio--b) null);
-  @include rgba(border-color, $grey--200, .5);
-}
-
 img {
   display: block;
+
   max-width: 100%;
 }
 
 canvas,
 iframe {
   display: block;
+  
   width: 100%;
 }
 
