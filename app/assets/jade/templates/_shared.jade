@@ -1,5 +1,5 @@
 block template-variables
-  - var pageSettings = {title: "chj", description: "Starter framework."}
+  - var page = {title: "chj", description: "Starter framework."}
 
 doctype
 html.no-js(lang="cs")
@@ -7,8 +7,8 @@ html.no-js(lang="cs")
     block template-head
       meta(charset="utf-8")
       meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
-      title!= pageSettings.title
-      meta(name="description", content=pageSettings.description)
+      title!= page.title
+      meta(name="description", content=page.description)
       meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
   body
