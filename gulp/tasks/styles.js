@@ -3,7 +3,7 @@ var
   plugins = require("gulp-load-plugins")({
     pattern: ["gulp-*", "beepbeep", "browser-*"]
   }),
-  config = require("../gulpconfig.json");
+  config = require(pathPrefix + "gulpconfig.json");
 
 gulp.task("styles", function () {
   return gulp.src(config.dev.scssBase)

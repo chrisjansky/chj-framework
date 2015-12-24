@@ -4,7 +4,7 @@ var
   plugins = require("gulp-load-plugins")({
     pattern: ["gulp-*", "del", "vinyl-paths"]
   }),
-  config = require("../gulpconfig.json");
+  config = require(pathPrefix + "gulpconfig.json");
 
 // Delete the previous build.
 gulp.task("build:wipe", function() {

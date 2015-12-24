@@ -4,7 +4,7 @@ var
   plugins = require("gulp-load-plugins")({
     pattern: ["glob", "gulp-*", "beepbeep"]
   }),
-  config = require("../gulpconfig.json");
+  config = require(pathPrefix + "gulpconfig.json");
 
 // Parse JSON locals.
 var jsonOutput;

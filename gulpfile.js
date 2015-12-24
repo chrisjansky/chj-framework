@@ -1,3 +1,5 @@
+pathPrefix = "../";
+
 var gulp = require("gulp");
 
 /* Basic */

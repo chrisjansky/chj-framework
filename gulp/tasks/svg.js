@@ -3,7 +3,7 @@ var
   plugins = require("gulp-load-plugins")({
     pattern: ["gulp-*", "del", "vinyl-paths"]
   }),
-  config = require("../gulpconfig.json");
+  config = require(pathPrefix + "gulpconfig.json");
 
 // Delete the PNG fallbacks/ folder.
 gulp.task("svg:wipe", function() {

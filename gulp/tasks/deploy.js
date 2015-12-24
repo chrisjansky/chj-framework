@@ -3,7 +3,7 @@ var
   plugins = require("gulp-load-plugins")({
     pattern: ["gulp-*", "vinyl-ftp"]
   }),
-  config = require("../gulpconfig.json");
+  config = require(pathPrefix + "gulpconfig.json");
 
 var
   ftpConn = plugins.vinylFtp.create({

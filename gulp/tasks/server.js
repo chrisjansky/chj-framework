@@ -3,7 +3,7 @@ var
   plugins = require("gulp-load-plugins")({
     pattern: ["browser-*", "hygienist-*"]
   }),
-  config = require("../gulpconfig.json");
+  config = require(pathPrefix + "gulpconfig.json");
 
 // Run a server for HTML files
 gulp.task("server:html", ["styles", "templates"], function() {

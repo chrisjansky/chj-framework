@@ -3,7 +3,7 @@ var
   plugins = require("gulp-load-plugins")({
     pattern: ["browser-*"]
   }),
-  config = require("../gulpconfig.json");
+  config = require(pathPrefix + "gulpconfig.json");
 
 gulp.task("watch", function() {
   gulp.watch(
