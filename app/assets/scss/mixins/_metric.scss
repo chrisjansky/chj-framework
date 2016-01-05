@@ -1,4 +1,8 @@
-// Get em value from $scales map
+/*
+Get em value from $scales map, optionally unit-less
+
+Example: font-size: sem(b, 2, true)
+*/
 @function sem($scale-letter, $scale-index: 1, $strip-unit: false) {
   $scale-group: map-get($scales, $scale-index);
 
@@ -10,14 +14,22 @@
 
 }
 
-// Get rm value from $scales map
+/*
+Get rem value from $scales map
+
+Example: font-size: rem(m, 1)
+*/
 @function srem($scale-letter, $scale-index: 1) {
   $scale-group: map-get($scales, $scale-index);
 
   @return rem(map-get($scale-group, $scale-letter));
 }
 
-// Get block height from $height-group map
+/*
+Get block height from $height-group map, optionally unit-less
+
+Example: line-height: sheight(b)
+*/
 @function sheight($height-letter, $strip-unit: false) {
 
   @if $strip-unit {
@@ -27,7 +39,11 @@
   }
 }
 
-// Get block width from $width-group map
+/*
+Get block width from $width-group map, optionally unit-less
+
+Example: max-width: swidth(l, true)
+*/
 @function swidth($width-letter, $strip-unit: false) {
 
   @if $strip-unit {
