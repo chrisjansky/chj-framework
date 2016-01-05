@@ -25,9 +25,9 @@
     "imagesGlob": "app/assets/images/**/*",
     "imagesIgnore": "!app/assets/images/_ignore{,/**}",
 
-    "svgSourceGlob": "app/assets/svg/*",
+    "svgSourceGlob": "app/assets/svg/*.svg",
+    "svgBuildGlob": "app/assets/svg/_build/*.svg",
     "svgBuild": "app/assets/svg/_build/",
-    "svgBuildGlob": "app/assets/svg/_build/**/*",
 
     "dataRoot": "app/assets/data/",
     "dataGlob": "app/assets/data/*.json",

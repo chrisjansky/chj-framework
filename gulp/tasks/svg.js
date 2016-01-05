@@ -10,7 +10,7 @@ gulp.task("svg:wipe", function() {
   return plugins.del(config.dev.svgBuildGlob);
 });
 
-// Optimize SVG.
+// Compile into a single SVG sprite file.
 gulp.task("svg:sprites", ["svg:wipe"], function() {
   return gulp.src(config.dev.svgSourceGlob)
     .pipe(plugins.svgSprite({
@@ -24,4 +24,16 @@ gulp.task("svg:sprites", ["svg:wipe"], function() {
     .pipe(gulp.dest(config.dev.svgBuild));
 });
 
-gulp.task("svg", ["svg:sprites"]);
+// Minify individual SVG assets.
+gulp.task("svg:minify", ["svg:wipe"], function() {
+  return gulp.src(config.dev.svgSourceGlob)
+    .pipe(plugins.imagemin({
+      svgoPlugins: [
+        {removeViewBox: false},
+        {removeUselessStrokeAndFill: false}
+      ]
+    }))
+    .pipe(gulp.dest(config.dev.svgBuild));
+});
+
+gulp.task("svg", ["svg:minify"]);
