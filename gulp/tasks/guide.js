@@ -2,14 +2,13 @@ var
   gulp = require("gulp"),
   fs = require("fs"),
   plugins = require("gulp-load-plugins")({
-    pattern: ["gulp-*", "del", "vinyl-paths"]
+    pattern: ["gulp-*", "del"]
   }),
   config = require(pathPrefix + "gulpconfig.json");
 
 // Delete previous KSS build.
 gulp.task("guide:wipe", function() {
-  return gulp.src(config.dev.styleguide, {read: false})
-    .pipe(plugins.vinylPaths(plugins.del));
+  return plugins.del(config.dev.styleguide);
 });
 
 // Construct KSS template using JADE and HTML partial.

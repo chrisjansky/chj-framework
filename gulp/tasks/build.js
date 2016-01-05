@@ -2,14 +2,13 @@ var
   gulp = require("gulp"),
   fs = require("fs"),
   plugins = require("gulp-load-plugins")({
-    pattern: ["gulp-*", "del", "vinyl-paths"]
+    pattern: ["gulp-*", "del"]
   }),
   config = require(pathPrefix + "gulpconfig.json");
 
 // Delete the previous build.
 gulp.task("build:wipe", function() {
-  return gulp.src(config.dist.root, {read: false})
-    .pipe(plugins.vinylPaths(plugins.del));
+  return plugins.del(config.dist.root);
 });
 
 // Read paths to assets.

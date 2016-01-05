@@ -1,14 +1,13 @@
 var
   gulp = require("gulp"),
   plugins = require("gulp-load-plugins")({
-    pattern: ["gulp-*", "del", "vinyl-paths"]
+    pattern: ["gulp-*", "del"]
   }),
   config = require(pathPrefix + "gulpconfig.json");
 
-// Delete the PNG fallbacks/ folder.
+// Delete the previous SVG build.
 gulp.task("svg:wipe", function() {
-  return gulp.src(config.dev.svgBuildGlob, {read: false})
-    .pipe(plugins.vinylPaths(plugins.del));
+  return plugins.del(config.dev.svgBuildGlob);
 });
 
 // Optimize SVG.
