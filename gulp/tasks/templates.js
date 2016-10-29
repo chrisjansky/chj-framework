@@ -36,7 +36,7 @@ gulp.task("templates:read", function() {
 });
 
 gulp.task("templates:compile", ["templates:read"], function() {
-  return gulp.src([config.dev.jadeGlob, config.dev.jadeIgnore])
+  return gulp.src([config.dev.pugGlob, config.dev.pugIgnore])
   
     .pipe(plugins.plumber(function (error) {
       plugins.beepbeep();
@@ -44,7 +44,7 @@ gulp.task("templates:compile", ["templates:read"], function() {
       this.emit("end");
     }))
 
-    .pipe(plugins.jade({
+    .pipe(plugins.pug({
       pretty: true,
       locals: JSON.parse(jsonOutput),
       basedir: config.dev.root

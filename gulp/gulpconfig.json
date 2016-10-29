@@ -10,9 +10,9 @@
     "pagesGlob": "app/**/*.html",
     "pagesIgnore": "!app/{assets,guide}/**/*.html",
 
-    "jadeRoot": "app/assets/jade/",
-    "jadeGlob": "app/assets/jade/**/*.jade",
-    "jadeIgnore": "!app/assets/jade/**/_*.jade",
+    "pugRoot": "app/assets/pug/",
+    "pugGlob": "app/assets/pug/**/*.pug",
+    "pugIgnore": "!app/assets/pug/**/_*.pug",
 
     "scssRoot": "app/assets/scss/",
     "scssBase": "app/assets/scss/*.scss",

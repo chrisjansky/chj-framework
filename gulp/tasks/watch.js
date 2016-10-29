@@ -12,7 +12,7 @@ gulp.task("watch", function() {
   );
 
   gulp.watch(
-    [config.dev.jadeGlob, config.dev.dataGlob, config.dev.resources],
+    [config.dev.pugGlob, config.dev.dataGlob, config.dev.resources],
     ["templates:reload"]
   );
 
