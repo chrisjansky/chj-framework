@@ -14,8 +14,6 @@ var
 
 gulp.task("deploy:clean", function(callback) {
   ftpConn.rmdir(config.ftp.path, function(error) {
-    if (error) return callback(error);
-
     gulp.src(config.dist.root + "**/*", {base: config.dist.root, buffer: false})
       .pipe(ftpConn.dest(config.ftp.path));
   });
