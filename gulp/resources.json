@@ -10,9 +10,11 @@
       "bower_components/idangerous-swiper/dist/css/swiper.css",
       "bower_components/featherlight/src/featherlight.css",
       "app/assets/css/style.css",
+
       "bower_components/idangerous-swiper/dist/js/swiper.jquery.js",
       "bower_components/featherlight/src/featherlight.js",
       "bower_components/smoothstate/src/jquery.smoothState.js",
+
       "app/assets/js/chj-base.js",
       "app/assets/js/chj-cycle.js",
       "app/assets/js/chj-tabs.js",
@@ -28,9 +30,9 @@
     ],
     "guide": [
       "app/assets/css/guide.css",
-      "app/guide/public/prism.css",
-      "app/guide/public/prism.js",
-      "app/guide/public/guide.js"
+      "app/guide/kss-assets/prism.css",
+
+      "app/guide/kss-assets/prism.js"
     ]
   },
   "injectDist": {

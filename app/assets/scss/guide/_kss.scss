@@ -1,121 +1,134 @@
-// Wrappers
-.kss-header {
-  padding: 1em 0 1em 1em;
+/* Sidebar */
 
-  @include reset-children;
-
-  @include media($dr__large) {
-    padding: 1.625em 0 1.625em 1.625em;
-  }
-  @include media($bp__desktop) {
-    @include position(fixed, 0 null 0 0);
-    z-index: $kss-index;
-
-    width: em($kss-sidebar);
-
-    overflow-y: auto;
-  }
-}
-
-.kss-header__link {
-  display: block;
-  text-decoration: none;
-
-  &:link,
-  &:visited {
-    color: $kss-link;
-  }
-  &:hover,
-  &:active {
-    color: $kss-hover;
-  }
-}
-
-.kss-head--normal {
-  font-size: $kss-unit-medium;
-
+.kss-doc-title {
   margin-top: 0;
-}
-.kss-head--low {
-  font-size: $kss-unit-base;
-}
 
-.kss-main {
-  padding: .625em;
-
-  @include media($bp__tablet) {
-    padding: 1em;
-  }
-  @include media($bp__desktop) {
-    @include reset-children;
-
-    padding: 1.625em;
-
-    margin-left: em($kss-sidebar);
-  }
+  font-size: $kss-unit-medium;
 }
 
-// Navigation
-[class^="kss-menu--"],
-[class*=" kss-menu--"] {
-  list-style: none;
+.kss-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 500;
+
+  width: em($kss-sidebar);
+  padding: 1.5em;
+
+  color: white;
+  background-color: black;
+
+  overflow-y: auto;
+}
+
+.kss-nav__menu {
   padding-left: 0;
-}
-.kss-menu--main {
-  margin-bottom: 0;
+  list-style-type: none;
 
-  li {
-    line-height: $kss-row;
-    border-top: $kss-stroke solid $kss-color-light;
+  a:link, a:visited {
+    color: $kss-color-light;
   }
-
-  @include media($bp__tablet) {
-    @include clearfix;
+  a:hover, a:active {
+    color: white;
   }
-  @include media($bp__phablet) {
-    & > li {
-      @include span-columns(2 of $col__phablet);
-      @include omega(3n);
-    }
-  }
-  @include media($bp__tablet) {
-    & > li {
-      @include span-columns(2 of $col__tablet);
-      @include omega(4n);
-    }
-  } 
 }
-.kss-menu--sub {
-  margin-bottom: 1em;
+
+.kss-nav__menu-item {
+  line-height: $kss-row;
+  border-top: $kss-stroke solid #333;
+}
+
+.kss-nav__ref {
+  margin-right: 1em;
+}
+
+.kss-nav__menu-child {
+  list-style-type: none;
+  padding-left: 0;
+
   font-size: $kss-unit-small;
 
-  a:link,
-  a:visited {
-    color: $kss-link;
+  a:link, a:visited {
+    color: $kss-color-medium;
   }
-  a:hover,
-  a:active {
-    color: $kss-hover;
+  a:hover, a:active {
+    color: $kss-color-light;
   }
 }
 
-// Item
-.kss-item__info {
-  @include clearfix;
+/* Main content */
+
+.kss-main {
+  @include reset-children;
+
+  padding: 1.5em;
+  margin-left: em($kss-sidebar);
+}
+
+.kss-overview {
+  @include reset-children;
+}
+
+.kss-item--depth-1 {
+  margin-bottom: 25vmin;
+}
+
+.kss-item--depth-2 {
+  margin-top: 3em;
+}
+
+.kss-bar {
+  display: flex;
+  align-items: center;
 
   margin-bottom: 1em;
-  
-  .kss-item + .kss-item & {
-    margin-top: 2.625em;
-  }
 }
-.kss-item__title {
-  @include margin(0 null);
 
-  @include media($bp__desktop) {
-    @include span-columns(9 of $col__desktop);
+.kss-bar__content {
+  flex-grow: 1;
+
+  @include reset-children;
+}
+
+.kss-bar__side {
+  min-width: em(200);
+
+  margin-left: 1em;
+}
+
+/* Variant layout */
+
+.kss-variant {
+  @include padding(1em null);
+
+  &:not(:first-child) {
+    border-top: 1px solid $kss-color-light; 
   }
 }
+
+.kss-variant__example {
+  overflow: auto;
+}
+
+.kss-variant__description {
+  float: right;
+  width: em(200);
+
+  margin-left: 1em;
+}
+
+/* Typography */
+
+.kss-variant__title {
+  margin-top: 0;
+  margin-bottom: .25em;
+
+  font-size: $kss-unit-small;
+
+  color: $kss-color-dark;
+}
+
 .kss-small {
   display: block;
 
@@ -125,43 +138,20 @@
     @include margin(0 null);
   }
 }
-.kss-item__content {
+
+.kss-title__permalink {
+  text-decoration: none;
 }
 
-.kss-example {
-  @include media($bp__desktop) {
-    @include span-columns(9 of $col__desktop);
+.kss-title__permalink-hash {
+  visibility: hidden;
+
+  color: $kss-color-light;
+
+  .kss-title__permalink:hover &,
+  .kss-title__permalink:active & {
+    visibility: visible;
   }
-}
-
-.kss-description {
-  @include reset-children;
-
-  @include media($bp__desktop) {
-    @include span-columns(3 of $col__desktop);
-  }
-}
-
-.kss-reference {
-  margin-right: .625em;
-}
-
-.kss-variant {
-  @include padding(1em null);
-
-  @include media($bp__desktop) {
-    @include clearfix;
-  }
-
-  & + & {
-    border-top: $kss-stroke solid $kss-color-light;
-  }
-
-}
-.kss-variant__title {
-  margin-bottom: em($kss-unit-xsmall);
-
-  color: $kss-color-black;
 }
 
 .kss-markup {
@@ -180,11 +170,6 @@
 
 .kss-preformat {
   display: none;
-
-  .kss-markup & {
-    // prism.css specificity issue.
-    @include margin(0 null);
-  }
 
   .kss-markup--open & {
     display: block;
