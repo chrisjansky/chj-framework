@@ -1,17 +1,12 @@
 $kss-sidebar: 200;
 $kss-row: em(40);
 
-$kss-index: $index--b;
+$kss-stroke: 1px;
 
-$kss-stroke: $stroke--s;
-
-$kss-color-light:  chroma(0, 100);
-$kss-color-medium: chroma(0, 300);
-$kss-color-dark:   chroma(0, 500);
-$kss-color-black:  chroma(0, 600);
-
-$kss-link:   $kss-color-dark;
-$kss-hover:  $kss-color-medium;
+$kss-color-light:  #CCC;
+$kss-color-medium: #AAA;
+$kss-color-dark:   #444;
+$kss-color-black:  #000;
 
 $kss-unit-medium: em(20);
 $kss-unit-base:   em($default__size);
