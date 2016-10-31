@@ -19,8 +19,9 @@ gulp.task("guide:scaffold", ["guide:wipe"], function() {
       pretty: true,
       basedir: config.dev.root
     }))
-    .pipe(plugins.rename(function (path) {
-      path.basename = "index";
+    .pipe(plugins.rename({
+      basename: "index",
+      extname: ".hbs"
     }))
     .pipe(gulp.dest(config.dev.kssRoot));
 });
@@ -29,12 +30,13 @@ gulp.task("guide:scaffold", ["guide:wipe"], function() {
 gulp.task("guide:compile", ["guide:scaffold"], function() {
   return gulp.src("", {read: false})
     .pipe(plugins.shell([
-      "kss-node <%= source %> <%= destination %> --template <%= template %>"
+      "kss <%= source %> <%= destination %> --builder <%= builder %> --homepage <%= homepage %>"
       ], {
         templateData: {
           source:      config.dev.cssRoot,
           destination: config.dev.styleguide,
-          template:    config.dev.kssRoot
+          builder:     config.dev.kssRoot,
+          homepage:    config.dev.kssMarkdown
         }
       }
     ));
