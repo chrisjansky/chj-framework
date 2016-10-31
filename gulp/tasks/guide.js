@@ -2,7 +2,7 @@ var
   gulp = require("gulp"),
   fs = require("fs"),
   plugins = require("gulp-load-plugins")({
-    pattern: ["gulp-*", "del"]
+    pattern: ["gulp-*", "del", "kss"]
   }),
   config = require(pathPrefix + "gulpconfig.json");
 
@@ -26,20 +26,14 @@ gulp.task("guide:scaffold", ["guide:wipe"], function() {
     .pipe(gulp.dest(config.dev.kssRoot));
 });
 
-// Run KSS in shell.
+// Run KSS.
 gulp.task("guide:compile", ["guide:scaffold"], function() {
-  return gulp.src("", {read: false})
-    .pipe(plugins.shell([
-      "kss <%= source %> <%= destination %> --builder <%= builder %> --homepage <%= homepage %>"
-      ], {
-        templateData: {
-          source:      config.dev.cssRoot,
-          destination: config.dev.styleguide,
-          builder:     config.dev.kssRoot,
-          homepage:    config.dev.kssMarkdown
-        }
-      }
-    ));
+  return plugins.kss({
+    source:      config.dev.cssRoot,
+    destination: config.dev.styleguide,
+    builder:     config.dev.kssRoot,
+    homepage:    config.dev.kssMarkdown
+  })
 });
 
 // Read paths to assets.
