@@ -13,3 +13,8 @@ A universal project starter kit.
 # Slider plugins
 - Flickity
   - Hard to use different gutters inside/outside whilst employing percentage based item widths
+
+# Terminal commands
+- `npm list --depth=0` to list current package versions 
+- `npm outdated` to list available package updates
+- `npm update  *package name* --save-dev` to update
