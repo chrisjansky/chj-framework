@@ -1,5 +1,4 @@
 /* Sidebar */
-
 .kss-doc-title {
   margin-top: 0;
 
@@ -13,13 +12,21 @@
   left: 0;
   z-index: 500;
 
-  width: em($kss-sidebar);
+  width: $kss-sidebar;
   padding: 1.5em;
 
   color: white;
   background-color: black;
 
   overflow-y: auto;
+
+  transform: translateX(-$kss-sidebar + 1);
+
+  transition: transform .25s;
+
+  &:hover {
+    transform: translateX(0);
+  }
 }
 
 .kss-nav__menu {
@@ -46,6 +53,7 @@
 .kss-nav__menu-child {
   list-style-type: none;
   padding-left: 0;
+  @include margin(1.5em null);
 
   font-size: $kss-unit-small;
 
@@ -58,12 +66,11 @@
 }
 
 /* Main content */
-
 .kss-main {
   @include reset-children;
 
   padding: 1.5em;
-  margin-left: em($kss-sidebar);
+  margin-left: 2em;
 }
 
 .kss-overview {
